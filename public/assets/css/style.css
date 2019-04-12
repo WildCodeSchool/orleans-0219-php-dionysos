@@ -1,0 +1,43 @@
+/* start Footer */
+footer ul
+{
+    list-style-type: none;
+}
+
+footer
+{
+    background-color: #303233;
+    color: white;
+}
+
+footer hr
+{
+    background-color: white;
+    margin: 2em ;
+}
+
+footer a
+{
+    list-style-type: none;
+}
+
+.smallPic
+{
+    width: 110px;
+}
+
+.smallPicfb
+{
+    width: 125px;
+}
+
+.smallPicCard
+{
+    width: 80px;
+}
+
+.ticketRestau
+{
+    width: 250px;
+}
+/* end Footer */
