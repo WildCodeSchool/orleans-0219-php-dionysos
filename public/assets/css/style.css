@@ -1,0 +1,51 @@
+/* start Footer */
+footer ul
+{
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+footer
+{
+    background-color: #303233;
+    color: white;
+}
+
+footer hr
+{
+    background-color: white;
+    margin: 2em ;
+}
+
+footer a
+{
+    list-style-type: none;
+}
+
+.smallPic
+{
+    width: 110px;
+}
+
+.smallPicfb
+{
+    width: 125px;
+}
+
+.smallPicCard
+{
+    width: 80px;
+}
+
+.mealTicket
+{
+    width: 250px;
+}
+
+.littleEndPage
+{
+    font-size: 0.7em;
+}
+/* end Footer */
