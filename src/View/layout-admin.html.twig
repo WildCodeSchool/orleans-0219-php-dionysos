@@ -1,21 +1,23 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/admin-style.css">{% endblock %}
+
 {% block header %}
 
 <h1>Dionysos - Espace Administrateur</h1>
 
 <ul class="nav nav-tabs pb-3">
     <li class="nav-item">
-        <a class="nav-link" href="/admin/reservations">Reservations</a>
+        <a class="nav-link" href="/AdminReservations/index">Reservations</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/admin/lacarte">La Carte</a>
+        <a class="nav-link" href="/lacarte/index">La Carte</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/admin/livredor">Livre d'Or</a>
+        <a class="nav-link" href="/livredor/index">Livre d'Or</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/admin/photos">Photos</a>
+        <a class="nav-link" href="/photos/index">Photos</a>
     </li>
 </ul>
 
