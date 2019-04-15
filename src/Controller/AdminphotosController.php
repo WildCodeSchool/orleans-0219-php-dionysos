@@ -8,7 +8,7 @@
 
 namespace App\Controller;
 
-class PhotosController extends AbstractController
+class AdminphotosController extends AbstractController
 {
 
     /**
@@ -21,6 +21,6 @@ class PhotosController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Photos/index.html.twig');
+        return $this->twig->render('Adminphotos/index.html.twig');
     }
 }

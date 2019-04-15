@@ -8,7 +8,7 @@
 
 namespace App\Controller;
 
-class LivredorController extends AbstractController
+class AdminmenuController extends AbstractController
 {
 
     /**
@@ -21,6 +21,6 @@ class LivredorController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Livredor/index.html.twig');
+        return $this->twig->render('Adminmenu/index.html.twig');
     }
 }

@@ -8,7 +8,7 @@
 
 namespace App\Controller;
 
-class LacarteController extends AbstractController
+class AdminreservationsController extends AbstractController
 {
 
     /**
@@ -21,6 +21,6 @@ class LacarteController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Lacarte/index.html.twig');
+        return $this->twig->render('Adminreservations/index.html.twig');
     }
 }
