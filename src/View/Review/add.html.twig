@@ -1,0 +1,36 @@
+{% extends 'layout-visitor.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+{% endblock %}
+{% block content %}
+<section class="guest-book text-center container-fluid">
+    <h1>LIVRE D'OR</h1>
+    <div class="row justify-content-center">
+        <div class="col-6">
+    <form method="POST">
+    <input type="hidden" value="{{ id }}" id="id" name="id" >
+    <div class="form-group ">
+        <label for="name">Nom : *</label>
+        <input required class="form-control" type="text" value="{{ name }}" id="name" name="name"  placeholder="Votre nom">
+    </div>
+    <div class="form-group">
+        <label for="comment">Commentaire : *</label>
+        <textarea required class="form-control" name="comment" id="comment" placeholder="Votre commentaire" >{{ comment }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="rating">Votre note : *</label>
+        <fieldset class="rating">
+            <input type="radio" id="star5" name="rating" value="{{ rating }}5" /><label class = "full" for="star5" title="Excellent - 5 étoiles"></label>
+            <input type="radio" id="star4" name="rating" value="{{ rating }}4" /><label class = "full" for="star4" title="Bon - 4 étoiles"></label>
+            <input type="radio" id="star3" name="rating" value="{{ rating }}3" /><label class = "full" for="star3" title="Moyen - 3 étoiles"></label>
+            <input type="radio" id="star2" name="rating" value="{{ rating }}2" /><label class = "full" for="star2" title="Mauvais - 2 étoiles"></label>
+            <input type="radio" id="star1" name="rating" value="{{ rating }}1" /><label class = "full" for="star1" title= "Médiocre - 1 étoile"></label>
+        </fieldset>
+    </div>
+    <button type="submit" name="submit" value="submit" class="btn btn-lg btn-dark">Envoyer</button>
+    </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

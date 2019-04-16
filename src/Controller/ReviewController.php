@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Model\BookManager;
+use App\Model\ReviewManager;
 
-class BookController extends AbstractController
+class ReviewController extends AbstractController
 {
 
     /**
@@ -18,10 +18,11 @@ class BookController extends AbstractController
 
     public function index()
     {
-        $bookManager = new BookManager();
-        $reviews = $bookManager->selectAll();
-        return $this->twig->render('Book/index.html.twig',['reviews' => $reviews]);
+        $reviewManager = new ReviewManager();
+        $review = $reviewManager->selectAll();
+        return $this->twig->render('Review/index.html.twig', ['review' => $review]);
     }
+
     /**
      * Display item creation page
      *
@@ -30,21 +31,19 @@ class BookController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
+
     public function add()
     {
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $bookManager = new BookManager();
+            $reviewManager  = new ReviewManager();
             $review = [
                 'name' => $_POST['name'],
                 'comment' => $_POST['name'],
-                'rating' => $_POST['rating'],
+                'rating' => $_POST['rating']
             ];
-            $id = $bookManager->insert($review);
-            header('Location:Book/show/'.$id);
-
+            $reviewManager ->insert($review);
+            header('Location:/review/add');
         }
-        return $this->twig->render('Book/index.html.twig');
+        return $this->twig->render('/Review/add.html.twig');
     }
-
 }
