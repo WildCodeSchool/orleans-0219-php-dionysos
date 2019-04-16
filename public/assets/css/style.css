@@ -1,29 +1,32 @@
-/*NavBar*/
-.imgnav {
 
-    width: 100px;
-    height: 100px;
+/*NavBar*/
+
+nav {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.imgnav {
+    width: 80px;
+    height: 80px;
     text-align: center;
     position: inherit;
 }
 .nav-item{
-    margin-top: 30px;
-    color: white;
-    padding-left: 0px;
-    margin-left: 0px;
-
+    margin-top: 25px;
 }
+
 .nav-link{
     color: black;
     font-size: 25px;
-
 }
-
 
 .navbar{
     background-image: url("../images/vintage-concrete/vintage-concrete/vintage-concrete.png");
-
 }
-.container-fluide{
-    text-align: left;
+
+
+@media screen and (max-width: 850px) {
+    .imgnav {
+        display: none;
+    }
 }
