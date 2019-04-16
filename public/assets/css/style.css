@@ -1,24 +1,22 @@
 /*NavBar*/
 .imgnav{
-    width: 110px;
-    height: 110px;
-    margin-left: 190px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
     position: inherit;
 }
 .nav-item{
     margin-top: 30px;
     color: white;
-    padding-left: 50px;
-    margin-left: 130Px;
+    padding-left: 0px;
+    margin-left: 0px;
 }
 .nav-link{
     color: black;
     font-size: 25px;
 }
-.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-    color: black;
 
-}
+
 .navbar{
     background-image: url("../images/vintage-concrete/vintage-concrete/vintage-concrete.png");
 
