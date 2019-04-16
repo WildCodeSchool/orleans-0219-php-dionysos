@@ -8,7 +8,7 @@
 
 namespace App\Controller;
 
-class AdminreservationsController extends AbstractController
+class AdminMenuController extends AbstractController
 {
 
     /**
@@ -21,6 +21,6 @@ class AdminreservationsController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Adminreservations/index.html.twig');
+        return $this->twig->render('AdminMenu/index.html.twig');
     }
 }
