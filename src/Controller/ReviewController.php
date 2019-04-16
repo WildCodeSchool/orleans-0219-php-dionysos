@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\Review;
 use App\Model\ReviewManager;
 
 class ReviewController extends AbstractController
