@@ -1,15 +1,25 @@
 h1 {
-    color: ;
     padding: 1em;
-
 }
 
 .guest-book .form-group{
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
+
 .guest-book button{
     margin-top: 1em;
+    color : white;
+    background-color: #954733;
+    transition: all 0.4s ease 0s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    border:none;
+}
+.guest-book button:hover{
+    color : white;
+    background-color: #5D1B18;
+    box-shadow: 0px 10px 15px rgba(181, 83, 40, 0.4);
+    border:none;
 }
 
 .guest-book label{

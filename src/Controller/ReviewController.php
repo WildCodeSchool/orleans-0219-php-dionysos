@@ -8,8 +8,8 @@ use App\Model\ReviewManager;
 class ReviewController extends AbstractController
 {
 
-    CONST EMPTY_FIELD = "Le champ ne peut pas être vide";
-    CONST MAX_LENGTH = 100;
+    const EMPTY_FIELD = "Le champ ne peut pas être vide";
+    const MAX_LENGTH = 100;
     /**
      * Display home page
      *
@@ -70,7 +70,7 @@ class ReviewController extends AbstractController
                 $data[$key] = htmlspecialchars($value);
             }
             $errors = $this->checkErrors($cleanPost);
-            if (empty($errors)){
+            if (empty($errors)) {
                 $reviewManager = new ReviewManager();
                 $review = [
                     'name' => $cleanPost['name'],
@@ -83,6 +83,4 @@ class ReviewController extends AbstractController
         }
         return $this->twig->render('/Review/add.html.twig', ['errors' => $errors, 'review' => $cleanPost]);
     }
-
-
 }
