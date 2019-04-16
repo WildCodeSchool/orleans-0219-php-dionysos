@@ -71,7 +71,7 @@ class ReviewController extends AbstractController
                 $reviewManager = new ReviewManager();
                 $review = [
                     'name' => $cleanPost['name'],
-                    'comment' => $cleanPost['name'],
+                    'comment' => $cleanPost['comment'],
                     'rating' => $cleanPost['rating']
                 ];
                 $reviewManager -> insert($review);
