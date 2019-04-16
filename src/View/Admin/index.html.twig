@@ -2,4 +2,21 @@
 
 {% block content %}
     <h2>Connexion</h2>
+
+  <div class="container login">
+        <form method="POST" action="">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" class="form-control" id="username" name="username" required minlength="3" maxlength="40">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" class="form-control" id="password" name="password" required minlength="8" maxlength="40">
+            </div>
+            <button type="submit" class="btn btn_item send-button"> Envoyer </button>
+
+        </form>
+   </div>
+
 {% endblock %}
