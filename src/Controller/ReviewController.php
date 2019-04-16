@@ -2,11 +2,14 @@
 
 namespace App\Controller;
 
+use App\Model\Review;
 use App\Model\ReviewManager;
 
 class ReviewController extends AbstractController
 {
 
+    CONST EMPTY_FIELD = "Le champ ne peut pas être vide";
+    CONST MAX_LENGTH = 100;
     /**
      * Display home page
      *
@@ -23,6 +26,29 @@ class ReviewController extends AbstractController
         return $this->twig->render('Review/index.html.twig', ['review' => $review]);
     }
 
+
+    /**
+     * @param array $cleanPost
+     * @return array
+     */
+
+    private function checkErrors(array $cleanPost): array
+    {
+        $errors = [];
+        if (empty($cleanPost['name'])) {
+            $errors['name'] = self::EMPTY_FIELD;
+        } elseif ((strlen($cleanPost['name']) > self::MAX_LENGTH)) {
+            $errors['name'] = 'Votre nom de produit ne peut pas être supérieur à ' . self::MAX_LENGTH . 'caractères';
+        }
+        if (empty($cleanPost['comment'])) {
+            $errors['comment'] = self::EMPTY_FIELD;
+        }
+        if (empty($cleanPost['rating'])) {
+            $errors['rating'] = 'Veuillez insérer une note.';
+        }
+        return $errors;
+    }
+
     /**
      * Display item creation page
      *
@@ -32,18 +58,31 @@ class ReviewController extends AbstractController
      * @throws \Twig\Error\SyntaxError
      */
 
+
     public function add()
     {
+        $cleanPost = [];
+        $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $reviewManager  = new ReviewManager();
-            $review = [
-                'name' => $_POST['name'],
-                'comment' => $_POST['name'],
-                'rating' => $_POST['rating']
-            ];
-            $reviewManager ->insert($review);
-            header('Location:/review/add');
+            foreach ($_POST as $key => $value) {
+                $cleanPost[$key]=trim($value);
+                $data[$key] = stripslashes($value);
+                $data[$key] = htmlspecialchars($value);
+            }
+            $errors = $this->checkErrors($cleanPost);
+            if (empty($errors)){
+                $reviewManager = new ReviewManager();
+                $review = [
+                    'name' => $cleanPost['name'],
+                    'comment' => $cleanPost['name'],
+                    'rating' => $cleanPost['rating']
+                ];
+                $reviewManager -> insert($review);
+                header('Location:/review/add');
+            }
         }
-        return $this->twig->render('/Review/add.html.twig');
+        return $this->twig->render('/Review/add.html.twig', ['errors' => $errors, 'review' => $cleanPost]);
     }
+
+
 }

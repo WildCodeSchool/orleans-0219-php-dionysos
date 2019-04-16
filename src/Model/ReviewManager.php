@@ -18,6 +18,7 @@ class ReviewManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
+
     /**
      * @param array $review
      * @return int
@@ -30,11 +31,8 @@ class ReviewManager extends AbstractManager
         $statement->bindValue(':name', $review['name'], \PDO::PARAM_STR);
         $statement->bindValue(':comment', $review['comment'], \PDO::PARAM_STR);
         $statement->bindValue(':rating', $review['rating'], \PDO::PARAM_STR);
-
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();
         }
     }
-
-
 }
