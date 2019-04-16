@@ -66,8 +66,6 @@ class ReviewController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key]=trim($value);
-                $data[$key] = stripslashes($value);
-                $data[$key] = htmlspecialchars($value);
             }
             $errors = $this->checkErrors($cleanPost);
             if (empty($errors)) {
