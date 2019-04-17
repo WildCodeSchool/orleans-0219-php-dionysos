@@ -21,7 +21,7 @@
     font-size: 25px;
 }
 .navbar {
-    background-image: url("../images/vintage-concrete.jpg");
+    background-image: url("../images/vintage-concrete.png");
     text-align: left;
 }
 @media screen and (max-width: 991px) {
