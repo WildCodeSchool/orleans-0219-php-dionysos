@@ -1,5 +1,6 @@
 <?php
 namespace App\Model;
+
 class ReservationManager extends AbstractManager
 {
     /**
@@ -20,7 +21,8 @@ class ReservationManager extends AbstractManager
     public function insert(array $reservation): int
     {
         // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (name, email, phone, date, nbPeople, appointment) 
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " 
+        (name, email, phone, date, nbPeople, appointment) 
         VALUES (:name, :email, :phone, :date, :nbPeople, :appointment)");
         $statement->bindValue(':name', $reservation['name'], \PDO::PARAM_STR);
         $statement->bindValue(':email', $reservation['email'], \PDO::PARAM_STR);

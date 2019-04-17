@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
+
 use App\Model\ReservationManager;
+
 class ReservationController extends AbstractController
 {
     const EMPTY_FIELD = "Veuillez compléter ce champ";
