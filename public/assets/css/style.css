@@ -1,3 +1,35 @@
+/*Navbar*/
+.nav {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.imgnav {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    position: inherit;
+}
+.nav-item{
+    margin-top: 25px;
+}
+
+.nav-link{
+    color: black;
+    font-size: 25px;
+}
+.navbar {
+    background-image: url("../images/vintage-concrete.png");
+    text-align: left;
+}
+
+@media screen and (max-width: 991px) {
+    .imgnav {
+        display: none;
+    }
+}
+/*end Navbar*/
+
+
 /* start Footer */
 footer ul
 {
