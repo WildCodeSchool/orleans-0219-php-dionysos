@@ -22,8 +22,12 @@
 
 .navbar{
     background-image: url("../images/vintage-concrete/vintage-concrete/vintage-concrete.png");
+    text-align: left;
 
 }
-.container-fluide{
-    text-align: left;
+
+@media screen and (max-width: 991px) {
+    .imgnav{
+        display: none;
+    }
 }
