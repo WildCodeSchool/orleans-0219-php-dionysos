@@ -6,23 +6,27 @@
     background-attachment: fixed;
     margin-bottom: 0;
     height: 100vh;
+    opacity: .9;
+    filter: alpha(opacity=50);
 }
 
 .jumbotron-title {
     font-family: 'Montserrat', sans-serif;
     color: #F8F8F8;
     font-size: 3em;
+    padding-bottom: 1em;
 }
 
 .jumbotron-text {
     font-family: 'Montserrat', sans-serif;
     color: #F8F8F8;
-    font-size: 1.5em;
+    font-size: 1.7em;
+    padding-bottom: 0.5em;
 }
 
-.arrow-down{
-    max-height:20px;
-    margin-top:25%;
+.arrow-down img{
+    max-height:25px;
+    margin-top: 20%;
 }
 
 
