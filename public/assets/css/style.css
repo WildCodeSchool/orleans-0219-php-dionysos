@@ -1,33 +1,91 @@
-/*NavBar*/
-.imgnav {
 
-    width: 100px;
-    height: 100px;
+
+/*Navbar*/
+
+.nav {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.imgnav {
+    width: 80px;
+    height: 80px;
     text-align: center;
     position: inherit;
 }
 .nav-item{
-    margin-top: 30px;
-    color: white;
-    padding-left: 0px;
-    margin-left: 0px;
-
+    margin-top: 25px;
 }
+
 .nav-link{
     color: black;
     font-size: 25px;
-
 }
-
-
-.navbar{
-    background-image: url("../images/vintage-concrete/vintage-concrete/vintage-concrete.png");
+.navbar {
+    background-image: url("../images/vintage-concrete.jpg");
     text-align: left;
-
 }
-
 @media screen and (max-width: 991px) {
-    .imgnav{
+    .imgnav {
         display: none;
     }
 }
+
+/*end Navbar*/
+
+
+/* start Footer */
+footer ul
+{
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+footer
+{
+    background-color: #303233;
+    color: white;
+}
+
+footer hr
+{
+    background-color: white;
+    margin: 2em ;
+}
+
+footer a
+{
+    list-style-type: none;
+}
+
+.smallPic
+{
+    width: 110px;
+}
+
+.smallPicfb
+{
+    width: 125px;
+}
+
+.smallPicCard
+{
+    width: 80px;
+}
+
+.mealTicket
+{
+    width: 250px;
+}
+
+.littleEndPage
+{
+    font-size: 0.7em;
+}
+
+@media screen and (max-width: 850px){
+    .imgnav {
+    display: none;
+    }
+}
+
+/* end Footer */
