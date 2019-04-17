@@ -1,31 +1,39 @@
 /* jumbotron home */
 
 .jumbotron {
-    background-image: url("http://www.polemb.net/wp-content/uploads/2018/05/polemb-16.jpg");
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("../images/jumbotron_1.jpg");
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 0;
     height: 100vh;
 }
 
-.jumbotron-title {
-    font-family: 'Montserrat', sans-serif;
+.jumbotron-text {
     color: #F8F8F8;
-    font-size: 4.5vw;
+    font-size: 2vw;
+    padding: 2em 5.5em 8% 5.5em;
+    text-shadow:0.5px 0.5px #000000;
+}
+
+.jumbotron-title {
+    font-weight: lighter;
+    color: #F8F8F8;
+    font-size: 4vw;
     padding-bottom: 5%;
     text-shadow:0.5px 0.5px #000000;
 }
-.jumbotron button{
-    font-size : 1.8vw;
-    margin-bottom: 3%;
-}
 
-.jumbotron-text {
-    font-family: 'Montserrat', sans-serif;
-    color: #F8F8F8;
-    font-size: 3vw;
-    padding-bottom: 8%;
-    text-shadow:0.5px 0.5px #000000;
+.jumbotron button{
+    font-size : 1.3vw;
+    margin-bottom: 5%;
+    transition : 0.5s ease all;
+}
+.jumbotron button:hover{
+    background-color: #954733;
+    border-color:  #954733;
+    opacity:0.8;
+    color : #F8F8F8;
 }
 
 .arrow-down img{
