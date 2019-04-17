@@ -4,12 +4,17 @@ footer ul
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
+    font-size: 0.8em;
 }
 
+footer p
+{
+    margin-bottom: 0;
+}
 
 footer
 {
-    background-color: #303233;
+    background-color: #2F1D15;
     color: white;
 }
 
@@ -26,22 +31,22 @@ footer a
 
 .smallPic
 {
-    width: 110px;
+    width: 95px;
 }
 
 .smallPicfb
 {
-    width: 125px;
+    width: 110px;
 }
 
 .smallPicCard
 {
-    width: 80px;
+    width: 70px;
 }
 
 .mealTicket
 {
-    width: 250px;
+    width: 215px;
 }
 
 .littleEndPage
