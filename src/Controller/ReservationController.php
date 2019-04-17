@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Model\ReservationManager;
@@ -6,6 +7,7 @@ use App\Model\ReservationManager;
 class ReservationController extends AbstractController
 {
     const EMPTY_FIELD = "Veuillez compléter ce champ";
+
     /**
      * Display home page
      *
@@ -20,6 +22,7 @@ class ReservationController extends AbstractController
         $reservation = $reservationManager->selectAll();
         return $this->twig->render('Reservation/index.html.twig', ['reservation' => $reservation]);
     }
+
     /**
      * @param array $cleanPost
      * @return array
@@ -30,23 +33,24 @@ class ReservationController extends AbstractController
         if (empty($cleanPost['name'])) {
             $errors['name'] = self::EMPTY_FIELD;
         }
-        if (empty($cleanPost['comment'])) {
+        if (empty($cleanPost['email'])) {
             $errors['email'] = self::EMPTY_FIELD;
         }
-        if (empty($cleanPost['rating'])) {
+        if (empty($cleanPost['phone'])) {
             $errors['phone'] = self::EMPTY_FIELD;
         }
-        if (empty($cleanPost['rating'])) {
+        if (empty($cleanPost['date'])) {
             $errors['date'] = self::EMPTY_FIELD;
         }
-        if (empty($cleanPost['rating'])) {
+        if (empty($cleanPost['nbPeople'])) {
             $errors['nbPeople'] = self::EMPTY_FIELD;
         }
-        if (empty($cleanPost['rating'])) {
+        if (empty($cleanPost['appointment'])) {
             $errors['appointment'] = self::EMPTY_FIELD;
         }
         return $errors;
     }
+
     /**
      * Display item creation page
      *
@@ -61,7 +65,7 @@ class ReservationController extends AbstractController
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             foreach ($_POST as $key => $value) {
-                $cleanPost[$key]=trim($value);
+                $cleanPost[$key] = trim($value);
             }
             $errors = $this->checkErrors($cleanPost);
             if (empty($errors)) {
@@ -74,7 +78,8 @@ class ReservationController extends AbstractController
                     'nbPeople' => $cleanPost['nbPeople'],
                     'appointment' => $cleanPost['appointment']
                 ];
-                $reservationManager -> insert($reservation);
+                // var_dump($cleanPost);
+                $reservationManager->insert($reservation);
                 header('Location:/Reservation/add');
             }
         }
