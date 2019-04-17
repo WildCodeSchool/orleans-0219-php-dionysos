@@ -6,8 +6,7 @@
     background-attachment: fixed;
     margin-bottom: 0;
     height: 100vh;
-    opacity: .9;
-    filter: alpha(opacity=50);
+
 }
 
 .jumbotron-title {
@@ -15,6 +14,8 @@
     color: #F8F8F8;
     font-size: 3em;
     padding-bottom: 1em;
+    text-shadow:0.5px 0.5px #000000;
+
 }
 
 .jumbotron-text {
@@ -22,11 +23,15 @@
     color: #F8F8F8;
     font-size: 1.7em;
     padding-bottom: 0.5em;
+    text-shadow:0.5px 0.5px #000000;
 }
 
 .arrow-down img{
     max-height:25px;
-    margin-top: 20%;
+    float: bottom;
+
+}
+.arrow-down img:after{
 }
 
 
