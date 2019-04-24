@@ -16,15 +16,9 @@
                         <div class="card-body ">
                             <h5 class="card-title">{{ reviews.name }}</h5>
                             <div class="rating-display text-center col-sm-12">
-                                {% set sum = 5-reviews.rating%}
-                                {% for i in 1..reviews.rating %}
-                                    <i class="icon-star"></i>
+                                {% for i in 1..5 %}
+                                    <i class="icon-star{{i > reviews.rating ? '-empty' }}"></i>
                                 {% endfor %}
-                                {% if sum != 0 %}
-                                    {% for sum in 1..sum %}
-                                        <i class="icon-star-empty"></i>
-                                    {% endfor %}
-                                {% endif %}
                             </div>
                             <p class="card-text">{{ reviews.comment }}</p>
                         </div>
