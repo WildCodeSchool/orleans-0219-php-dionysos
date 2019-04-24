@@ -78,7 +78,6 @@ class ReservationController extends AbstractController
                     'nbPeople' => $cleanPost['nbPeople'],
                     'appointment' => $cleanPost['appointment']
                 ];
-                // var_dump($cleanPost);
                 $reservationManager->insert($reservation);
                 header('Location:/Reservation/add');
             }

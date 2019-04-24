@@ -59,9 +59,9 @@
                         <div class="formErrors">{{ errors.nbPeople }}</div>
                     {% endif %}
                     <div class="form-group">
-                        <label for="Hour">Heure d'arrivée*</label>
+                        <label for="appointment">Heure d'arrivée*</label>
                         <input required type="time" class="form-control" id="appointment" value="{{ appointment }}"
-                               name="name">
+                               name="appointment">
                     </div>
                     {% if errors.appointment is defined %}
                         <div class="formErrors">{{ errors.appointment }}</div>
