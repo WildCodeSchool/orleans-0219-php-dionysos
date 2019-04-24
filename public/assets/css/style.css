@@ -80,6 +80,25 @@
     display: flex;
     align-items: center;
 }
+p {
+
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+
+}
+
+h1{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size:4em;
+}
+
+h2 {
+
+    font-family: 'Montserrat', sans-serif;
+    font-size:2.5em;
+    padding-top: 2em;
+}
 
 .find{
 
