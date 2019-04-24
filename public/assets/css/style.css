@@ -29,6 +29,11 @@
         display: none;
     }
 }
+@media screen and (max-width: 850px) {
+    .imgnav {
+        display: none;
+    }
+}
 
 /*end Navbar*/
 
@@ -81,11 +86,4 @@ footer a
 {
     font-size: 0.7em;
 }
-
-@media screen and (max-width: 850px){
-    .imgnav {
-    display: none;
-    }
-}
-
 /* end Footer */
