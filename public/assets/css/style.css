@@ -1,3 +1,58 @@
+/* common */
+p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+}
+
+h1{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size:4em;
+}
+
+h2 {
+
+    font-family: 'Montserrat', sans-serif;
+    font-size:2.5em;
+}
+
+section {
+    padding-top:20px;
+    padding-bottom:20px;
+}
+/* end common */
+
+/*Navbar*/
+.nav {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.imgnav {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    position: inherit;
+}
+.nav-item{
+    margin-top: 25px;
+}
+
+.nav-link{
+    color: black;
+    font-size: 25px;
+}
+.navbar {
+    background-image: url("../images/vintage-concrete.png");
+    text-align: left;
+}
+
+@media screen and (max-width: 991px) {
+    .imgnav {
+        display: none;
+    }
+}
+/*end Navbar*/
+
 /* jumbotron home */
 .jumbotron {
     font-family: 'Montserrat', sans-serif;
@@ -44,105 +99,42 @@
     max-height:20px;
 }
 
-/*Navbar*/
-.nav {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.imgnav {
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    position: inherit;
-}
-.nav-item{
-    margin-top: 25px;
-}
-
-.nav-link{
-    color: black;
-    font-size: 25px;
-}
-.navbar {
-    background-image: url("../images/vintage-concrete.png");
-    text-align: left;
-}
-
-@media screen and (max-width: 991px) {
-    .imgnav {
-        display: none;
-    }
-}
-/*end Navbar*/
 /*body*/
 .display {
     display: flex;
     align-items: center;
 }
 
-.menu{
-
-    background-color: #2F1D15 ;
-    color: #F8F8F8;
-
+.reservation {
+    background-color: #F8F8F8 ;
+    color: #2F1D15;
 }
 
-.btn{
+.btn-red {
     margin-top: 1em;
     color : white;
     background-color: #954733;
     transition: all 0.4s ease 0s;
     border:none;
     margin-bottom: 1em;
-    font-size: 2em;
+    font-size: 1.2em;
 }
-.btn:hover{
-    color : white;
+
+.btn-red:hover {
+    color: white;
     background-color: #5D1B18;
-    border:none;
+    border: none;
 }
-
-.reservation{
-
-    background-color: #F8F8F8 ;
-    color: #2F1D15;
-}
-
-p {
-
-    font-family: 'Lato', sans-serif;
-    font-size: 2em;
-
-}
-
-h1{
-
-    font-family: 'Montserrat', sans-serif;
-    font-size:4em;
-}
-
-h2 {
-
-    font-family: 'Montserrat', sans-serif;
-    font-size:2.5em;
-    padding-top: 2em;
-}
-
 
 .find{
-
     background-color: #2F1D15 ;
     color: #F8F8F8;
-
 }
 
 .aboutus{
-
     background-color: #F8F8F8 ;
     color: #2F1D15;
-
 }
-
 
 /*fin body*/
 
@@ -164,6 +156,7 @@ footer
 {
     background-color: #2F1D15;
     color: white;
+    padding-bottom: 8px;
 }
 
 footer hr
