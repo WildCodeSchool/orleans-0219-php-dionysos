@@ -77,6 +77,7 @@
 
 /*body*/
 
+
 .display {
     display: flex;
     align-items: center;
@@ -101,6 +102,31 @@
     color : white;
     background-color: #5D1B18;
     border:none;
+
+p {
+
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+
+}
+
+h1{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size:4em;
+}
+
+h2 {
+
+    font-family: 'Montserrat', sans-serif;
+    font-size:2.5em;
+    padding-top: 2em;
+}
+.aboutus{
+
+    background-color: #F8F8F8 ;
+    color: #2F1D15;
+
 }
 
 /*fin body*/
