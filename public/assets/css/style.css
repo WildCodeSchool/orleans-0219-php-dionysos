@@ -1,7 +1,50 @@
+/* jumbotron home */
+.jumbotron {
+    font-family: 'Montserrat', sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 0;
+    height: 100vh;
+    background-image: url("../images/jumbotron_1.jpg");
+    background-color :rgba(0,0,0,0.4);
+    background-blend-mode: color;
+}
 
+.jumbotron-text {
+    color: #F8F8F8;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    padding: 2em 5.5em 8% 5.5em;
+    text-shadow:0.5px 0.5px #000000;
+}
+
+.jumbotron-title {
+    font-weight: lighter;
+    color: #F8F8F8;
+    font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
+    padding-top:5%;
+    padding-bottom: 5%;
+    text-shadow:0.5px 0.5px #000000;
+}
+
+.jumbotron button{
+    font-size: calc(12px + (22 - 12) * ((100vw - 300px) / (1600 - 300)));
+    margin-bottom: 5%;
+    transition : 0.5s ease all;
+    padding:15px;
+}
+
+.jumbotron button:hover{
+    background-color: #954733;
+    border-color:  #954733;
+    opacity: 0.9;
+    color : #F8F8F8;
+}
+
+.arrow-down img{
+    max-height:20px;
+}
 
 /*Navbar*/
-
 .nav {
     font-family: 'Montserrat', sans-serif;
 }
@@ -24,12 +67,12 @@
     background-image: url("../images/vintage-concrete.png");
     text-align: left;
 }
+
 @media screen and (max-width: 991px) {
     .imgnav {
         display: none;
     }
 }
-
 /*end Navbar*/
 
 /*body*/
@@ -68,10 +111,17 @@ footer ul
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
+    font-size: 0.8em;
 }
+
+footer p
+{
+    margin-bottom: 0;
+}
+
 footer
 {
-    background-color: #303233;
+    background-color: #2F1D15;
     color: white;
 }
 
@@ -88,33 +138,26 @@ footer a
 
 .smallPic
 {
-    width: 110px;
+    width: 95px;
 }
 
 .smallPicfb
 {
-    width: 125px;
+    width: 110px;
 }
 
 .smallPicCard
 {
-    width: 80px;
+    width: 70px;
 }
 
 .mealTicket
 {
-    width: 250px;
+    width: 215px;
 }
 
 .littleEndPage
 {
     font-size: 0.7em;
 }
-
-@media screen and (max-width: 850px){
-    .imgnav {
-    display: none;
-    }
-}
-
 /* end Footer */
