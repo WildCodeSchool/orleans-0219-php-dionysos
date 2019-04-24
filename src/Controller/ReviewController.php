@@ -75,9 +75,25 @@ class ReviewController extends AbstractController
                     'rating' => $cleanPost['rating']
                 ];
                 $reviewManager -> insert($review);
-                header('Location:/review/add');
+                header('Location:/review/index');
             }
         }
         return $this->twig->render('/Review/add.html.twig', ['errors' => $errors, 'review' => $cleanPost]);
+    }
+
+    /**
+     * Display item informations specified by $id
+     *
+     * @param int $id
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function show(int $id)
+    {
+        $reviewManager = new ReviewManager();
+        $review = $reviewManager->selectOneById($id);
+        return $this->twig->render('/Review/show.html.twig', ['review' => $review]);
     }
 }
