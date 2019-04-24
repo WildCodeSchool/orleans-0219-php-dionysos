@@ -1,5 +1,10 @@
-h1 {
+.guest-book h1 {
     padding: 1em;
+    font-family: 'Montserrat', sans-serif;
+}
+.guest-book .form {
+    font-family: 'Lato', sans-serif;
+    text-align: left;
 }
 
 .guest-book .form-group{
@@ -24,13 +29,15 @@ h1 {
 }
 
 .guest-book label{
-    float: left;
-    margin-bottom: 0.5em;
+    vertical-align: middle;
     font-weight: bold;
 }
 .guest-book .rating{
     display: inline-block;
+    vertical-align: middle;
+    margin-left:10px;
 }
+
 .rating > input {
     display: none;
 }
@@ -41,7 +48,6 @@ h1 {
     font-family: FontAwesome;
     content: "\f005";
     cursor: pointer;
-
 }
 
 .rating > label {
@@ -57,4 +63,60 @@ h1 {
 .rating > input:checked + label:hover, /* hover current star when changing rating */
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+.rating > input:checked ~ label:hover ~ label { color: #FFED85; }
+
+.rating-display{
+    display:inline-block;
+}
+.icon-star:before {
+    color: #FFD700;
+}
+.icon-star-empty:before{
+    color: #FFD700;
+}
+
+.comments {
+    padding:2em;
+    font-family: 'Lato', sans-serif;
+}
+
+.comments .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(11px + 1vw);
+}
+
+.comments .card-text{
+    padding-top: 1em;
+    font-size: calc(8px + 0.6vw);
+}
+.comments .card{
+    margin: 1em 2em 1em 2em;
+    max-width:18em;
+    color: #F8F8F8;
+    background-color: rgba(108, 67, 51, 0.72);
+    transition: all 0.4s ease 0s;
+    padding: 0.5em;
+    border:none;
+    box-shadow: 0px 10px 15px rgba(181, 83, 40, 0.4);
+}
+.comments .card:hover{
+    color: #F8F8F8;
+    background-color: #5d1b18;
+    border:none;
+}
+
+.comments button{
+    margin-top: 1em;
+    color : white;
+    background-color: #5d1b18;
+    transition: all 0.4s ease 0s;
+    border:none;
+    margin-bottom: 1em;
+}
+
+.comments button:hover{
+    color : white;
+    border:none;
+    background-color: #5d1b18;
+    box-shadow: 0 5px 5px rgba(105, 48, 23, 0.56);
+}
