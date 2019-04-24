@@ -132,3 +132,28 @@ footer a
     font-size: 0.7em;
 }
 /* end Footer */
+
+
+
+
+
+/* Menu style  */
+
+.menusection {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.menutext {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 1rem;
+
+}
+
+/* end of Menu style  */
+
+

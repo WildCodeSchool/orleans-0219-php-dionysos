@@ -1,7 +1,32 @@
 {% extends 'layout-visitor.html.twig' %}
 
 {% block content %}
+    <h1>Notre Carte</h1>
+    <h2 class="menusection">Entrées</h2>
+    <ul>
+        {% for dish in dish %}
+            {% if dish.category == "entrée" %}
+                <li class="menutext">{{ dish.dish_name }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 
-    {% include '/Dish/dish.html.twig' %}
+    <h2 class="menusection">Plats</h2>
+    <ul>
+        {% for dish in dish %}
+            {% if dish.category == "plat" %}
+                <li class="menutext">{{ dish.dish_name }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <h2 class="menusection">Desserts</h2>
+    <ul>
+        {% for dish in dish %}
+            {% if dish.category == "dessert" %}
+                <li class="menutext">{{ dish.dish_name }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 
 {% endblock %}
