@@ -75,7 +75,7 @@ class ReviewController extends AbstractController
                     'rating' => $cleanPost['rating']
                 ];
                 $reviewManager -> insert($review);
-                header('Location:/review/add');
+                header('Location:/review/index');
             }
         }
         return $this->twig->render('/Review/add.html.twig', ['errors' => $errors, 'review' => $cleanPost]);
