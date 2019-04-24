@@ -1,9 +1,0 @@
-{% block content %}
-    <h1>Plats</h1>
-    <ul>
-        {% for dish in dish %}
-            <li><a href="/dish/show/{{ dish.id }}">{{ dish.id }}. {{ dish.dish_name }}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="/dish/add">Ajouter</a>
-{% endblock %}

@@ -23,6 +23,4 @@ class DishController extends AbstractController
 
         return $this->twig->render('Dish/index.html.twig', ['dish' => $dish]);
     }
-
-
 }
