@@ -5,13 +5,11 @@ p {
 }
 
 h1{
-
     font-family: 'Montserrat', sans-serif;
     font-size:4em;
 }
 
 h2 {
-
     font-family: 'Montserrat', sans-serif;
     font-size:2.5em;
 }
@@ -20,37 +18,38 @@ section {
     padding-top:20px;
     padding-bottom:20px;
 }
+body{
+    scroll-behavior: smooth;
+}
+
 /* end common */
 
 /*Navbar*/
-.nav {
+
+.navbar {
+    background-image: url("../images/exclusive_paper.png");
     font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    padding-left:50px;
+    padding-right:20px;
 }
 
 .imgnav {
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    position: inherit;
+    font-family: 'Montserrat', sans-serif;
+    color: #3f3f3e; !important
+}
+.navbar-nav{
+    justify-content:right;
 }
 .nav-item{
-    margin-top: 25px;
+    padding-left:10px;
 }
-
-.nav-link{
-    color: black;
-    font-size: 25px;
-}
-.navbar {
-    background-image: url("../images/vintage-concrete.png");
-    text-align: left;
-}
-
 @media screen and (max-width: 991px) {
     .imgnav {
         display: none;
     }
 }
+
 /*end Navbar*/
 
 /* jumbotron home */
