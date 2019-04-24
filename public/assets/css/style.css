@@ -75,6 +75,36 @@
 }
 /*end Navbar*/
 
+/*body*/
+
+.display {
+    display: flex;
+    align-items: center;
+}
+
+.reservation{
+
+    background-color: #F8F8F8 ;
+    color: #2F1D15;
+}
+
+.btn{
+    margin-top: 1em;
+    color : white;
+    background-color: #954733;
+    transition: all 0.4s ease 0s;
+    border:none;
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+.btn:hover{
+    color : white;
+    background-color: #5D1B18;
+    border:none;
+}
+
+/*fin body*/
+
 
 /* start Footer */
 footer ul
