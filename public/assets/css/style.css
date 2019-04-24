@@ -32,12 +32,9 @@ body{
     font-size: 1.4em;
     padding-left:50px;
     padding-right:20px;
+    height:4em;
 }
 
-.imgnav {
-    font-family: 'Montserrat', sans-serif;
-    color: #3f3f3e; !important
-}
 .navbar-nav{
     justify-content:right;
 }
@@ -58,7 +55,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 0;
-    height: 100vh;
+    height:calc(100vh - 4em);
     background-image: url("../images/jumbotron_1.jpg");
     background-color :rgba(0,0,0,0.4);
     background-blend-mode: color;
