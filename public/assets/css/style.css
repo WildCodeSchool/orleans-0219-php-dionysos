@@ -102,6 +102,48 @@
     border:none;
 }
 
+.reservation{
+
+    background-color: #F8F8F8 ;
+    color: #2F1D15;
+}
+
+p {
+
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+
+}
+
+h1{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size:4em;
+}
+
+h2 {
+
+    font-family: 'Montserrat', sans-serif;
+    font-size:2.5em;
+    padding-top: 2em;
+}
+
+
+.find{
+
+    background-color: #2F1D15 ;
+    color: #F8F8F8;
+
+}
+
+.aboutus{
+
+    background-color: #F8F8F8 ;
+    color: #2F1D15;
+
+}
+
+
 /*fin body*/
 
 /* start Footer */
