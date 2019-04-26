@@ -22,4 +22,3 @@ class FindUsController extends AbstractController
         return $this->twig->render('Findus/index.html.twig');
     }
 }
-
