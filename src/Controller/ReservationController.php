@@ -16,12 +16,6 @@ class ReservationController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    /*public function index()
-    {
-        $reservationManager = new ReservationManager();
-        $reservation = $reservationManager->selectAll();
-        return $this->twig->render('Reservation/index.html.twig', ['reservation' => $reservation]);
-    }*/
 
     /**
      * @param array $cleanPost
