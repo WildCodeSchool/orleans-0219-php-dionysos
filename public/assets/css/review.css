@@ -97,7 +97,7 @@
     transition: all 0.4s ease 0s;
     padding: 0.5em;
     box-shadow: 8px 8px 8px rgba(181, 83, 40, 0.4);
-
+}
 .comments .card:hover{
     color: #F8F8F8;
     background-color: #5d1b18;
