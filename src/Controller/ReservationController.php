@@ -73,9 +73,22 @@ class ReservationController extends AbstractController
                     'appointment' => $cleanPost['appointment']
                 ];
                 $reservationManager->insert($reservation);
-                header('Location:/Reservation/add');
+                header('Location:/Reservation/success');
             }
         }
         return $this->twig->render('/Reservation/add.html.twig', ['errors' => $errors, 'reservation' => $cleanPost]);
+    }
+
+        /**
+         * Display home page
+         *
+         * @return string
+         * @throws \Twig\Error\LoaderError
+         * @throws \Twig\Error\RuntimeError
+         * @throws \Twig\Error\SyntaxError
+         */
+        public function success()
+    {
+        return $this->twig->render('Reservation/success.html.twig');
     }
 }
