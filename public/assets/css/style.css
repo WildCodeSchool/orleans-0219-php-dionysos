@@ -14,7 +14,7 @@ h2 {
 }
 
 section{
-    padding:6vw;
+    padding:5.5vw;
 }
 
 body{
@@ -28,7 +28,7 @@ body{
 nav.navbar-inverse{
     transition: all 0.4s ease;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.3em;
+    font-size: 1.1em;
     padding-left:50px;
     padding-right:20px;
     height:4em;
@@ -38,12 +38,14 @@ nav .navbar-nav li a{
     color: rgba(81, 65, 53, 0.87) !important;
     transition: all 0.4s ease;
 }
+
 nav .navbar-nav li a:hover{
     color: rgb(44,33,27) !important;
 }
+
 a.navbar-brand{
     color: rgba(81, 65, 53, 0.87) !important;
-    font-size:1.2em;
+    font-size:1.1em;
 }
 
 
@@ -135,8 +137,8 @@ a.navbar-brand{
 
 .btn {
     padding : 15px;
-    margin-top:10px;
-    margin-bottom:10px;
+    margin-top:1em;
+    margin-bottom:1em;
 }
 
 .menu{
