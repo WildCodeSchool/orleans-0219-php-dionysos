@@ -10,13 +10,13 @@
 
 .guest-book button{
     margin-top: 1em;
+    margin-bottom: 1em;
     color : white;
     background-color: #5d1b18;
     transition: all 0.5s ease 0s;
     border:none;
-    margin-bottom: 1em;
-    padding:10px 15px 10px 15px;
 }
+
 .guest-book button:hover{
     border:none;
     background-color: #5d1b18;
@@ -26,7 +26,7 @@
 .guest-book label{
     vertical-align: middle;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .guest-book .rating{
     display: inline-block;
@@ -40,7 +40,7 @@
 
 .rating > label:before {
     margin: 3px;
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-family: FontAwesome;
     content: "\f005";
     cursor: pointer;
@@ -67,27 +67,27 @@
 .icon-star:before {
     padding-top: 10px;
     color: #FFD700;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 .icon-star-empty:before{
     padding-top: 10px;
     color: #FFD700;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .comments {
-    padding:2em;
+    padding:1.2em;
     font-family: 'Lato', sans-serif;
 }
 
 .comments .card-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.4em;
+    font-size: 1em;
 }
 
 .comments .card-text{
-    padding-top: 1em;
-    font-size: 1.1em;
+    padding-top: 0.5em;
+    font-size: 0.8em;
 }
 .comments .card{
     margin: 1em 2em 1em 2em;
@@ -95,7 +95,7 @@
     height:16em;
     color: #0b0303;
     transition: all 0.4s ease 0s;
-    padding: 0.5em;
+    padding: 0.4em;
     box-shadow: 8px 8px 8px rgba(181, 83, 40, 0.4);
 }
 .comments .card:hover{
