@@ -38,11 +38,33 @@
                             {% endif %}
                         </div>
                         <div class="text-center">
-                            <button type="submit" name="submit" value="submit" class="btn btn-lg btn-dark">Envoyer</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-lg m-3 btn-dark">Envoyer</button>
                         </div>
                     </form>
                 </div>
             </div>
+             <section class="comments">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            {% for reviews in reviewAll %}
+                                <div class="card col-sm-12 col-md-6 col-lg-4 text-center">
+                                    <div class="card-body ">
+                                        <h5 class="card-title">{{ reviews.name }}</h5>
+                                        <div class="col-12">
+                                            <hr>
+                                        </div>
+                                        <div class="rating-display text-center col-sm-12">
+                                            {% for i in 1..5 %}
+                                                <i class="icon-star{{i > reviews.rating ? '-empty' }}"></i>
+                                            {% endfor %}
+                                        </div>
+                                        <p class="card-text">{{ reviews.comment }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
         </div>
     </section>
 {% endblock %}
