@@ -79,15 +79,15 @@ class ReservationController extends AbstractController
         return $this->twig->render('/Reservation/add.html.twig', ['errors' => $errors, 'reservation' => $cleanPost]);
     }
 
-        /**
-         * Display home page
-         *
-         * @return string
-         * @throws \Twig\Error\LoaderError
-         * @throws \Twig\Error\RuntimeError
-         * @throws \Twig\Error\SyntaxError
-         */
-        public function success()
+    /**
+     * Display home page
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function success()
     {
         return $this->twig->render('Reservation/success.html.twig');
     }
