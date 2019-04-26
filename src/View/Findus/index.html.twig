@@ -1,0 +1,41 @@
+{% extends 'layout-visitor.html.twig' %}
+
+{% block content %}
+<body>
+<section class="map" id="map">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <h2>Venez nous retouver</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center py-5">
+            <div class="col-lg-12 col-xl-6 mx-auto display py-5">
+                <div class="text-center mx-auto">
+                    <h2 class="text-center">Horaires d'ouvertures</h2>
+                    <ul>
+                        <li>Mardi au Samedi 12h00- 14h00</li>
+                        <li>Vendredi au Samedi 19h00-22h00</li>
+                    </ul>
+                    <h2 class="text-center">Nous trouver</h2>
+                    <ul>
+                        <li>En tram descendre à l'arrêt place Charles De Gaulle</li>
+                        <li>En voiture stationnement possible - Parking du cheval rouge</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-xl-6 text-center">
+                <iframe width="650" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=1.9023996591567993%2C47.899709246193574%2C1.9050818681716921%2C47.90101294973302&amp;layer=mapnik&amp;marker=47.90036110206713%2C1.9037407636642456"
+                        style="border: 1px solid black"></iframe>
+                <br/>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+</body>
+{% endblock %}
