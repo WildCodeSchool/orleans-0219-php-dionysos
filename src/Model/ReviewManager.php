@@ -17,6 +17,15 @@ class ReviewManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+    /**
+     * Get all row from database.
+     *
+     * @return array
+     */
+    public function selectAllReviews(): array
+    {
+        return $this->pdo->query('SELECT * FROM ' . $this->table .' ORDER BY id DESC')->fetchAll();
+    }
 
 
     /**

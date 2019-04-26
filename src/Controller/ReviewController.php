@@ -61,7 +61,7 @@ class ReviewController extends AbstractController
     public function add()
     {
         $reviewAllManager = new ReviewManager();
-        $reviewAll = $reviewAllManager->selectAll();
+        $reviewAll = $reviewAllManager->selectAllReviews();
         $cleanPost = [];
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
