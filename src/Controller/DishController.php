@@ -19,7 +19,7 @@ class DishController extends AbstractController
     public function index()
     {
         $dishManager = new DishManager();
-        $dish = $dishManager->selectAll();
+        $dish = $dishManager->selectDish();
 
         return $this->twig->render('Dish/index.html.twig', ['dish' => $dish]);
     }

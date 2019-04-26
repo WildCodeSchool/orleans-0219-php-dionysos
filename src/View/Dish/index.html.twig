@@ -1,32 +1,29 @@
 {% extends 'layout-visitor.html.twig' %}
 
 {% block content %}
-    <h1>Notre Carte</h1>
-    <h2 class="menusection">Entrées</h2>
-    <ul>
-        {% for dish in dish %}
-            {% if dish.category == "entrée" %}
-                <li class="menutext">{{ dish.dish_name }}</li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+    <h1 class="menutitle">Notre Carte</h1>
 
-    <h2 class="menusection">Plats</h2>
-    <ul>
-        {% for dish in dish %}
-            {% if dish.category == "plat" %}
-                <li class="menutext">{{ dish.dish_name }}</li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+    {% set section = '' %}
 
-    <h2 class="menusection">Desserts</h2>
-    <ul>
-        {% for dish in dish %}
-            {% if dish.category == "dessert" %}
-                <li class="menutext">{{ dish.dish_name }}</li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+    {% for dish1 in dish %}
+        {% if (dish1.name != section) %}
+
+            {% set section = dish1.name %}
+            <h2 class="menusection">{{ section }} </h2>
+            <ul class="menulist">
+                {% for dish2 in dish %}
+                    {% if dish1.name == dish2.name %}
+                        {% if (dish2.sup != NULL) %}
+                            <li class="menutext">{{dish2.dish_name}}<strong>{{" (sup + #{dish2.sup} euros)"}}</strong></li>
+                        {% else %}
+                            <li class="menutext">{{ dish2.dish_name }}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+
+    {% endfor %}
 
 {% endblock %}

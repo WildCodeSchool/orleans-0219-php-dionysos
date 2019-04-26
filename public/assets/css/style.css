@@ -140,19 +140,30 @@ footer a
 /* Menu style  */
 
 .menusection {
-    text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    text-align: center;
     padding-top: 4rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
 }
 
 .menutext {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     padding-top: 1rem;
-
+    position: relative;
+    right: 1.5rem;
 }
+
+.menulist {
+    list-style: none;
+}
+
+.menutitle {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 3rem;
+}
+
 
 /* end of Menu style  */
 
