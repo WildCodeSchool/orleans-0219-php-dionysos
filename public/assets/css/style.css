@@ -20,7 +20,7 @@ section{
 body{
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
-    font-size: 1em;
+    font-size: 1.3em;
 }
 /* end common */
 
@@ -35,14 +35,14 @@ nav.navbar-inverse{
     background-image: url("../images/exclusive_paper.png");
 }
 nav .navbar-nav li a{
-    color: rgba(100, 81, 65, 0.87) !important;
+    color: rgba(81, 65, 53, 0.87) !important;
     transition: all 0.4s ease;
 }
 nav .navbar-nav li a:hover{
     color: rgb(44,33,27) !important;
 }
 a.navbar-brand{
-    color: rgba(100, 81, 65, 0.87) !important;
+    color: rgba(81, 65, 53, 0.87) !important;
     font-size:1.2em;
 }
 
@@ -102,13 +102,6 @@ a.navbar-brand{
     padding:15px;
 }
 
-.jumbotron button:hover{
-    background-color: #954733;
-    border-color:  #954733;
-    opacity: 0.9;
-    color : #F8F8F8;
-}
-
 .arrow-down img{
     max-height:20px;
 }
@@ -139,13 +132,20 @@ a.navbar-brand{
     background-color: #5D1B18;
     border: none;
 }
+
+.btn {
+    padding : 15px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
 .menu{
-    background-color: #2F1D15 ;
-    color: #F8F8F8;
+    background-color: #2F1D15;
+    color: #f8f8f8;
 }
 .find{
-    background-color: #2F1D15 ;
-    color: #F8F8F8;
+    background-color: #2F1D15;
+    color: #f8f8f8;
 }
 
 .aboutus{
