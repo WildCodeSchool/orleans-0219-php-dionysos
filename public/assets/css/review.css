@@ -67,12 +67,12 @@
 .icon-star:before {
     padding-top: 10px;
     color: #FFD700;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 .icon-star-empty:before{
     padding-top: 10px;
     color: #FFD700;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 .comments {
@@ -91,8 +91,8 @@
 }
 .comments .card{
     margin: 1em 2em 1em 2em;
-    max-width:18em;
-    height:16em;
+    max-width:19em;
+    height:17em;
     color: #0b0303;
     transition: all 0.4s ease 0s;
     padding: 0.4em;
@@ -102,4 +102,8 @@
     color: #F8F8F8;
     background-color: #5d1b18;
     border:none;
+}
+.comments .card .date {
+    font-size: 0.5em;
+    font-weight: lighter;
 }

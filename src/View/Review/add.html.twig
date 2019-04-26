@@ -54,6 +54,10 @@
                                 <div class="col-12">
                                     <hr>
                                 </div>
+                                <p class="card-text card-date">{{ reviews.date }}</p>
+                                <div class="col-12">
+                                    <hr>
+                                </div>
                                 <div class="rating-display text-center col-sm-12">
                                     {% for i in 1..5 %}
                                         <i class="icon-star{{i > reviews.rating ? '-empty' }}"></i>
