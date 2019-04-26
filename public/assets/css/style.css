@@ -53,13 +53,13 @@ footer a
 /* end Footer */
 
 /* start reservation */
-h2
+.ReservationBlock h2
 {
     font-size: 1.4em;
     font-weight: 700;
 }
 
-.ReservationBlock h2, p, button
+.ReservationBlock h1, h2, p, button
 {
     text-align: center;
 }
