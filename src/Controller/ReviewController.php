@@ -60,6 +60,8 @@ class ReviewController extends AbstractController
 
     public function add()
     {
+        $reviewAllManager = new ReviewManager();
+        $reviewAll = $reviewAllManager->selectAll();
         $cleanPost = [];
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -75,9 +77,10 @@ class ReviewController extends AbstractController
                     'rating' => $cleanPost['rating']
                 ];
                 $reviewManager -> insert($review);
-                header('Location:/review/index');
+                header('Location:/review/add');
             }
         }
-        return $this->twig->render('/Review/add.html.twig', ['errors' => $errors, 'review' => $cleanPost]);
+        return $this->twig->render('/Review/add.html.twig', ['errors' => $errors,
+            'review' => $cleanPost, 'reviewAll' => $reviewAll]);
     }
 }
