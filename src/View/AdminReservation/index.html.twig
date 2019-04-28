@@ -4,10 +4,9 @@
     <h2>Espace Réservation</h2>
     <div class="container-fluid ">
         <div class="col-md-4 mx-auto py-2 justify-content-center">
-            <a class="btn btn-success w-100" href="add/" role="button">Ajouter un évènement ...</a>
+            <a class="btn btn-success w-100" href="add/" role="button">Ajouter un évènement</a>
         </div>
         <div class="table-responsive-vertical mx-5">
-            <!-- Table starts here -->
             <table id="table" class="table table-hover table-striped table-bordered">
                 <thead class="comp-thead-color">
                 <tr>
@@ -30,9 +29,9 @@
                         <td data-title="Nombres de convives">{{ reservation.nbPeople }}</td>
                         <td data-title="Date">{{ reservation.date }}</td>
                         <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
-                        <td><a class="btn btn-warning w-100" href="edit/{{ reservation.id }}" role="button">Editer ...</a>
+                        <td><a class="btn btn-warning w-100" href="edit/{{ reservation.id }}" role="button">Modifier</a>
                         </td>
-                        <td><a class="btn btn-danger w-100" href="delete/{{ reservation.id }}" role="button">Enlever</a></td>
+                        <td><a class="btn btn-danger w-100" href="delete/{{ reservation.id }}" role="button">Supprimer</a></td>
                     </tr>
                 {% endfor %}
                 </tbody>
