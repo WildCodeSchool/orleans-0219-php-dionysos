@@ -1,0 +1,37 @@
+{% extends 'layout-admin.html.twig' %}
+
+{% block content %}
+        <section class="list-comments">
+            <h2>Gérez vos commentaires clients</h2>
+            <div class="container-fluid">
+            <div class="row align-items-center">
+                <table class="table table-sm table-hover table-bordered ">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Note</th>
+                        <th scope="col">Commentaire</th>
+                        <th scope="col">En ligne</th>
+                        <th scope="col">Modifier</th>
+                        <th scope="col">Supprimer</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for review in reviews %}
+                    <tr>
+                        <td>{{ review.name }}</td>
+                        <td>{{ review.date }}</td>
+                        <td>{{ review.rating }}/5</td>
+                        <td>{{ review.comment }}</td>
+                        <td>{{ review.online }}</td>
+                        <td><button><a href="adminGuestBook/update/{{review.id}}">Modifier</a></button></td>
+                        <td><button><a href="adminGuestBook/delete/{{review.id}}">Supprimer</a></button></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </section>
+{% endblock %}

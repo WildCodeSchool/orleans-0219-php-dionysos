@@ -23,3 +23,13 @@ li {
     border-color: black;
     border-width: 1px;
 }
+
+body {
+    font-size: 15px;
+}
+
+table {
+    width:100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
