@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Model\HomeReviewManager;
+
 class HomeController extends AbstractController
 {
 
@@ -21,6 +23,8 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $homeReviewManager = new HomeReviewManager();
+        $homeReview = $homeReviewManager->selectHomeReviews();
+        return $this->twig->render('Home/index.html.twig', ['homeReview' => $homeReview]);
     }
 }
