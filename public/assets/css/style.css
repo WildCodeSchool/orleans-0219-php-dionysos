@@ -1,30 +1,49 @@
 /* common */
 h1{
     font-family: 'Montserrat', sans-serif;
-    font-size:2.5em;
+    font-size:2.3em;
     padding-bottom:1em;
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size:2.2em;
+    font-size:2.1em;
     text-align: center;
     font-weight: lighter;
     padding-bottom:5vw;
 }
 
 section{
-    padding:5.5vw;
+    padding:5.4vw;
 }
 
 body{
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
-    font-size: 1.4em;
+    font-size: 13pt;
 }
+
+.btn {
+    padding : 10px;
+    margin-top:2em;
+    margin-bottom:2em;
+    font-size: 13pt;
+    transition : 0.5s ease all;
+}
+
+.btn-outline-light a{
+    color:white;
+}
+
+.btn-outline-light:hover a{
+    color:rgb(44,33,27);
+    text-decoration: none;
+}
+
 /* end common */
 
 /*Navbar*/
+
 nav.navbar-inverse{
     transition: all 0.4s ease;
     font-family: 'Montserrat', sans-serif;
@@ -34,6 +53,7 @@ nav.navbar-inverse{
     height:4em;
     background-image: url("../images/exclusive_paper.png");
 }
+
 nav .navbar-nav li a{
     color: rgba(81, 65, 53, 0.87) !important;
     transition: all 0.4s ease;
@@ -47,7 +67,6 @@ a.navbar-brand{
     color: rgba(81, 65, 53, 0.87) !important;
     font-size:1.1em;
 }
-
 
 .navbar-nav{
     justify-content:right;
@@ -75,7 +94,7 @@ a.navbar-brand{
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 0;
-    height:100vh;
+    height:calc(100vh - 4em);
     background-image: url("../images/jumbotron_1.jpg");
     background-color :rgba(0,0,0,0.4);
     background-blend-mode: color;
@@ -120,10 +139,14 @@ a.navbar-brand{
 }
 
 .btn-red {
-    color : white;
     background-color: #954733;
     transition: all 0.4s ease 0s;
     border:none;
+    padding:11px;
+}
+.btn-red a {
+    color : white;
+    text-decoration: none;
 }
 
 .btn-red:hover {
@@ -132,32 +155,40 @@ a.navbar-brand{
     border: none;
 }
 
-.btn {
-    padding : 15px;
-    margin-top:1em;
-    margin-bottom:1em;
-    font-size: 1.2em;
+.btn-red:hover a {
+    text-decoration: none;
 }
 
-.menu{
+.img-homepage {
+    object-fit: cover;
+    max-width: 400px;
+    max-height: 40
+    0px;
+}
+
+/*HOMEPAGE*/
+
+.menu {
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.8);
+    background-blend-mode: color;
+    background-image: url("../images/dishes.jpg");
+    color: #f8f8f8;
+}
+
+.find {
     background-color: #2F1D15;
     color: #f8f8f8;
 }
-.find{
-    background-color: #2F1D15;
-    color: #f8f8f8;
-}
 
-.aboutus{
+.aboutus {
     background-color: #F8F8F8 ;
     color: #2F1D15;
 }
 
-.img-thumbnail {
-    object-fit: cover;
-    max-width: 450px;
-    max-height: 450px;
-}
+
+/*END HOMEPAGE*/
 
 /*fin body*/
 
