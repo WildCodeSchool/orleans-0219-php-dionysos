@@ -24,8 +24,7 @@ class ReviewManager extends AbstractManager
      */
     public function selectAllReviews(): array
     {
-        return $this->pdo->query('SELECT * FROM ' . $this->table .' WHERE LENGTH(name) < 25 
-        AND LENGTH(comment) < 110 AND online = 1 ORDER BY id DESC')->fetchAll();
+        return $this->pdo->query('SELECT * FROM ' . $this->table .' WHERE online = 1 ORDER BY id DESC')->fetchAll();
     }
 
 

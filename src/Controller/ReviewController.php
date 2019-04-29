@@ -8,7 +8,8 @@ class ReviewController extends AbstractController
 {
 
     const EMPTY_FIELD = "Le champ ne peut pas être vide";
-    const MAX_LENGTH = 100;
+    const MAX_LENGTH_NAME = 30;
+    const MAX_LENGTH = 130;
     /**
      * Display home page
      *
@@ -36,11 +37,13 @@ class ReviewController extends AbstractController
         $errors = [];
         if (empty($cleanPost['name'])) {
             $errors['name'] = self::EMPTY_FIELD;
-        } elseif ((strlen($cleanPost['name']) > self::MAX_LENGTH)) {
-            $errors['name'] = 'Votre nom de produit ne peut pas être supérieur à ' . self::MAX_LENGTH . 'caractères';
+        } elseif ((strlen($cleanPost['name']) > self::MAX_LENGTH_NAME)) {
+            $errors['name'] = 'Votre nom ne peut pas être supérieur à ' . self::MAX_LENGTH . 'caractères';
         }
         if (empty($cleanPost['comment'])) {
             $errors['comment'] = self::EMPTY_FIELD;
+        } elseif ((strlen($cleanPost['comment']) > self::MAX_LENGTH)) {
+            $errors['comment'] = 'Votre commentaire ne peut pas être supérieur à ' . self::MAX_LENGTH . 'caractères';
         }
         if (empty($cleanPost['rating'])) {
             $errors['rating'] = 'Veuillez insérer une note.';
