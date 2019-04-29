@@ -26,12 +26,13 @@ class AdminReviewManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
     /**
      * Get all row from database, ordered by asc.
      *
      * @return array
      */
-    public function selectAllAdminReviews(): array
+    public function selectAll(): array
     {
         return $this->pdo->query('SELECT * FROM ' . self::TABLE . ' ORDER BY id DESC')->fetchAll();
     }
@@ -48,20 +49,15 @@ class AdminReviewManager extends AbstractManager
     }
 
     /**
-     * @param int $id int $online
+     * online from 0 to 1 or 1 to 0
+     *@param array $data
      * @return bool
      */
-    public function online(int $id, int $online)
+    public function updateStatus(array $data):bool
     {
         // prepared request
-
-        $statement = $this->pdo->prepare("UPDATE $this->table SET `online` = :online WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
-        if ($online == 1) {
-            $statement->bindValue('online', 0, \PDO::PARAM_STR);
-        } else {
-            $statement->bindValue('online', 1, \PDO::PARAM_STR);
-        }
+        $statement = $this->pdo->prepare("UPDATE $this->table SET `online` = !`online` WHERE id=:online");
+        $statement->bindValue(':online', $data['online'], \PDO::PARAM_INT);
         return $statement->execute();
     }
 }

@@ -22,33 +22,21 @@ class AdminReviewController extends AbstractController
      */
     public function index()
     {
+        //base
         $adminReviewManager = new adminReviewManager();
-        $reviews = $adminReviewManager->selectAllAdminReviews();
-        return $this->twig->render('Admin/review.html.twig', ['reviews' => $reviews]);
-    }
-
-    /**
-     * Handle item deletion
-     *
-     * @param int $id
-     */
-
-    public function delete(int $id)
-    {
-        $adminReviewManager = new adminReviewManager();
-        $adminReviewManager ->delete($id);
-        header('Location: Admin/review.html.twig');
-    }
-
-    /**
-     * @param int $id, int $online
-     *
-     */
-
-    public function online(int $id, int $online)
-    {
-        $adminReviewManager = new adminReviewManager();
-        $adminReviewManager ->online($id, $online);
-        header('Location: Admin/review.html.twig');
+        $reviews = $adminReviewManager->selectAll();
+        //fin base
+        //update
+        $data = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            foreach ($_POST as $key => $value) {
+                $data[$key] = trim($value);
+            }
+            if (!empty($_POST['online'])) {
+                $adminReviewManager -> updateStatus($data);
+                header('location:/AdminReview/index/?success=true&id=' . $data['online'] . '#' . $data['online']);
+            }
+        }
+        return $this->twig->render('Admin/review.html.twig', ['reviews' => $reviews, 'review' => $data]);
     }
 }

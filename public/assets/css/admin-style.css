@@ -25,11 +25,13 @@ li {
 }
 
 body {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .list-comments table {
-    width:100%;
-    table-layout: fixed;
     word-wrap: break-word;
+    font-size: 18px;
+}
+.list-comments table th{
+    padding:5px;
 }
