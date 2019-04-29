@@ -36,49 +36,4 @@
         </p>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {% set section = '' %}
-
-    {% for dish1 in dishes %}
-        {% if (dish1.name != section) %}
-
-            {% set section = dish1.name %}
-            <h2 class="menusection">{{ section }} </h2>
-            <ul class="menulist">
-                {% for dish2 in dish %}
-                    {% if dish1.name == dish2.name %}
-                        {% if (dish2.sup != NULL) %}
-                            <li class="menutext">{{dish2.dish_name}}<strong>{{" (sup + #{dish2.sup} euros)"}}</strong></li>
-                        {% else %}
-                            <li class="menutext">{{ dish2.dish_name }}
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-            </ul>
-
-        {% endif %}
-
-    {% endfor %}
-
 {% endblock %}
