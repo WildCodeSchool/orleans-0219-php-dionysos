@@ -142,8 +142,8 @@ footer a
 .menusection {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    padding-top: 4rem;
-    padding-bottom: 0rem;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
 }
 
 .menutext {
@@ -156,14 +156,14 @@ footer a
 
 .menulist {
     list-style: none;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .menutitle {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     padding-top: 4rem;
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
 }
 
 .menupage {
@@ -196,7 +196,7 @@ footer a
 }
 
 .menufootnote {
-    padding-top: 3rem;
+    padding-top: 4rem;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-size: 0.8rem;

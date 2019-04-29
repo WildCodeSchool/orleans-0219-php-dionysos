@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\DishManager;
 use App\Model\CategoryManager;
+use App\Model\MenuManager;
 
 class DishController extends AbstractController
 {
@@ -31,10 +32,13 @@ class DishController extends AbstractController
         $categoryManager = new CategoryManager();
         $categories = $categoryManager->selectAll();
 
+        $menuManager = new MenuManager();
+        $menus = $menuManager->selectAll();
 
         return $this->twig->render('Dish/index.html.twig', [
             'dishesWithCategories' => $dishesWithCategories,
             'categories' => $categories,
+            'menus' => $menus,
         ]);
     }
 }

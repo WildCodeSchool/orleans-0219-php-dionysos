@@ -4,30 +4,26 @@
 
 {% block content %}
     <section class="menupage">
-    <h1 class="menutitle">Notre Carte</h1>
+
+        <h1 class="menutitle">Notre Carte</h1>
+
         <div class="menupricebox">
-            <p class="dishprices">Menu Petit Tonneau Entrée/Plat ou Plat/Dessert 22 €</p>
-            <p class="dishprices">Menu Grand Tonneau: Entrée/Plat/Dessert 28 €</p>
-        </div>
-    {% for category in categories %}
-        <h2 class="menusection">{{ category.name }}  : {{ category.price }}  € <img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo"></h2>
-        {% for dishesWithCategory in dishesWithCategories %}
-            <ul class="menulist">
-            {% for dish in dishesWithCategory %}
-                {% if dish.name == category.name %}
-                    {% if (dish.sup != NULL) %}
-                        <li class="menutext">{{dish.dish_name}}<strong>{{" (sup + #{dish.sup} euros)"}}</strong></li>
-                    {% else %}
-                        <li class="menutext">{{ dish.dish_name }}</li>
-                    {% endif %}
-                {% endif %}
+            {% for menu in menus %}
+                <p class="dishprices">{{ menu.name }} : {{ menu.price }} €</p>
             {% endfor %}
-        </ul>
+        </div>
+
+        {% for category in categories %}
+            <h2 class="menusection">{{ category.name }} : {{ category.price }} € <img
+                        src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo"></h2>
+            {% for dish in dishesWithCategories[category.id] %}
+                <ul class="menulist">
+                    <li class="menutext">{{dish.dish_name}}<strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)'}}</strong></li>
+                </ul>
+            {% endfor %}
 
         {% endfor %}
 
-
-    {% endfor %}
         <p class="menufootnote">
             <img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogofooter">
             Logo « Fait Maison » selon le Décret Nº 2014-797 du 11 juillet 2014. <br/>
