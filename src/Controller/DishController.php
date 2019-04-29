@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\DishManager;
+use App\Model\CategoryManager;
 
 class DishController extends AbstractController
 {
@@ -19,8 +20,19 @@ class DishController extends AbstractController
     public function index()
     {
         $dishManager = new DishManager();
-        $dish = $dishManager->selectDish();
+        $dishes = $dishManager->selectDish();
 
-        return $this->twig->render('Dish/index.html.twig', ['dish' => $dish]);
+        foreach ($dishes as $dish) {
+            $dishesWithCategories[$dish['category']][] = $dish;
+        }
+
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectAll();
+
+
+        return $this->twig->render('Dish/index.html.twig', [
+            'dishesWithCategories' => $dishesWithCategories,
+            'categories' => $categories,
+        ]);
     }
 }

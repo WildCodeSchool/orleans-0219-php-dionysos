@@ -143,7 +143,7 @@ footer a
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     padding-top: 4rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0rem;
 }
 
 .menutext {
@@ -156,12 +156,58 @@ footer a
 
 .menulist {
     list-style: none;
+    margin-bottom: 3rem;
 }
 
 .menutitle {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.menupage {
+    padding-bottom: 4rem;
+}
+
+.dishprices {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.menupricebox {
+    margin: auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    width: 50%;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.faitmaisonlogo {
+    height: 3%;
+    width: 3%;
+    position: relative;
+    left: 2rem;
+}
+
+.menufootnote {
     padding-top: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.faitmaisonlogofooter {
+    height: 4%;
+    width: 4%;
+    position: relative;
+    bottom: 0.3rem;
+    padding-right: 1rem;
 }
 
 
