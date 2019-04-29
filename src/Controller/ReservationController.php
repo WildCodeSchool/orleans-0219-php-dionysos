@@ -6,7 +6,9 @@ use App\Model\ReservationManager;
 
 class ReservationController extends AbstractController
 {
-    const EMPTY_FIELD = "Veuillez compléter ce champ";
+    const EMPTY_FIELD = "* Veuillez compléter ce champ";
+    const FIELD_EMAIL = "* L'email n'est pas valide !";
+    const FIELD_DATE = "* La date de réservation doit être postérieure ou égal à aujourd'hui !";
 
     /**
      * Display home page
@@ -21,20 +23,28 @@ class ReservationController extends AbstractController
      * @param array $cleanPost
      * @return array
      */
+
     private function checkErrors(array $cleanPost): array
     {
+
         $errors = [];
         if (empty($cleanPost['name'])) {
             $errors['name'] = self::EMPTY_FIELD;
         }
         if (empty($cleanPost['email'])) {
-            $errors['email'] = self::EMPTY_FIELD;
+            $errors['email'] = self::FIELD_EMAIL;
+        } elseif (!filter_var($cleanPost['email'], FILTER_VALIDATE_EMAIL)) {
+            $errors['email'] = self::FIELD_EMAIL;
         }
         if (empty($cleanPost['phone'])) {
             $errors['phone'] = self::EMPTY_FIELD;
         }
+        $today = date("Y-m-d");
+        $date = $cleanPost['date'];
         if (empty($cleanPost['date'])) {
             $errors['date'] = self::EMPTY_FIELD;
+        } elseif ($date < $today) {
+            $errors['date'] = self::FIELD_DATE;
         }
         if (empty($cleanPost['nbPeople'])) {
             $errors['nbPeople'] = self::EMPTY_FIELD;
@@ -44,6 +54,7 @@ class ReservationController extends AbstractController
         }
         return $errors;
     }
+
 
     /**
      * Display item creation page
@@ -64,16 +75,10 @@ class ReservationController extends AbstractController
             $errors = $this->checkErrors($cleanPost);
             if (empty($errors)) {
                 $reservationManager = new ReservationManager();
-                $reservation = [
-                    'name' => $cleanPost['name'],
-                    'email' => $cleanPost['email'],
-                    'phone' => $cleanPost['phone'],
-                    'date' => $cleanPost['date'],
-                    'nbPeople' => $cleanPost['nbPeople'],
-                    'appointment' => $cleanPost['appointment']
-                ];
+                $reservation = $cleanPost;
                 $reservationManager->insert($reservation);
                 header('Location:/Reservation/success');
+                exit();
             }
         }
         return $this->twig->render('/Reservation/add.html.twig', ['errors' => $errors, 'reservation' => $cleanPost]);
