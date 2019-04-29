@@ -51,5 +51,4 @@ class AdminReviewController extends AbstractController
         $adminReviewManager ->online($id, $online);
         header('Location: Admin/review.html.twig');
     }
-
 }
