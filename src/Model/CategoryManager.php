@@ -20,5 +20,4 @@ class CategoryManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
-
 }

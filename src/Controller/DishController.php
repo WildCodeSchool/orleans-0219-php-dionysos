@@ -22,6 +22,8 @@ class DishController extends AbstractController
         $dishManager = new DishManager();
         $dishes = $dishManager->selectDish();
 
+        $dishesWithCategories = [];  // initialiser la variable pour eviter un erreur dans le return;
+
         foreach ($dishes as $dish) {
             $dishesWithCategories[$dish['category']][] = $dish;
         }
