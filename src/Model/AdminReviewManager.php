@@ -48,16 +48,20 @@ class AdminReviewManager extends AbstractManager
     }
 
     /**
-     * @param array $item
+     * @param int $id int $online
      * @return bool
      */
-    public function update(array $item):bool
+    public function online(int $id, int $online)
     {
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE $this->table SET `title` = :title WHERE id=:id");
-        $statement->bindValue('id', $item['id'], \PDO::PARAM_INT);
-        $statement->bindValue('title', $item['title'], \PDO::PARAM_STR);
 
+        $statement = $this->pdo->prepare("UPDATE $this->table SET `online` = :online WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        if ($online == 1 ) {
+            $statement->bindValue('online', 0, \PDO::PARAM_STR);
+        } else {
+            $statement->bindValue('online', 1, \PDO::PARAM_STR);
+        }
         return $statement->execute();
     }
 }

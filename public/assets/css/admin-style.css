@@ -28,7 +28,7 @@ body {
     font-size: 15px;
 }
 
-table {
+.list-comments table {
     width:100%;
     table-layout: fixed;
     word-wrap: break-word;
