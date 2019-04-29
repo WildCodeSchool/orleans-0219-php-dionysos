@@ -38,17 +38,6 @@ class AdminReviewManager extends AbstractManager
     }
 
     /**
-     * @param int $id
-     */
-    public function delete(int $id): void
-    {
-        // prepared request
-        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id=:id");
-        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
-        $statement->execute();
-    }
-
-    /**
      * online from 0 to 1 or 1 to 0
      *@param array $data
      * @return bool
