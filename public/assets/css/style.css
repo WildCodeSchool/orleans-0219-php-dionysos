@@ -1,5 +1,5 @@
 /* common */
-h1{
+h1 {
     font-family: 'Montserrat', sans-serif;
     font-size:2.2em;
     padding-bottom:1em;
@@ -10,14 +10,14 @@ h2 {
     font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
     text-align: center;
     font-weight: lighter;
-    padding-bottom:5vw;
+    padding-bottom: 5vw;
 }
 
 section{
     padding: 5.4vw 5.6vw 5.4vw 5.6vw;
 }
 
-body{
+body {
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
     font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
@@ -68,15 +68,16 @@ body{
 
 .navbar-brand a{
     color: rgba(81, 65, 53, 0.87) !important;
-    font-size:1.1em;
+    font-size: 1.1em;
+}
+  
+.navbar-nav {
+    justify-content: right;
+
 }
 
-.navbar-nav{
-    justify-content:right;
-}
-
-.nav-item{
-    padding-left:10px;
+.nav-item {
+    padding-left: 10px;
 }
 
 nav .navbar-collapse{
@@ -100,7 +101,7 @@ nav .navbar-collapse{
     margin-bottom: 0;
     height:calc(100vh - 4.2em);
     background-image: url("../images/jumbotron_1.jpg");
-    background-color :rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: color;
 }
 
@@ -108,7 +109,7 @@ nav .navbar-collapse{
     color: #F8F8F8;
     font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
     padding: 2em 5.5em 8% 5.5em;
-    text-shadow:0.5px 0.5px #000000;
+    text-shadow: 0.5px 0.5px #000000;
 }
 
 .jumbotron-title {
@@ -117,18 +118,18 @@ nav .navbar-collapse{
     font-size: calc(50px + (70 - 50) * ((100vw - 300px) / (1600 - 300)));
     padding-top:5%;
     padding-bottom: 5%;
-    text-shadow:0.5px 0.5px #000000;
+    text-shadow: 0.5px 0.5px #000000;
 }
 
-.jumbotron button{
+.jumbotron button {
     font-size: calc(12px + (22 - 12) * ((100vw - 300px) / (1600 - 300)));
     margin-bottom: 5%;
-    transition : 0.5s ease all;
-    padding:15px;
+    transition: 0.5s ease all;
+    padding: 15px;
 }
 
-.arrow-down img{
-    max-height:20px;
+.arrow-down img {
+    max-height: 20px;
 }
 
 /*body*/
@@ -144,6 +145,7 @@ nav .navbar-collapse{
     padding:11px;
     border-radius:0;
 }
+
 .btn-red a {
     color : white;
     text-decoration: none;
@@ -194,19 +196,29 @@ nav .navbar-collapse{
 
 /*END HOMEPAGE*/
 
+#map {
+    color: #2F1D15;
+}
+
+#map li {
+    list-style-type: none
+}
+
+#map h2 {
+    padding-bottom: 1vw;
+}
+
 /*fin body*/
 
 /* start Footer */
-footer ul
-{
+footer ul {
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
     font-size: 0.8em;
 }
 
-footer p
-{
+footer p {
     margin-bottom: 0;
 }
 
@@ -217,39 +229,33 @@ footer
     padding-bottom: 8px;
 }
 
-footer hr
-{
+footer hr {
     background-color: white;
-    margin: 2em ;
+    margin: 2em;
 }
 
-footer a
-{
+footer a {
     list-style-type: none;
 }
 
-.smallPic
-{
+.smallPic {
     width: 95px;
 }
 
-.smallPicfb
-{
+.smallPicfb {
     width: 110px;
 }
 
-.smallPicCard
-{
+.smallPicCard {
     width: 70px;
 }
 
-.mealTicket
-{
+.mealTicket {
     width: 215px;
 }
 
-.littleEndPage
-{
+.littleEndPage {
     font-size: 0.7em;
 }
+
 /* end Footer */
