@@ -33,23 +33,7 @@ class AdminReviewManager extends AbstractManager
      */
     public function selectAllAdminReviews(): array
     {
-        return $this->pdo->query('SELECT * FROM ' . $this->table .' ORDER BY id DESC')->fetchAll();
-    }
-    
-    /**
-     * @param array $item
-     * @return int
-     */
-     
-    public function insert(array $item): int
-    {
-        // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO $this->table (`title`) VALUES (:title)");
-        $statement->bindValue('title', $item['title'], \PDO::PARAM_STR);
-
-        if ($statement->execute()) {
-            return (int)$this->pdo->lastInsertId();
-        }
+        return $this->pdo->query('SELECT * FROM ' . self::TABLE . ' ORDER BY id DESC')->fetchAll();
     }
 
     /**
@@ -58,8 +42,8 @@ class AdminReviewManager extends AbstractManager
     public function delete(int $id): void
     {
         // prepared request
-        $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id=:id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
 
