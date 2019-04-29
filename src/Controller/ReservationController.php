@@ -26,7 +26,6 @@ class ReservationController extends AbstractController
 
     private function checkErrors(array $cleanPost): array
     {
-
         $errors = [];
         if (empty($cleanPost['name'])) {
             $errors['name'] = self::EMPTY_FIELD;

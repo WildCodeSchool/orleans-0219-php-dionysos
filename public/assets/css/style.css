@@ -224,6 +224,11 @@ footer a {
     text-align: center;
 }
 
+.reservationForm
+{
+    font-size: 0.7em;
+}
+
 form label, .weightBold
 {
     font-weight: 700;

@@ -21,23 +21,23 @@
                 <form class="col col-md-8 " method="POST">
                     <div class="form-group">
                         <label for="name">Nom*</label>
-                        <input required type="text" class="form-control" id="name" value="{{ name }}" name="name"
+                        <input required type="text" class="form-control" id="name" value="{{ reservation.name }}" name="name"
                                placeholder="Dionysos">
                     </div>
                     {% if errors.name is defined %}
                         <div class="formErrors">{{ errors.name }}</div>
                     {% endif %}
                     <div class="form-group">
-                        <label for="exampleInputEmail">Adresse mail*</label>
-                        <input required type="email" class="form-control" id="email" value="{{ email }}" name="email"
+                        <label for="email">Adresse mail*</label>
+                        <input required type="email" class="form-control" id="email" value="{{ reservation.email }}" name="email"
                                placeholder="adresse@mail.fr">
                     </div>
                     {% if errors.email is defined %}
-                        <div class="formErrors">{{ errors.email }}</div>
+                        <div class="alert alert-danger reservationForm" role="alert">{{ errors.email }}</div>
                     {% endif %}
                     <div class="form-group">
                         <label for="phone">Téléphone*</label>
-                        <input required type="text" class="form-control" minlength="10" maxlength="10" id="phone" value="{{ phone }}"
+                        <input required type="text" class="form-control" minlength="10" maxlength="10" id="phone" value="{{ reservation.phone }}"
                                name="phone"
                                placeholder="0238537112">
                     </div>
@@ -46,15 +46,15 @@
                     {% endif %}
                     <div class="form-group">
                         <label for="date">Date de réservation*</label>
-                        <input required type="date" class="form-control" id="date" value="{{ date }}" name="date">
+                        <input required type="date" class="form-control" id="date" value="{{ reservation.date }}" name="date">
                     </div>
                     {% if errors.date is defined %}
-                        <div class="formErrors">{{ errors.date }}</div>
+                        <div class="alert alert-danger reservationForm" role="alert">{{ errors.date }}</div>
                     {% endif %}
                     <div class="form-group">
                         <label for="nbPeople">Nombre de convives*</label>
                         <input required type="number" min="0" max="22" class="form-control" id="nbPeople"
-                               placeholder="3" value="{{ nbPeople }}" name="nbPeople">
+                               placeholder="3" value="{{ reservation.nbPeople }}" name="nbPeople">
                         <small id="nbPeople" class="form-text text-muted">(jusqu'à 22 convives maximum)</small>
                     </div>
                     {% if errors.nbPeople is defined %}
@@ -62,11 +62,11 @@
                     {% endif %}
                     <div class="form-group">
                         <label for="appointment">Heure d'arrivée*</label>
-                        <input required type="time" class="form-control" id="appointment" value="{{ appointment }}"
+                        <input required type="time" class="form-control" id="appointment" value="{{ reservation.appointment }}"
                                name="appointment">
                     </div>
                     {% if errors.appointment is defined %}
-                        <div class="formErrors">{{ errors.appointment }}</div>
+                        <div class="formErrors ">{{ errors.appointment }}</div>
                     {% endif %}
 
                     <div class="text-center pb-4">
