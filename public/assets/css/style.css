@@ -1,34 +1,37 @@
 /* common */
 h1{
     font-family: 'Montserrat', sans-serif;
-    font-size:2.3em;
+    font-size:2.2em;
     padding-bottom:1em;
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size:2.1em;
+    font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
     text-align: center;
     font-weight: lighter;
     padding-bottom:5vw;
 }
 
 section{
-    padding:5.4vw;
+    padding: 5.4vw 5.6vw 5.4vw 5.6vw;
 }
 
 body{
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
-    font-size: 13pt;
+    font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .btn {
     padding : 10px;
-    margin-top:2em;
-    margin-bottom:2em;
-    font-size: 13pt;
+    margin:2.8em 1.5em 2.8em 1.5em;
+    font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
     transition : 0.5s ease all;
+}
+
+.btn-outline-light {
+    border-radius:0;
 }
 
 .btn-outline-light a{
@@ -44,26 +47,26 @@ body{
 
 /*Navbar*/
 
-nav.navbar-inverse{
+.navbar-inverse{
     transition: all 0.4s ease;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1em;
+    font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
     padding-left:50px;
     padding-right:20px;
-    height:4em;
+    height:4.2em;
     background-image: url("../images/exclusive_paper.png");
 }
 
-nav .navbar-nav li a{
+.navbar-nav li a{
     color: rgba(81, 65, 53, 0.87) !important;
     transition: all 0.4s ease;
 }
 
-nav .navbar-nav li a:hover{
+.navbar-nav li a:hover{
     color: rgb(44,33,27) !important;
 }
 
-a.navbar-brand{
+.navbar-brand a{
     color: rgba(81, 65, 53, 0.87) !important;
     font-size:1.1em;
 }
@@ -76,8 +79,12 @@ a.navbar-brand{
     padding-left:10px;
 }
 
+nav .navbar-collapse{
+    background-image: url("../images/exclusive_paper.png");
+}
+
 @media screen and (max-width: 991px) {
-    .imgnav {
+    .navbar-brand {
         display: none;
     }
 }
@@ -86,15 +93,12 @@ a.navbar-brand{
 
 /* jumbotron home */
 
-.jumbotron h1{
-    font-size: 4em;
-}
 .jumbotron {
     font-family: 'Montserrat', sans-serif;
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 0;
-    height:calc(100vh - 4em);
+    height:calc(100vh - 4.2em);
     background-image: url("../images/jumbotron_1.jpg");
     background-color :rgba(0,0,0,0.4);
     background-blend-mode: color;
@@ -110,7 +114,7 @@ a.navbar-brand{
 .jumbotron-title {
     font-weight: lighter;
     color: #F8F8F8;
-    font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(50px + (70 - 50) * ((100vw - 300px) / (1600 - 300)));
     padding-top:5%;
     padding-bottom: 5%;
     text-shadow:0.5px 0.5px #000000;
@@ -133,16 +137,12 @@ a.navbar-brand{
     align-items: center;
 }
 
-.reservation {
-    background-color: #F8F8F8 ;
-    color: #2F1D15;
-}
-
 .btn-red {
-    background-color: #954733;
+    background-color: #5D1B18;
     transition: all 0.4s ease 0s;
     border:none;
     padding:11px;
+    border-radius:0;
 }
 .btn-red a {
     color : white;
@@ -151,7 +151,7 @@ a.navbar-brand{
 
 .btn-red:hover {
     color: white;
-    background-color: #5D1B18;
+    background-color: rgba(93, 27, 24, 0.8);
     border: none;
 }
 
@@ -161,9 +161,8 @@ a.navbar-brand{
 
 .img-homepage {
     object-fit: cover;
-    max-width: 400px;
-    max-height: 40
-    0px;
+    max-width: 450px;
+    max-height: 450px;
 }
 
 /*HOMEPAGE*/
@@ -178,12 +177,17 @@ a.navbar-brand{
 }
 
 .find {
-    background-color: #2F1D15;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.8);
+    background-blend-mode: color;
+    background-image: url("../images/jeanne-arc-martroi.jpg");
     color: #f8f8f8;
 }
 
-.aboutus {
-    background-color: #F8F8F8 ;
+.aboutus, .reservation{
+    background-color: #faf9f7;
+    background-image: url("../images/exclusive_paper.png");
     color: #2F1D15;
 }
 
@@ -208,7 +212,7 @@ footer p
 
 footer
 {
-    background-color: #2F1D15;
+    background-color: #1d1d1d;
     color: white;
     padding-bottom: 8px;
 }
