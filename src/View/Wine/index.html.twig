@@ -1,0 +1,50 @@
+{% extends 'layout-visitor.html.twig' %}
+
+{% block content %}
+    <h1>Carte des vins</h1>
+
+    <h2>Vins blancs</h2>
+
+    <table>
+        <tr>
+            <th>Description</th>
+            <th>A table</th>
+            <th>A emporter</th>
+        </tr>
+        {% for whiteWine in whiteWines %}
+            <tr>
+                <td>{{ whiteWine.description }}</td><td>{{ whiteWine.restaurent_price }}</td><td>{{ whiteWine.away_price }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+    <h2>Vins rouges</h2>
+    <table>
+        <tr>
+            <th>Description</th>
+            <th>A table</th>
+            <th>A emporter</th>
+        </tr>
+        {% for redWine in redWines %}
+            <tr>
+                <td>{{ redWine.description }}</td><td>{{ redWine.restaurent_price }}</td><td>{{ redWine.away_price }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Vins rosés</h2>
+    <table>
+        <tr>
+            <th>Description</th>
+            <th>A table</th>
+            <th>A emporter</th>
+        </tr>
+        {% for roseWine in roseWines %}
+            <tr>
+                <td>{{ roseWine.description }}</td><td>{{ roseWine.restaurent_price }}</td><td>{{ roseWine.away_price }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
