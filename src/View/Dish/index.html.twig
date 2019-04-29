@@ -1,0 +1,35 @@
+{% extends 'layout-visitor.html.twig' %}
+
+
+
+{% block content %}
+    <section class="menupage">
+
+        <h1 class="menutitle">Notre Carte</h1>
+
+        <div class="menupricebox">
+            {% for menu in menus %}
+                <p class="dishprices">{{ menu.name }} : {{ menu.price }} €</p>
+            {% endfor %}
+        </div>
+
+        {% for category in categories %}
+            <h2 class="menusection">{{ category.name }} : {{ category.price }} € <img
+                        src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo"></h2>
+            {% for dish in dishesWithCategories[category.id] %}
+                <ul class="menulist">
+                    <li class="menutext">{{dish.dish_name}}<strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)'}}</strong></li>
+                </ul>
+            {% endfor %}
+
+        {% endfor %}
+
+        <p class="menufootnote">
+            <img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogofooter">
+            Logo « Fait Maison » selon le Décret Nº 2014-797 du 11 juillet 2014. <br/>
+            Les plats «faits maison» sont élaborés sur place à partir de produits bruts.
+
+        </p>
+    </section>
+
+{% endblock %}
