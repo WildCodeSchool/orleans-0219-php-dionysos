@@ -4,7 +4,7 @@
     <h2>Espace Réservation</h2>
     <div class="container-fluid ">
         <div class="col-md-4 mx-auto py-2 justify-content-center">
-            <a class="btn btn-success w-100" href="add/" role="button">Ajouter un évènement</a>
+            <button class="btn btn-red btn-lg">Ajouter une réservation</button>
         </div>
         <div class="table-responsive-vertical mx-5">
             <table id="table" class="table table-hover table-striped table-bordered">
@@ -13,7 +13,7 @@
                     <th scope="col">Nom</th>
                     <th scope="col">Email</th>
                     <th scope="col">Téléphone</th>
-                    <th scope="col">Nombres de convives</th>
+                    <th scope="col">Nombre de convives</th>
                     <th scope="col">Date</th>
                     <th scope="col">Heure d'arrivée</th>
                     <th scope="col">Modification</th>
@@ -26,7 +26,7 @@
                         <td data-title="Nom">{{ reservation.name }}</td>
                         <td data-title="Email">{{ reservation.email }}</td>
                         <td data-title="Téléphone">{{ reservation.phone }}</td>
-                        <td data-title="Nombres de convives">{{ reservation.nbPeople }}</td>
+                        <td data-title="Nombre de convives">{{ reservation.nbPeople }}</td>
                         <td data-title="Date">{{ reservation.date }}</td>
                         <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
                         <td><a class="btn btn-warning w-100" href="edit/{{ reservation.id }}" role="button">Modifier</a>

@@ -10,7 +10,6 @@ namespace App\Controller;
 
 class AdminReservationController extends AbstractController
 {
-
     /**
      * Display home page
      *
