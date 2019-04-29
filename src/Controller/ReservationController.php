@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\ReservationManager;
+use Nette\Utils\DateTime;
 
 class ReservationController extends AbstractController
 {
@@ -45,8 +46,11 @@ class ReservationController extends AbstractController
         } elseif ($date < $today) {
             $errors['date'] = self::FIELD_DATE;
         }
+        $nbPeople = $cleanPost['nbPeople'];
         if (empty($cleanPost['nbPeople'])) {
             $errors['nbPeople'] = self::EMPTY_FIELD;
+        } elseif ($nbPeople < 0 or $nbPeople > 22) {
+            $errors['nbPeople'] = '*Veuillez choisir une valeure comprise entre 0 et 22 !';
         }
         if (empty($cleanPost['appointment'])) {
             $errors['appointment'] = self::EMPTY_FIELD;
