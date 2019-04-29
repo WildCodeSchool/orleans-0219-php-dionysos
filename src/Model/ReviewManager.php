@@ -42,7 +42,7 @@ class ReviewManager extends AbstractManager
         $statement->bindValue(':comment', $review['comment'], \PDO::PARAM_STR);
         $statement->bindValue(':rating', $review['rating'], \PDO::PARAM_STR);
         $statement->bindValue(':date', $date, \PDO::PARAM_STR);
-        $statement->bindValue(':online', 1, \PDO::PARAM_STR);
+        $statement->bindValue(':online', 0, \PDO::PARAM_STR);
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();
         }
