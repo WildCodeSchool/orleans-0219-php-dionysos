@@ -1,66 +1,91 @@
 /* common */
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5em;
-    padding-bottom: 1em;
+    font-size:2.2em;
+    padding-bottom:1em;
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.2em;
+    font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
     text-align: center;
     font-weight: lighter;
     padding-bottom: 5vw;
 }
 
-section {
-    padding: 5.5vw;
+section{
+    padding: 5.4vw 5.6vw 5.4vw 5.6vw;
 }
 
 body {
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
-    font-size: 1.4em;
+    font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.btn {
+    padding : 10px;
+    margin:2.8em 1.5em 2.8em 1.5em;
+    font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
+    transition : 0.5s ease all;
+}
+
+.btn-outline-light {
+    border-radius:0;
+}
+
+.btn-outline-light a{
+    color:white;
+}
+
+.btn-outline-light:hover a{
+    color:rgb(44,33,27);
+    text-decoration: none;
 }
 
 /* end common */
 
 /*Navbar*/
-nav.navbar-inverse {
+
+.navbar-inverse{
     transition: all 0.4s ease;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1em;
-    padding-left: 50px;
-    padding-right: 20px;
-    height: 4em;
+    font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
+    padding-left:50px;
+    padding-right:20px;
+    height:4.2em;
     background-image: url("../images/exclusive_paper.png");
 }
 
-nav .navbar-nav li a {
+.navbar-nav li a{
     color: rgba(81, 65, 53, 0.87) !important;
     transition: all 0.4s ease;
 }
 
-nav .navbar-nav li a:hover {
-    color: rgb(44, 33, 27) !important;
+.navbar-nav li a:hover{
+    color: rgb(44,33,27) !important;
 }
 
-a.navbar-brand {
+.navbar-brand a{
     color: rgba(81, 65, 53, 0.87) !important;
     font-size: 1.1em;
 }
-
-
+  
 .navbar-nav {
     justify-content: right;
+
 }
 
 .nav-item {
     padding-left: 10px;
 }
 
+nav .navbar-collapse{
+    background-image: url("../images/exclusive_paper.png");
+}
+
 @media screen and (max-width: 991px) {
-    .imgnav {
+    .navbar-brand {
         display: none;
     }
 }
@@ -69,16 +94,12 @@ a.navbar-brand {
 
 /* jumbotron home */
 
-.jumbotron h1 {
-    font-size: 4em;
-}
-
 .jumbotron {
     font-family: 'Montserrat', sans-serif;
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 0;
-    height: 100vh;
+    height:calc(100vh - 4.2em);
     background-image: url("../images/jumbotron_1.jpg");
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: color;
@@ -94,8 +115,8 @@ a.navbar-brand {
 .jumbotron-title {
     font-weight: lighter;
     color: #F8F8F8;
-    font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
-    padding-top: 5%;
+    font-size: calc(50px + (70 - 50) * ((100vw - 300px) / (1600 - 300)));
+    padding-top:5%;
     padding-bottom: 5%;
     text-shadow: 0.5px 0.5px #000000;
 }
@@ -117,51 +138,63 @@ a.navbar-brand {
     align-items: center;
 }
 
-.reservation {
-    background-color: #F8F8F8;
-    color: #2F1D15;
+.btn-red {
+    background-color: #5D1B18;
+    transition: all 0.4s ease 0s;
+    border:none;
+    padding:11px;
+    border-radius:0;
 }
 
-.btn-red {
-    color: white;
-    background-color: #954733;
-    transition: all 0.4s ease 0s;
-    border: none;
+.btn-red a {
+    color : white;
+    text-decoration: none;
 }
 
 .btn-red:hover {
     color: white;
-    background-color: #5D1B18;
+    background-color: rgba(93, 27, 24, 0.8);
     border: none;
 }
 
-.btn {
-    padding: 15px;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    font-size: 1.2em;
+.btn-red:hover a {
+    text-decoration: none;
 }
 
-.menu {
-    background-color: #2F1D15;
-    color: #f8f8f8;
-}
-
-.find {
-    background-color: #2F1D15;
-    color: #f8f8f8;
-}
-
-.aboutus {
-    background-color: #F8F8F8;
-    color: #2F1D15;
-}
-
-.img-thumbnail {
+.img-homepage {
     object-fit: cover;
     max-width: 450px;
     max-height: 450px;
 }
+
+/*HOMEPAGE*/
+
+.menu {
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.8);
+    background-blend-mode: color;
+    background-image: url("../images/dishes.jpg");
+    color: #f8f8f8;
+}
+
+.find {
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.8);
+    background-blend-mode: color;
+    background-image: url("../images/jeanne-arc-martroi.jpg");
+    color: #f8f8f8;
+}
+
+.aboutus, .reservation{
+    background-color: #faf9f7;
+    background-image: url("../images/exclusive_paper.png");
+    color: #2F1D15;
+}
+
+
+/*END HOMEPAGE*/
 
 #map {
     color: #2F1D15;
@@ -304,8 +337,9 @@ footer p {
     margin-bottom: 0;
 }
 
-footer {
-    background-color: #2F1D15;
+footer
+{
+    background-color: #1d1d1d;
     color: white;
     padding-bottom: 8px;
 }
