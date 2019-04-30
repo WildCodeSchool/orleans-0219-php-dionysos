@@ -8,8 +8,9 @@
 
 namespace App\Controller;
 
-use App\Model\AdminDishManager;
 use App\Model\CategoryManager;
+use App\Model\DishManager;
+use App\Model\MenuManager;
 
 class AdminDishController extends AbstractController
 {
@@ -28,7 +29,7 @@ class AdminDishController extends AbstractController
     {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $adminDishManager = new AdminDishManager();
+            $dishManager = new DishManager();
 
 
             $noSupplement = $_POST['sup'];
@@ -40,7 +41,7 @@ class AdminDishController extends AbstractController
                 'category' => $_POST['category'],
                 'sup' => $noSupplement,
             ];
-            $id = $adminDishManager->insert($dish);
+            $id = $dishManager->insert($dish);
             header('Location:/AdminDish/add');
             exit;
         }
@@ -48,5 +49,46 @@ class AdminDishController extends AbstractController
         $categories = $categoryManager->selectAll();
 
         return $this->twig->render('Admin/Dish/add.html.twig', ['categories' => $categories,]);
+    }
+
+    public function index()
+    {
+        $dishManager = new DishManager();
+        $dishes = $dishManager->selectDish();
+
+        $dishesWithCategories = [];  // initialiser la variable pour eviter un erreur dans le return;
+
+        foreach ($dishes as $dish) {
+            $dishesWithCategories[$dish['category']][] = $dish;
+        }
+
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectAll();
+
+        $menuManager = new MenuManager();
+        $menus = $menuManager->selectAll();
+
+        return $this->twig->render('Admin/Dish/index.html.twig', [
+            'dishesWithCategories' => $dishesWithCategories,
+            'categories' => $categories,
+            'menus' => $menus,
+            'dishes' => $dishes,
+        ]);
+    }
+
+    public function show(int $id)
+    {
+        $dishManager = new DishManager();
+        $dish = $dishManager->selectOneById($id);
+
+        return $this->twig->render('Admin/Dish/show.html.twig', ['dish' => $dish]);
+    }
+
+    public function delete(int $id)
+    {
+        $DishManager = new DishManager();
+        $DishManager->delete($id);
+        header('Location:/AdminDish/index');
+        exit;
     }
 }
