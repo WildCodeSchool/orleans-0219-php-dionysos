@@ -1,0 +1,84 @@
+{% extends 'layout-visitor.html.twig' %}
+
+{% block content %}
+    <section class="ReservationBlock">
+        <h1>RESERVATION</h1>
+        <h2>Réservation par téléphone :</h2>
+        <div class="text-center pb-4">
+            <button class="btn btn-lg"><img src="/assets/images/call-icon.png"
+                                            class="littlePicCall pb-1"
+                                            alt="Petit téléphone">Tél: 02 38 53 71 12
+            </button>
+        </div>
+        <div class="container">
+            <h2>Réservation par mail :</h2>
+            <p class="sameText">Après avoir rempli ce formulaire, vous recevrez une confirmation par mail ou par
+                téléphone de notre part.</p>
+            <p>Au plaisir de vous acceuillir dans notre restaurant.</p>
+            <p class="weightBold">* Tous ces champs sont obligatoires</p>
+            <div class="row justify-content-md-center">
+
+                <form class="col col-md-8 " method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom*</label>
+                        <input required type="text" class="form-control" id="name" value="{{ reservation.name }}"
+                               name="name"
+                               placeholder="Dionysos">
+                    </div>
+                    {% if errors.name is defined %}
+                        <div class="formErrors">{{ errors.name }}</div>
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="email">Adresse mail*</label>
+                        <input required type="email" class="form-control" id="email" value="{{ reservation.email }}"
+                               name="email"
+                               placeholder="adresse@mail.fr">
+                    </div>
+                    {% if errors.email is defined %}
+                        <div class="alert alert-danger reservationForm" role="alert">{{ errors.email }}</div>
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="phone">Téléphone*</label>
+                        <input required type="text" class="form-control" minlength="10" maxlength="10" id="phone"
+                               value="{{ reservation.phone }}"
+                               name="phone"
+                               placeholder="0238537112">
+                    </div>
+                    {% if errors.phone is defined %}
+                        <div class="formErrors">{{ errors.phone }}</div>
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="date">Date de réservation*</label>
+                        <input required type="date" class="form-control" id="date" value="{{ reservation.date }}"
+                               name="date">
+                    </div>
+                    {% if errors.date is defined %}
+                        <div class="alert alert-danger reservationForm" role="alert">{{ errors.date }}</div>
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="nbPeople">Nombre de convives*</label>
+                        <input required type="number" class="form-control" id="nbPeople"
+                               placeholder="3" value="{{ reservation.nbPeople }}" name="nbPeople">
+                        <small id="nbPeople" class="form-text text-muted">(jusqu'à 22 convives maximum)</small>
+                    </div>
+                    {% if errors.nbPeople is defined %}
+                        <div class="alert alert-danger reservationForm" role="alert">{{ errors.nbPeople }}</div>
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="appointment">Heure d'arrivée*</label>
+                        <input required type="time" class="form-control" id="appointment"
+                               value="{{ reservation.appointment }}"
+                               name="appointment">
+                    </div>
+                    {% if errors.appointment is defined %}
+                        <div class="formErrors ">{{ errors.appointment }}</div>
+                    {% endif %}
+
+                    <div class="text-center pb-4">
+                        <button type="submit" class="btn btn-lg">Réserver</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
