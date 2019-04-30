@@ -23,3 +23,15 @@ li {
     border-color: black;
     border-width: 1px;
 }
+
+body {
+    font-size: 16px;
+}
+
+.list-comments table {
+    word-wrap: break-word;
+    font-size: 18px;
+}
+.list-comments table th{
+    padding:5px;
+}
