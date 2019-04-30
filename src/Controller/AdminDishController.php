@@ -37,6 +37,7 @@ class AdminDishController extends AbstractController
             ];
             $id = $adminDishManager->insert($dish);
             header('Location:/AdminDish/add');
+            exit;
         }
 
         return $this->twig->render('Admin/Dish/add.html.twig');
