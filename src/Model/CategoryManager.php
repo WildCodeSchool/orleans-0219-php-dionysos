@@ -26,5 +26,4 @@ class CategoryManager extends AbstractManager
     {
         return $this->pdo->query('SELECT * FROM ' . self::TABLE . ' ORDER BY display_order ASC')->fetchAll();
     }
-
 }
