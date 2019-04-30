@@ -44,8 +44,10 @@ class ReservationController extends AbstractController
         if (empty($cleanPost['date'])) {
             $errors['date'] = self::EMPTY_FIELD;
         } elseif ($date < $today) {
-            $date = DateTime::createFromFormat('Y-m-d', $cleanPost['date']);
             $errors['date'] = self::FIELD_DATE;
+            $date = DateTime::createFromFormat('Y-m-d', $cleanPost['date']);
+        } elseif ($date && $date->format('Y-m-d') !==  $cleanPost['date']) {
+            $errors['date'] = "*Le format de date n'est pas valide !";
         }
         $nbPeople = $cleanPost['nbPeople'];
         if (empty($cleanPost['nbPeople'])) {
