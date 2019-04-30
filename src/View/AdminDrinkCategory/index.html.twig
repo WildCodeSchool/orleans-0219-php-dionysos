@@ -1,0 +1,26 @@
+{% extends 'layout-admin.html.twig' %}
+
+{% block title %}Admin Drinks categories{% endblock %}
+
+{% block content %}
+    <section class="container">
+        <table class="table table-striped">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <td>Categorie</td>
+                    <td>Editer</td>
+                    <td>Supprimer</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for drinkCategory in drinkCategories %}
+                <tr>
+                    <td>{{ drinkCategory.name }}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}
