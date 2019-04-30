@@ -16,6 +16,10 @@
                         <div class="form-group">
                             <label for="comment">Commentaire : *</label>
                             <textarea required class="form-control" name="comment" id="comment" placeholder="Votre commentaire" >{{ comment }}</textarea>
+                            <textarea required class="form-control" name="comment" id="comment" placeholder="Votre commentaire" >{{ comment }}</textarea>
+                            <small id="comment-limit" class="form-text text-muted">
+                                Votre message ne doit pas faire plus de 130 caractères.
+                            </small>
                         </div>
                         {% if errors.comment is defined %}
                             <div class="formErrors">{{ errors.comment}}</div>
