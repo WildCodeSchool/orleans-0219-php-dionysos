@@ -239,12 +239,19 @@ nav .navbar-collapse{
 .guest-book label{
     vertical-align: middle;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 0.9em;
+
 }
 .guest-book .rating{
     display: inline-block;
     vertical-align: middle;
     margin-left:10px;
+}
+
+.form-success{
+    font-size: 0.9em;
+    color: #3c6236;
+    padding-top:1em;
 }
 
 .rating > input {
@@ -289,6 +296,7 @@ nav .navbar-collapse{
     color: #FFD700;
     font-size: 1.1em;
 }
+
 
 .comments {
     padding:1.2em;
