@@ -1,0 +1,11 @@
+{% extends 'layout-visitor.html.twig' %}
+
+{% block content %}
+    <section class="container">
+        <h1>Edition de {{ drinkCategory.name }}</h1>
+
+        {% include 'AdminDrinkCategory/_form.html.twig' %}
+
+        <a class="btn btn-outline-dark" href="/adminDrinkCategory/index"><i class="fa fa-chevron-left"></i> Retour aux catégories</a>
+    </section>
+{% endblock %}
