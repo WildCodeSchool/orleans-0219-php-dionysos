@@ -29,9 +29,6 @@ class HomeReviewManager extends AbstractManager
     public function selectHomeReviews(): array
     {
         return $this->pdo->query('SELECT * FROM ' . $this->table .' 
-        WHERE rating > 3 
-        AND online = 1 
-        ORDER BY RAND() 
-        LIMIT 3') -> fetchAll();
+        WHERE online = 1 ORDER BY RAND() LIMIT 3') -> fetchAll();
     }
 }
