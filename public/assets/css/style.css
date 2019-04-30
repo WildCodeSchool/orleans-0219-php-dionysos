@@ -1,63 +1,90 @@
 /* common */
-h1{
+h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size:2.5em;
+    font-size:2.2em;
     padding-bottom:1em;
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size:2.2em;
+    font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
     text-align: center;
     font-weight: lighter;
-    padding-bottom:5vw;
+    padding-bottom: 5vw;
 }
 
 section{
-    padding:5.5vw;
+    padding: 5.4vw 5.6vw 5.4vw 5.6vw;
 }
 
-body{
+body {
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
-    font-size: 1.4em;
+    font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
 }
+
+.btn {
+    padding : 10px;
+    margin:2.8em 1.5em 2.8em 1.5em;
+    font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
+    transition : 0.5s ease all;
+}
+
+.btn-outline-light {
+    border-radius:0;
+}
+
+.btn-outline-light a{
+    color:white;
+}
+
+.btn-outline-light:hover a{
+    color:rgb(44,33,27);
+    text-decoration: none;
+}
+
 /* end common */
 
 /*Navbar*/
-nav.navbar-inverse{
+
+.navbar-inverse{
     transition: all 0.4s ease;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1em;
+    font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1600 - 300)));
     padding-left:50px;
     padding-right:20px;
-    height:4em;
+    height:4.2em;
     background-image: url("../images/exclusive_paper.png");
 }
-nav .navbar-nav li a{
+
+.navbar-nav li a{
     color: rgba(81, 65, 53, 0.87) !important;
     transition: all 0.4s ease;
 }
 
-nav .navbar-nav li a:hover{
+.navbar-nav li a:hover{
     color: rgb(44,33,27) !important;
 }
 
-a.navbar-brand{
+.navbar-brand a{
     color: rgba(81, 65, 53, 0.87) !important;
-    font-size:1.1em;
+    font-size: 1.1em;
+}
+  
+.navbar-nav {
+    justify-content: right;
 }
 
-.navbar-nav{
-    justify-content:right;
+.nav-item {
+    padding-left: 10px;
 }
 
-.nav-item{
-    padding-left:10px;
+nav .navbar-collapse{
+    background-image: url("../images/exclusive_paper.png");
 }
 
 @media screen and (max-width: 991px) {
-    .imgnav {
+    .navbar-brand {
         display: none;
     }
 }
@@ -66,17 +93,14 @@ a.navbar-brand{
 
 /* jumbotron home */
 
-.jumbotron h1{
-    font-size: 4em;
-}
 .jumbotron {
     font-family: 'Montserrat', sans-serif;
     background-size: cover;
     background-attachment: fixed;
     margin-bottom: 0;
-    height:100vh;
+    height:calc(100vh - 4.2em);
     background-image: url("../images/jumbotron_1.jpg");
-    background-color :rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: color;
 }
 
@@ -90,21 +114,21 @@ a.navbar-brand{
 .jumbotron-title {
     font-weight: lighter;
     color: #F8F8F8;
-    font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
+    font-size: calc(50px + (70 - 50) * ((100vw - 300px) / (1600 - 300)));
     padding-top:5%;
     padding-bottom: 5%;
-    text-shadow:0.5px 0.5px #000000;
+    text-shadow: 0.5px 0.5px #000000;
 }
 
-.jumbotron button{
+.jumbotron button {
     font-size: calc(12px + (22 - 12) * ((100vw - 300px) / (1600 - 300)));
     margin-bottom: 5%;
-    transition : 0.5s ease all;
-    padding:15px;
+    transition: 0.5s ease all;
+    padding: 15px;
 }
 
-.arrow-down img{
-    max-height:20px;
+.arrow-down img {
+    max-height: 20px;
 }
 
 
@@ -114,88 +138,228 @@ a.navbar-brand{
     align-items: center;
 }
 
-.reservation {
-    background-color: #F8F8F8 ;
-    color: #2F1D15;
-}
-
 .btn-red {
-    color : white;
-    background-color: #954733;
+    background-color: #5D1B18;
     transition: all 0.4s ease 0s;
     border:none;
+    padding:11px;
+    border-radius:0;
+}
+
+.btn-red a {
+    color : white;
+    text-decoration: none;
 }
 
 .btn-red:hover {
     color: white;
-    background-color: #5D1B18;
+    background-color: rgba(93, 27, 24, 0.8);
     border: none;
 }
 
-.btn {
-    padding : 15px;
-    margin-top:1em;
-    margin-bottom:1em;
-    font-size: 1.2em;
+.btn-red:hover a {
+    text-decoration: none;
 }
 
-.menu{
-    background-color: #2F1D15;
-    color: #f8f8f8;
-}
-.find{
-    background-color: #2F1D15;
-    color: #f8f8f8;
-}
-
-.aboutus{
-    background-color: #F8F8F8 ;
-    color: #2F1D15;
-}
-
-.img-thumbnail {
+.img-homepage {
     object-fit: cover;
     max-width: 450px;
     max-height: 450px;
 }
 
+/*HOMEPAGE*/
+
+.menu {
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.8);
+    background-blend-mode: color;
+    background-image: url("../images/dishes.jpg");
+    color: #f8f8f8;
+}
+
+.find {
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.8);
+    background-blend-mode: color;
+    background-image: url("../images/jeanne-arc-martroi.jpg");
+    color: #f8f8f8;
+}
+
+.aboutus, .reservation{
+    background-color: #faf9f7;
+    background-image: url("../images/exclusive_paper.png");
+    color: #2F1D15;
+}
+
+
+/*END HOMEPAGE*/
+
+#map {
+    color: #2F1D15;
+}
+
+#map li {
+    list-style-type: none
+}
+
+#map h2 {
+    padding-bottom: 1vw;
+}
+
 /*fin body*/
+/*PAGE REVIEW*/
+
+.guest-book .form {
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+}
+
+.guest-book .form-group{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.guest-book button{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color : white;
+    background-color: #5d1b18;
+    transition: all 0.5s ease 0s;
+    border:none;
+}
+
+.guest-book button:hover{
+    border:none;
+    background-color: #5d1b18;
+    box-shadow: 0 7px 7px rgba(105, 48, 23, 0.56);
+}
+
+.guest-book label{
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+.guest-book .rating{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left:10px;
+}
+
+.rating > input {
+    display: none;
+}
+
+.rating > label:before {
+    margin: 3px;
+    font-size: 1.4em;
+    font-family: FontAwesome;
+    content: "\f005";
+    cursor: pointer;
+}
+
+.rating > label {
+    color: #ddd;
+    float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85; }
+
+.rating-display{
+    display:inline-block;
+}
+
+.icon-star:before {
+    padding-top: 10px;
+    color: #FFD700;
+    font-size: 1.1em;
+}
+
+.icon-star-empty:before{
+    padding-top: 10px;
+    color: #FFD700;
+    font-size: 1.1em;
+}
+
+.comments {
+    padding:1.2em;
+    font-family: 'Lato', sans-serif;
+}
+
+.comments .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+}
+
+.comments .card-text{
+    padding-top: 0.5em;
+    font-size: 0.8em;
+}
+.comments .card{
+    margin: 1em 2em 1em 2em;
+    max-width:19em;
+    height:17em;
+    color: #0b0303;
+    transition: all 0.4s ease 0s;
+    padding: 0.4em;
+    box-shadow: 8px 8px 8px rgba(181, 83, 40, 0.4);
+}
+.comments .card:hover{
+    color: #F8F8F8;
+    background-color: #5d1b18;
+    border:none;
+}
+.comments .card .date {
+    font-size: 0.5em;
+    font-weight: lighter;
+}
+
+/*END PAGE REVIEW*/
 
 
 /* start Footer */
-footer ul
-{
+footer ul {
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
     font-size: 0.8em;
 }
 
-footer p
-{
-    margin-bottom: 0;
-}
-
 footer
 {
-    background-color: #2F1D15;
+    background-color: #1d1d1d;
     color: white;
     padding-bottom: 8px;
 }
 
-footer hr
+footer p
 {
+    margin-bottom: 0;
+}
+footer hr {
     background-color: white;
-    margin: 2em ;
+    margin: 2em;
 }
 
-footer a
-{
+footer a {
     list-style-type: none;
 }
+  
+footer hr {
+    background-color: white;
+    margin: 2em;
+}
 
-.smallPic
-{
+.smallPic {
     width: 95px;
 }
 
@@ -203,19 +367,128 @@ footer a
 {
     width: 110px;
 }
-
 .smallPicCard
 {
     width: 70px;
 }
-
 .mealTicket
 {
     width: 215px;
 }
-
 .littleEndPage
+{
+    font-size: 0.6em;
+}
+
+/* end Footer */
+
+/* start reservation */
+.ReservationBlock h2
+{
+    font-size: 1.4em;
+    font-weight: 700;
+    padding-bottom: 0;
+}
+
+.ReservationBlock h1, h2, p, button
+{
+    text-align: center;
+}
+
+.reservationForm
 {
     font-size: 0.7em;
 }
-/* end Footer */
+
+form label, .weightBold
+{
+    font-weight: 700;
+}
+
+.sameText
+{
+    margin-bottom: 0;
+}
+
+.littlePicCall
+{
+    max-width: 20px;
+    height: auto;
+}
+
+/* end reservation */
+
+/* Menu style  */
+
+.menusection {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+.menutext {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 1rem;
+    position: relative;
+    right: 1.5rem;
+}
+
+.menulist {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.menutitle {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.menupage {
+    padding-bottom: 4rem;
+}
+
+.dishprices {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.menupricebox {
+    margin: auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    width: 50%;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.faitmaisonlogo {
+    height: 3%;
+    width: 3%;
+    position: relative;
+    left: 2rem;
+}
+
+.menufootnote {
+    padding-top: 4rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.faitmaisonlogofooter {
+    height: 4%;
+    width: 4%;
+    position: relative;
+    bottom: 0.3rem;
+    padding-right: 1rem;
+}
+
+/* end of Menu style  */
