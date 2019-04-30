@@ -16,7 +16,6 @@
                     <th scope="col">Nombre de convives</th>
                     <th scope="col">Date</th>
                     <th scope="col">Heure d'arrivée</th>
-                    <th scope="col">Modification</th>
                     <th scope="col">Suppression</th>
                 </tr>
                 </thead>
@@ -29,8 +28,6 @@
                         <td data-title="Nombre de convives">{{ reservation.nbPeople }}</td>
                         <td data-title="Date">{{ reservation.date }}</td>
                         <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
-                        <td><a class="btn btn-warning w-100" href="edit/{{ reservation.id }}" role="button">Modifier</a>
-                        </td>
                         <td><a class="btn btn-danger w-100" href="delete/{{ reservation.id }}" role="button">Supprimer</a></td>
                     </tr>
                 {% endfor %}
