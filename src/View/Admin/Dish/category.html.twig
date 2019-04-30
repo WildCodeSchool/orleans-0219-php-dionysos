@@ -1,0 +1,33 @@
+{% extends 'layout-admin.html.twig' %}
+
+{% block content %}
+    <section class="list-categories">
+        <h2>Gérez vos catégories de plats</h2>
+        <div class="container-fluid">
+            <div class="row table-responsive">
+                <table class="table table-bordered table-hover col-sm-10 offset-1 text-center justify-content-center">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th class="col-1" scope="col">Ordre</th>
+                        <th class="col-2" scope="col">Nom</th>
+                        <th class="col-1" scope="col">Prix</th>
+                        <th class="col-2" scope="col">Modifier</th>
+                        <th class="col-2" scope="col">Supprimer</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for category in categories %}
+                            <tr>
+                                <td>{{ category.display_order }}</td>
+                                <td>{{ category.name }}</td>
+                                <td>{{ category.price}} €</td>
+                                <td><a href="" type="button" class="btn btn-primary">Modifier</a></td>
+                                <td><a href="" type="button" class="btn btn-danger">Supprimer</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}

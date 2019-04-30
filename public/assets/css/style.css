@@ -73,7 +73,6 @@ body {
   
 .navbar-nav {
     justify-content: right;
-
 }
 
 .nav-item {
@@ -89,8 +88,30 @@ nav .navbar-collapse{
         display: none;
     }
 }
+@media screen and (max-width: 850px) {
+    .imgnav {
+        display: none;
+    }
+}
 
 /*end Navbar*/
+
+/*picture*/
+.modal_centered_photo{
+    max-width:800px;
+}
+
+
+.modal-content img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+.h1_pphoto{
+    text-align: center;
+    color: darkred;
+}
+/*end picture*/
 
 /* jumbotron home */
 
@@ -131,6 +152,7 @@ nav .navbar-collapse{
 .arrow-down img {
     max-height: 20px;
 }
+
 
 /*body*/
 .display {
@@ -193,7 +215,6 @@ nav .navbar-collapse{
     color: #2F1D15;
 }
 
-
 /*END HOMEPAGE*/
 
 #map {
@@ -209,6 +230,7 @@ nav .navbar-collapse{
 }
 
 /*fin body*/
+
 /*PAGE REVIEW*/
 
 .guest-book .form {
@@ -333,69 +355,12 @@ nav .navbar-collapse{
 
 /*END PAGE REVIEW*/
 
-/* start Footer */
-footer ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-    font-size: 0.8em;
-}
-
-footer
-{
-    background-color: #1d1d1d;
-    color: white;
-    padding-bottom: 8px;
-}
-
-footer p
-{
-    margin-bottom: 0;
-}
-footer hr {
-    background-color: white;
-}
-
-footer a {
-   font-size: 0.7em;
-  
-footer hr {
-    background-color: white;
-    margin: 2em;
-}
-
-footer a {
-    list-style-type: none;
-}
-
-.smallPic {
-    width: 95px;
-}
-
-.smallPicfb
-{
-    width: 110px;
-}
-.smallPicCard
-{
-    width: 70px;
-}
-.mealTicket
-{
-    width: 215px;
-}
-.littleEndPage
-{
-    font-size: 0.7em;
-}
-
-/* end Footer */
-
 /* start reservation */
 .ReservationBlock h2
 {
     font-size: 1.4em;
     font-weight: 700;
+    padding-bottom: 0;
 }
 
 .ReservationBlock h1, h2, p, button
@@ -424,19 +389,6 @@ form label, .weightBold
     height: auto;
 }
 
-.btn-lg{
-    margin-top: 1em;
-    color : white;
-    background-color: #954733;
-    transition: all 0.4s ease 0s;
-    border:none;
-    margin-bottom: 1em;
-}
-.btn-lg:hover{
-    color : white;
-    background-color: #5D1B18;
-    border:none;
-}
 /* end reservation */
 
 /* Menu style  */
@@ -512,5 +464,57 @@ form label, .weightBold
     padding-right: 1rem;
 }
 
-
 /* end of Menu style  */
+
+/* start Footer */
+footer ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 0.8em;
+}
+
+footer
+{
+    background-color: #1d1d1d;
+    color: white;
+    padding-bottom: 8px;
+}
+
+footer p
+{
+    margin-bottom: 0;
+}
+
+footer a {
+    list-style-type: none;
+}
+
+  
+footer hr {
+    background-color: white;
+    margin: 2em;
+}
+
+.smallPic {
+    width: 95px;
+}
+
+.smallPicfb
+{
+    width: 110px;
+}
+.smallPicCard
+{
+    width: 70px;
+}
+.mealTicket
+{
+    width: 215px;
+}
+.littleEndPage
+{
+    font-size: 0.6em;
+}
+
+/* end Footer */
