@@ -8,18 +8,29 @@
 
 namespace App\Controller;
 
+use App\Model\AdminReservationManager;
+
 class AdminReservationController extends AbstractController
 {
-    /**
-     * Display home page
-     *
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
+
     public function index()
     {
-        return $this->twig->render('AdminReservation/index.html.twig');
+        //base
+        $AdminReservationManager = new AdminReservationManager();
+        $reservation = $AdminReservationManager->selectAll();
+        //fin base
+        //update
+        $data = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            foreach ($_POST as $key => $value) {
+                $data[$key] = trim($value);
+            }
+            if (!empty($_POST['online'])) {
+                $AdminReservationManager->updateStatus($data);
+                header('location:/AdminReview/index/?success=true&id=' . $data['online'] . '#' . $data['online']);
+            }
+        }
+        return $this->twig->render('AdminReservation/index.html.twig', ['reservation' => $reservation, 'reservations'
+        => $data]);
     }
 }
