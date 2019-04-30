@@ -2,34 +2,39 @@
 
 {% block content %}
     <section class="list-categories">
-        <h2>Gérez vos catégories</h2>
-        <button>Ajouter une nouvelle catégorie</button>
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th scope="col">Catégorie</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Label Fait Maison</th>
-                <th scope="col">Modifier</th>
-                <th scope="col">Supprimer</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for category in categories %}
-            <tr>
-                <th scope="row"> {{ category.name }}</th>
-                <td>{{ category.price }}</td>
-                <td>
-                    <form method="POST">
-                        <input id="id" name="label" type="hidden" value="{{ category.id }}">
-                        <button type="submit" class="btn btn-sm {{ (category.label != 1) ? 'btn-success' : 'btn-secondary' }}">{{ (category.label == 1) ? 'Retirer le label' : 'Ajouter le label' }}</button>
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-        <!--tableau liste des catégories avec bouton modifier, ajouter, supprimer, ajouter label fait maison-->
-        <!--ouverture modale?-->
+        <h2>Gérez vos catégories de plats</h2>
+        <div class="container-fluid">
+            <div class="row">
+                <table class="table table-hover table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for review in reviews %}
+                        <tr>
+                            <td>{{ review.name }}</td>
+                            <td>{{ review.date }}</td>
+                            <td>{{ review.rating }}/5</td>
+                            <td class=" text-left">{{ review.comment }}</td>
+                            <td>
+                                {{ (review.online == 1) ? 'Oui' : 'Non' }}
+                            </td>
+                            <td>
+                                <form method="POST">
+                                    <input id="id" name="online" type="hidden" value="{{ review.id }}">
+                                    <button type="submit" class="btn btn-sm {{ (review.online != 1) ? 'btn-success' : 'btn-secondary' }}">{{ (review.online == 1) ? 'Mettre hors ligne' : 'Mettre en ligne' }}</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </section>
 {% endblock %}
