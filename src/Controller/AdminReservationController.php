@@ -12,25 +12,30 @@ use App\Model\AdminReservationManager;
 
 class AdminReservationController extends AbstractController
 {
+    /**
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
 
     public function index()
     {
         //base
         $AdminReservationManager = new AdminReservationManager();
-        $reservation = $AdminReservationManager->selectAll();
-        //fin base
-        //update
-        $data = [];
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            foreach ($_POST as $key => $value) {
-                $data[$key] = trim($value);
-            }
-            if (!empty($_POST['online'])) {
-                $AdminReservationManager->updateStatus($data);
-                header('location:/AdminReview/index/?success=true&id=' . $data['online'] . '#' . $data['online']);
-            }
-        }
-        return $this->twig->render('AdminReservation/index.html.twig', ['reservation' => $reservation, 'reservations'
-        => $data]);
+        $reservations = $AdminReservationManager->selectAll();
+
+        return $this->twig->render('AdminReservation/index.html.twig', ['reservations' => $reservations, 'reservation'
+        ]);
+    }
+
+    /**
+     * @param int $id
+     */
+    public function delete(int $id)
+    {
+        $AdminReservationManager = new AdminReservationManager();
+        $AdminReservationManager->delete($id);
+        header('Location:/AdminReservation/index');
     }
 }

@@ -34,19 +34,17 @@ class AdminReservationManager extends AbstractManager
      */
     public function selectAll(): array
     {
-        return $this->pdo->query('SELECT * FROM ' . self::TABLE . ' ORDER BY id DESC')->fetchAll();
+        return $this->pdo->query('SELECT * FROM ' . self::TABLE . ' ORDER BY date')->fetchAll();
     }
 
     /**
-     * online from 0 to 1 or 1 to 0
-     *@param array $data
-     * @return bool
+     * @param int $id
      */
-    public function updateStatus(array $data):bool
+    public function delete(int $id): void
     {
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE $this->table SET `online` = !`online` WHERE id=:online");
-        $statement->bindValue(':online', $data['online'], \PDO::PARAM_INT);
-        return $statement->execute();
+        $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
     }
 }
