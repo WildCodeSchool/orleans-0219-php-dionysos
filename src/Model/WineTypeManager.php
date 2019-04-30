@@ -12,12 +12,12 @@ namespace App\Model;
 /**
  *
  */
-class WhiteWineManager extends AbstractManager
+class WineTypeManager extends AbstractManager
 {
     /**
      *
      */
-    const TABLE = 'white_wine';
+    const TABLE = 'wine_type';
 
     /**
      *  Initializes this class.

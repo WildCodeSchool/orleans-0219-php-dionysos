@@ -1,50 +1,30 @@
 {% extends 'layout-visitor.html.twig' %}
 
 {% block content %}
-    <h1>Carte des vins</h1>
+    <section class="menupage container">
+    <h1 class="menutitle">Carte des vins</h1>
 
-    <h2>Vins blancs</h2>
 
-    <table>
-        <tr>
-            <th>Description</th>
-            <th>A table</th>
-            <th>A emporter</th>
-        </tr>
-        {% for whiteWine in whiteWines %}
-            <tr>
-                <td>{{ whiteWine.description }}</td><td>{{ whiteWine.restaurent_price }}</td><td>{{ whiteWine.away_price }}</td>
+    {% for wineType in wineTypes %}
+        <h2 class="menusection" id="{{ wineType.type|capitalize }}">{{ wineType.type|capitalize }} </h2>
+
+        <table class="winemenutable">
+            <tr class="wineblock">
+                <th>Description</th>
+                <th>A table</th>
+                <th>A emporter</th>
+            </tr>
+
+        {% for wine in winesWithTypes[wineType.type] %}
+            <tr class="wineblock">
+                <td>{{ wine.description }}</td><td>{{ wine.restaurant_price }}</td><td>{{ wine.away_price }}</td>
             </tr>
         {% endfor %}
-    </table>
 
+        </table>
 
-    <h2>Vins rouges</h2>
-    <table>
-        <tr>
-            <th>Description</th>
-            <th>A table</th>
-            <th>A emporter</th>
-        </tr>
-        {% for redWine in redWines %}
-            <tr>
-                <td>{{ redWine.description }}</td><td>{{ redWine.restaurent_price }}</td><td>{{ redWine.away_price }}</td>
-            </tr>
-        {% endfor %}
-    </table>
+    {% endfor %}
 
-    <h2>Vins rosés</h2>
-    <table>
-        <tr>
-            <th>Description</th>
-            <th>A table</th>
-            <th>A emporter</th>
-        </tr>
-        {% for roseWine in roseWines %}
-            <tr>
-                <td>{{ roseWine.description }}</td><td>{{ roseWine.restaurent_price }}</td><td>{{ roseWine.away_price }}</td>
-            </tr>
-        {% endfor %}
-    </table>
+    </section>
 
 {% endblock %}

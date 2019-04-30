@@ -340,3 +340,22 @@ footer a {
 }
 
 /* end Footer */
+
+
+/*  Start wine menu  */
+
+.wineblock > th {
+    padding: 10px;
+}
+
+.wineblock > td {
+    padding: 10px;
+    padding-right: 3rem;
+    font-size: smaller;
+}
+
+.winemenutable {
+   margin: auto;
+}
+
+/*  End wine menu  */

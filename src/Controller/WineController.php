@@ -9,9 +9,8 @@
 
 namespace App\Controller;
 
-use App\Model\WhiteWineManager;
-use App\Model\RedWineManager;
-use App\Model\RoseWineManager;
+use App\Model\WineManager;
+use App\Model\WineTypeManager;
 
 /**
  * Class WineController
@@ -31,19 +30,22 @@ class WineController extends AbstractController
      */
     public function index()
     {
-        $whiteWineManager = new WhiteWineManager();
-        $whiteWines = $whiteWineManager->selectAll();
+        $wineManager = new WineManager();
+        $wines = $wineManager->selectWine();
 
-        $redWineManager = new RedWineManager();
-        $redWines = $redWineManager->selectAll();
+        $winesWithTypes = [];  // initialiser la variable pour eviter un erreur dans le return;
 
-        $roseWineManager = new RoseWineManager();
-        $roseWines = $roseWineManager->selectAll();
+        foreach ($wines as $wine) {
+            $winesWithTypes[$wine['type']][] = $wine;
+        }
+
+        $wineTypeManager = new WineTypeManager();
+        $wineTypes = $wineTypeManager->selectAll();
 
         return $this->twig->render('Wine/index.html.twig', [
-            'whiteWines' => $whiteWines,
-            'redWines' => $redWines,
-            'roseWines' => $roseWines,
+            'wines' => $wines,
+            'wineTypes' => $wineTypes,
+            'winesWithTypes' => $winesWithTypes,
             ]);
     }
 }

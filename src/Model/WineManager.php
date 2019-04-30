@@ -12,12 +12,12 @@ namespace App\Model;
 /**
  *
  */
-class RedWineManager extends AbstractManager
+class WineManager extends AbstractManager
 {
     /**
      *
      */
-    const TABLE = 'red_wine';
+    const TABLE = 'wine';
 
     /**
      *  Initializes this class.
@@ -25,5 +25,11 @@ class RedWineManager extends AbstractManager
     public function __construct()
     {
         parent::__construct(self::TABLE);
+    }
+
+    public function selectWine(): array
+    {
+        return $this->pdo->query('SELECT * FROM ' . $this->table . ' 
+        RIGHT JOIN wine_type ON wine.type = wine_type.id')->fetchAll();
     }
 }
