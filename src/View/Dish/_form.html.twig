@@ -1,0 +1,10 @@
+<form method="post">
+    <input type="hidden" value="{{ dish.id }}" name="id">
+    <label for="dish_name">Nom du plat : </label>
+    <input id="dish_name" type="text" value="{{ dish.dish_name }}" name="dish_name">
+    <label for="category">Categorie : </label>
+    <input type="text" value="{{ dish.category }}" name="category">
+    <label for="sup">Prix supplementaire : </label>
+    <input type="text" value="{{ dish.sup }}" name="sup">
+    <input type="submit" value="Valider">
+</form>
