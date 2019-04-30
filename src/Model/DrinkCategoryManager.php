@@ -29,14 +29,22 @@ class DrinkCategoryManager extends AbstractManager
 
 
     /**
-     * @param array $item
+     * @return array
+     */
+    public function selectAll(): array
+    {
+        return $this->pdo->query('SELECT * FROM ' . $this->table. ' ORDER BY name ASC')->fetchAll();
+    }
+
+    /**
+     * @param array $data
      * @return int
      */
-    public function insert(array $item): int
+    public function insert(array $data): int
     {
         // prepared request
         $statement = $this->pdo->prepare("INSERT INTO $this->table (`name`) VALUES (:name)");
-        $statement->bindValue('title', $item['title'], \PDO::PARAM_STR);
+        $statement->bindValue('name', $data['name'], \PDO::PARAM_STR);
 
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();

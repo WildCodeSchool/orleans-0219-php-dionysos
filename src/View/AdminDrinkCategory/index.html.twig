@@ -4,13 +4,23 @@
 
 {% block content %}
     <section class="container">
+
+        {% if success is defined %}
+            <div class="mt-2 alert alert-success">
+                La catégorie a bien été mise à jour
+            </div>
+        {% endif %}
+
+        <a class="btn btn-dark my-2" href="/adminDrinkCategory/add"><i class="fas fa-plus"></i> Ajouter une
+            catégorie</a>
+
         <table class="table table-striped">
             <thead class="bg-dark text-white">
-                <tr>
-                    <td>Categorie</td>
-                    <td>Editer</td>
-                    <td>Supprimer</td>
-                </tr>
+            <tr>
+                <td>Categorie</td>
+                <td>Editer</td>
+                <td>Supprimer</td>
+            </tr>
             </thead>
             <tbody>
             {% for drinkCategory in drinkCategories %}

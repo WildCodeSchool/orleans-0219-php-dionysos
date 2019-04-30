@@ -1,0 +1,17 @@
+<ul class="alert alert-danger">
+    {%- for error in errors -%}
+        <li>{{- error -}}</li>
+    {%- endfor -%}
+</ul>
+
+<form method="post">
+    <input type="hidden" value="{{ drinkCategory.id }}" name="id">
+    <div class="form-group">
+        <label for="category">Category</label>
+        <input class="form-control" type="text" id="category" value="{{ drinkCategory.name ?? '' }}"
+               name="name" placeholder="Vins rouges">
+    </div>
+    <div class="form-group d-flex justify-content-center">
+        <input class="btn btn-dark btn-lg" type="submit" value="Valider">
+    </div>
+</form>
