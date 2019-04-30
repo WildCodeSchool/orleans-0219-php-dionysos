@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheet %}
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+{% endblock %}
+
 {% block header %} {% include '_header.html.twig' %}  {% endblock %}
 
 {% block footer %}
@@ -55,6 +60,7 @@
                     <p class="justify-content-center littleEndPage">© Made with <3 by WCS | <a href=""
                                                                                                class="text-white">Mentions
                             Légales</a> | <a href="" class="text-white">Politique de Confidentialité</a></p>
+
                 </div>
             </div>
         </div>
