@@ -9,9 +9,12 @@
 namespace App\Controller;
 
 use App\Model\AdminDishManager;
+use App\Model\CategoryManager;
 
 class AdminDishController extends AbstractController
 {
+
+
 
     /**
      * Display item creation page
@@ -26,6 +29,8 @@ class AdminDishController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $adminDishManager = new AdminDishManager();
+
+
             $noSupplement = $_POST['sup'];
             if ($_POST['sup'] == 0) {
                 $noSupplement = null;
@@ -39,7 +44,9 @@ class AdminDishController extends AbstractController
             header('Location:/AdminDish/add');
             exit;
         }
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectAll();
 
-        return $this->twig->render('Admin/Dish/add.html.twig');
+        return $this->twig->render('Admin/Dish/add.html.twig', ['categories' => $categories,]);
     }
 }
