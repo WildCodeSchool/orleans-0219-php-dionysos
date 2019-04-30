@@ -6,6 +6,7 @@ namespace App\Model;
 /**
  *
  */
+
 class CategoryManager extends AbstractManager
 {
     /**
@@ -19,5 +20,10 @@ class CategoryManager extends AbstractManager
     public function __construct()
     {
         parent::__construct(self::TABLE);
+    }
+
+    public function selectAll(): array
+    {
+        return $this->pdo->query('SELECT * FROM ' . self::TABLE . ' ORDER BY display_order ASC')->fetchAll();
     }
 }
