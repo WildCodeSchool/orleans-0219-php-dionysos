@@ -333,10 +333,6 @@ footer ul {
     font-size: 0.8em;
 }
 
-footer p {
-    margin-bottom: 0;
-}
-
 footer
 {
     background-color: #1d1d1d;
@@ -344,6 +340,17 @@ footer
     padding-bottom: 8px;
 }
 
+footer p
+{
+    margin-bottom: 0;
+}
+footer hr {
+    background-color: white;
+}
+
+footer a {
+   font-size: 0.7em;
+  
 footer hr {
     background-color: white;
     margin: 2em;
@@ -357,27 +364,72 @@ footer a {
     width: 95px;
 }
 
-.smallPicfb {
+.smallPicfb
+{
     width: 110px;
 }
-
-.smallPicCard {
+.smallPicCard
+{
     width: 70px;
 }
-
-.mealTicket {
+.mealTicket
+{
     width: 215px;
 }
-
-.littleEndPage {
+.littleEndPage
+{
     font-size: 0.7em;
 }
 
 /* end Footer */
 
+/* start reservation */
+.ReservationBlock h2
+{
+    font-size: 1.4em;
+    font-weight: 700;
+}
 
+.ReservationBlock h1, h2, p, button
+{
+    text-align: center;
+}
 
+.reservationForm
+{
+    font-size: 0.7em;
+}
 
+form label, .weightBold
+{
+    font-weight: 700;
+}
+
+.sameText
+{
+    margin-bottom: 0;
+}
+
+.littlePicCall
+{
+    max-width: 20px;
+    height: auto;
+}
+
+.btn-lg{
+    margin-top: 1em;
+    color : white;
+    background-color: #954733;
+    transition: all 0.4s ease 0s;
+    border:none;
+    margin-bottom: 1em;
+}
+.btn-lg:hover{
+    color : white;
+    background-color: #5D1B18;
+    border:none;
+}
+/* end reservation */
 
 /* Menu style  */
 
@@ -454,5 +506,3 @@ footer a {
 
 
 /* end of Menu style  */
-
-
