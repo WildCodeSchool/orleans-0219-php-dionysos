@@ -25,6 +25,56 @@ class AdminDrinkCategoryController extends AbstractController
     {
         $drinkCategoryManager = new DrinkCategoryManager();
         $drinkCategories = $drinkCategoryManager->selectAll();
-        return $this->twig->render('AdminDrinkCategory/index.html.twig', ['drinkCategories' => $drinkCategories]);
+
+        return $this->twig->render('AdminDrinkCategory/index.html.twig', [
+            'drinkCategories' => $drinkCategories,
+            'success'         => $_GET['success'] ?? null,
+        ]);
+    }
+
+    /**
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function add()
+    {
+        $drinkCategoryManager = new DrinkCategoryManager();
+        $drinkCategory = $errors = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $drinkCategory['name'] = trim($_POST['name']);
+            $errors = $this->checkErrors($drinkCategory);
+
+            if (empty($errors)) {
+                $drinkCategoryManager->insert($drinkCategory);
+                header('Location: /adminDrinkCategory/index/?success=1');
+                exit();
+            }
+        }
+
+        return $this->twig->render('AdminDrinkCategory/add.html.twig', [
+            'drinkCategory' => $drinkCategory,
+            'errors'        => $errors,
+        ]);
+    }
+
+    /**
+     * @param array $drinkCategory
+     * @return array
+     */
+    private function checkErrors(array $drinkCategory): array
+    {
+        if (empty($drinkCategory['name'])) {
+            $errors[] = 'Le nom de la catégorie est obligatoire';
+        }
+
+        $maxLength = 150;
+        if (!empty($drinkCategory['name']) && strlen($drinkCategory['name']) > $maxLength) {
+            $errors[] = 'Le nom de la catégorie ne doit pas excéder ' . $maxLength . ' caractères';
+        }
+
+        return $errors ?? [];
     }
 }
