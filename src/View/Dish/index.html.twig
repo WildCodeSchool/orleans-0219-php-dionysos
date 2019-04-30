@@ -3,6 +3,14 @@
 
 
 {% block content %}
+<section>
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <a href="#Entrées">Entrées</a>
+        <a href="#Plats">Plats</a>
+        <a href="#Desserts">Desserts</a>
+    </div>
+</section>
     <section class="menupage">
 
         <h1 class="menutitle">Notre Carte</h1>
@@ -14,7 +22,7 @@
         </div>
 
         {% for category in categories %}
-            <h2 class="menusection">{{ category.name }} : {{ category.price }} € <img
+            <h2 class="menusection" id="{{ category.name }}">{{ category.name }} : {{ category.price }} € <img
                         src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo"></h2>
             {% for dish in dishesWithCategories[category.id] %}
                 <ul class="menulist">
