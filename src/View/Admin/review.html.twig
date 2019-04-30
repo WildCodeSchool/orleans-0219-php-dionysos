@@ -1,0 +1,42 @@
+{% extends 'layout-admin.html.twig' %}
+
+{% block content %}
+        <section class="list-comments">
+            <h2>Gérez vos commentaires clients</h2>
+            <div class="container-fluid">
+            <div class="row">
+                <table class="text-center table table-sm table-hover table-bordered ">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Note</th>
+                        <th class="col-8" scope="col">Commentaire</th>
+                        <th scope="col">En ligne</th>
+                        <th scope="col">Statut</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for review in reviews %}
+                    <tr>
+                        <td>{{ review.name }}</td>
+                        <td>{{ review.date }}</td>
+                        <td>{{ review.rating }}/5</td>
+                        <td class=" text-left">{{ review.comment }}</td>
+                        <td>
+                            {{ (review.online == 1) ? 'Oui' : 'Non' }}
+                        </td>
+                        <td>
+                            <form method="POST">
+                                <input id="id" name="online" type="hidden" value="{{ review.id }}">
+                                <button type="submit" class="btn btn-sm {{ (review.online != 1) ? 'btn-success' : 'btn-secondary' }}">{{ (review.online == 1) ? 'Mettre hors ligne' : 'Mettre en ligne' }}</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </section>
+{% endblock %}
