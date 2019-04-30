@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 use App\Model\AdminDishManager;
+use Psr\Log\NullLogger;
 
 class AdminDishController extends AbstractController
 {
@@ -26,10 +27,14 @@ class AdminDishController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $adminDishManager = new AdminDishManager();
+            $noSupplement = $_POST['sup'];
+            if ($_POST['sup'] == 0) {
+                $noSupplement = null;
+            }
             $dish = [
                 'dish_name' => $_POST['dish_name'],
                 'category' => $_POST['category'],
-                'sup' => $_POST['sup'],
+                'sup' => $noSupplement,
             ];
             $id = $adminDishManager->insert($dish);
             header('Location:/AdminDish/add');

@@ -1,0 +1,14 @@
+<form method="post">
+    <input type="hidden" value="{{ dish.id }}" name="id">
+    <label for="dish_name">Nom du plat : </label>
+    <input id="dish_name" type="text" value="{{ dish.dish_name }}" name="dish_name"  size="40" required>
+    <label for="category">Categorie : </label>
+    <select name="category">
+        <option value="1">Entrée</option>
+        <option value="2">Plat</option>
+        <option value="3">Dessert</option>
+    </select>
+    <label for="sup">Prix supplementaire : </label>
+    <input type="number" value="{{ dish.sup }}" name="sup" min="0" max="200" required>
+    <input type="submit" value="Valider">
+</form>
