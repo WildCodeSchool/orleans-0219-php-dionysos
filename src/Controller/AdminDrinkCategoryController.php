@@ -28,7 +28,7 @@ class AdminDrinkCategoryController extends AbstractController
 
         return $this->twig->render('AdminDrinkCategory/index.html.twig', [
             'drinkCategories' => $drinkCategories,
-            'success'         => $_GET['success'] ?? null,
+            'notification'         => $_GET['notification'] ?? null,
         ]);
     }
 
@@ -49,7 +49,7 @@ class AdminDrinkCategoryController extends AbstractController
 
             if (empty($errors)) {
                 $drinkCategoryManager->insert($drinkCategory);
-                header('Location: /adminDrinkCategory/index/?success=1');
+                header('Location: /adminDrinkCategory/index/?notification=edit');
                 exit();
             }
         }
@@ -58,6 +58,22 @@ class AdminDrinkCategoryController extends AbstractController
             'drinkCategory' => $drinkCategory,
             'errors'        => $errors,
         ]);
+    }
+
+    /**
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function delete()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $drinkCategoryId = (int)trim($_POST['id']);
+            $drinkCategoryManager = new DrinkCategoryManager();
+            $drinkCategoryManager->delete($drinkCategoryId);
+            header('Location: /adminDrinkCategory/index/?notification=delete');
+            exit();
+        }
     }
 
     /**
