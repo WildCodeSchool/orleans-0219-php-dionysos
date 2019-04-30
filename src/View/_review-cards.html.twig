@@ -9,7 +9,7 @@
     </div>
     <div class="rating-display text-center col-sm-12">
         {% for i in 1..5 %}
-            <i class="icon-star{{i > review.rating ? '-empty' }}"></i>
+            <i class="fa-star fa{{i > review.rating ? 'r' }}"></i>
         {% endfor %}
     </div>
     <p class="card-text">{{ review.comment }}</p>

@@ -282,9 +282,9 @@ nav .navbar-collapse{
 
 .rating > label:before {
     margin: 3px;
-    font-size: 1.4em;
-    font-family: FontAwesome;
-    content: "\f005";
+    font-weight: 900;
+    font-family: 'Font Awesome 5 Free';
+    content: '\f005';
     cursor: pointer;
 }
 
@@ -307,16 +307,10 @@ nav .navbar-collapse{
     display:inline-block;
 }
 
-.icon-star:before {
+.fa-star {
     padding-top: 10px;
     color: #FFD700;
-    font-size: 1.1em;
-}
-
-.icon-star-empty:before{
-    padding-top: 10px;
-    color: #FFD700;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 
