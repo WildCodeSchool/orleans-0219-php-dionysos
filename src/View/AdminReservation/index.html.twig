@@ -1,11 +1,8 @@
 {% extends 'layout-admin.html.twig' %}
 
 {% block content %}
-    <h2>Espace Réservation</h2>
+    <h2>Réservations en attentes</h2>
     <div class="container-fluid ">
-        <div class="text-center">
-            <a href="/Reservation/add" class="btn btn-primary btn-lg">Ajouter une réservation</a>
-        </div>
         <div class="table-responsive-vertical mx-1 text-center pt-4">
             <table id="table" class="table table-hover table-striped table-bordered">
                 <thead class="comp-thead-color">
@@ -32,6 +29,33 @@
                         <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
                         <td><a class="btn btn-danger" href="delete/{{ reservation.id }}" role="button">Supprimer</a></td>
                         <td><a class="btn btn-success" href="send/{{ reservation.id }}" role="button">Confirmation</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <h2>Réservations validées</h2>
+        <div class="table-responsive-vertical mx-1 text-center pt-4">
+            <table id="table" class="table table-hover table-striped table-bordered">
+                <thead class="comp-thead-color">
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Téléphone</th>
+                    <th scope="col">Nombre de convives</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Heure d'arrivée</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for reservation in reservations %}
+                    <tr>
+                        <td data-title="Nom">{{ reservation.name }}</td>
+                        <td data-title="Email">{{ reservation.email }}</td>
+                        <td data-title="Téléphone">{{ reservation.phone }}</td>
+                        <td data-title="Nombre de convives">{{ reservation.nbPeople }}</td>
+                        <td data-title="Date">{{ reservation.date }}</td>
+                        <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
