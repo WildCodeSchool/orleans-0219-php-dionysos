@@ -11,7 +11,6 @@
                         <th class="col-1" scope="col">Ordre</th>
                         <th class="col-2" scope="col">Nom</th>
                         <th class="col-1" scope="col">Prix</th>
-                        <th class="col-2" scope="col">Label</th>
                         <th class="col-2" scope="col">Modifier</th>
                         <th class="col-2" scope="col">Supprimer</th>
                     </tr>
@@ -22,14 +21,6 @@
                                 <td>{{ category.display_order }}</td>
                                 <td>{{ category.name }}</td>
                                 <td>{{ category.price}} €</td>
-                                <td>
-                                    <form method="POST">
-                                        <input id="id" name="label" type="hidden" value="{{ category.id }}">
-                                        <button type="submit" class="btn
-                                        {{ (category.label != 1) ? ' btn-success' : ' btn-secondary' }}">
-                                        {{ (category.label == 1) ? 'Retirer le label' : 'Ajouter le label' }}</button>
-                                    </form>
-                                </td>
                                 <td><a href="" type="button" class="btn btn-primary">Modifier</a></td>
                                 <td><a href="" type="button" class="btn btn-danger">Supprimer</a></td>
                             </tr>
