@@ -61,6 +61,7 @@ class AdminDrinkCategoryController extends AbstractController
     }
 
     /**
+     * @return string
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
@@ -74,6 +75,28 @@ class AdminDrinkCategoryController extends AbstractController
             header('Location: /adminDrinkCategory/index/?notification=delete');
             exit();
         }
+      
+    public function edit(int $id)
+    {
+        $drinkCategoryManager = new DrinkCategoryManager();
+        $drinkCategory = $drinkCategoryManager->selectOneById($id);
+        $errors = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $drinkCategory['name'] = trim($_POST['name']);
+            $errors = $this->checkErrors($drinkCategory);
+
+            if (empty($errors)) {
+                $drinkCategoryManager->update($drinkCategory);
+                header('Location: /adminDrinkCategory/index/?notification=edit');
+                exit();
+            }
+        }
+
+        return $this->twig->render('AdminDrinkCategory/add.html.twig', [
+            'drinkCategory' => $drinkCategory,
+            'errors'        => $errors,
+        ]);
     }
 
     /**
