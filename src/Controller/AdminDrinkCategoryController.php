@@ -78,7 +78,7 @@ class AdminDrinkCategoryController extends AbstractController
 
             if (empty($errors)) {
                 $drinkCategoryManager->update($drinkCategory);
-                header('Location: /adminDrinkCategory/index/?success=1');
+                header('Location: /adminDrinkCategory/index/?notification=edit');
                 exit();
             }
         }
