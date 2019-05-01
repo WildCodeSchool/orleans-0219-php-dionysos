@@ -1,0 +1,41 @@
+<ul class="alert alert-danger">
+    {%- for error in errors -%}
+        <li>{{- error -}}</li>
+    {%- endfor -%}
+</ul>
+
+<form method="post">
+    <input type="hidden" value="{{ drink.id }}" name="id">
+    <div class="form-group">
+        <label for="drink_name">Boisson</label>
+        <input class="form-control" type="text" id="drink_name" value="{{ drink.name ?? '' }}"
+               name="name" placeholder="Beaujolais Nouveau 2019" required>
+    </div>
+    <div class="form-group">
+        <label for="category">Categorie</label>
+        <select class="form-control" name="drink_type_id" id="category">
+            {% for category in categories %}
+                <option value="{{ category.id }}" {{ category.id==drink.drink_type_id ? 'selected' }}>
+                    {{ category.name }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="price">Prix (€)</label>
+        <input class="form-control" type="number" id="price" value="{{ drink.main_price ?? '' }}"
+               name="main_price" placeholder="19" step="0.1" min="0"required>
+
+        <label for="takeaway_price">Prix à emporter (€)</label>
+        <input class="form-control" type="number" id="takeaway_price" value="{{ drink.takeaway_price ?? '' }}"
+               name="takeaway_price" placeholder="16" step="0.1" min="0">
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="is_organic" value="1" {{ drink.is_organic ? 'checked' }}
+               name="is_organic">
+        <label class="form-check-label" for="is_organic">Biologique</label>
+    </div>
+    <div class="form-group d-flex justify-content-center">
+        <input class="btn btn-dark btn-lg" type="submit" value="Valider">
+    </div>
+</form>
