@@ -48,11 +48,10 @@ class AdminCategoryController extends AbstractController
             ];
             $categoryManager->insert($category);
             $categoryManager->changeOrder($category['display_order']);
-
-            //header('Location:/AdminCategory/add');
-            //exit;
+            header('location:/AdminCategory/add/?success=true');
+            exit;
         }
         return $this->twig->render('Admin/Dish/add_category.html.twig', ['categories' => $categories,
-            'category' => $cleanPost]);
+            'category' => $cleanPost, 'get' => $_GET]);
     }
 }

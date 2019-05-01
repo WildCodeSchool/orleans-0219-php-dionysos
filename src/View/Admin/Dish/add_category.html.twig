@@ -2,9 +2,15 @@
 {% block content %}
     <div class="container">
         <h2>Ajouter une catégorie</h2>
+        {% if get.success == true %}
+            <p class="text-center form-success">Votre catégorie a bien été ajoutée!</p>
+            <div class="text-center p-4">
+                <a href="/AdminCategory/index"  type="button" class="btn btn-primary">Retour à la liste des catégories</a>
+            </div>
+        {% endif %}
         <form method="POST">
             <div class="form-group">
-                <label for="name">Nom du plat : </label>
+                <label for="name">Nom de la catégorie : </label>
                 <input required class="form-control col-5" id="name" type="text" value="{{ category.name }}" name="name"  size="40">
             </div>
             <div class="form-group">
