@@ -27,7 +27,6 @@ class DrinkManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
-
     /**
      * @return array
      */
@@ -37,7 +36,8 @@ class DrinkManager extends AbstractManager
         JOIN drink_type dt ON dt.id=d.drink_type_id ORDER BY name ASC')->fetchAll();
     }
 
-    public function insert(array $data): int
+
+  public function insert(array $data): int
     {
         // prepared request
         $statement = $this->pdo->prepare("INSERT INTO $this->table 
