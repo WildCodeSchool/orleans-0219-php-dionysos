@@ -29,18 +29,18 @@ class ReviewManager extends AbstractManager
 
 
     /**
-     * @param array $review
+     * @param array $cleanReview
      * @return int
      */
-    public function insert(array $review): int
+    public function insert(array $cleanReview): int
     {
         // prepared request
         $date = date("d/m/Y");
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (name, date, comment, rating, online) 
         VALUES (:name, :date, :comment, :rating, :online)");
-        $statement->bindValue(':name', $review['name'], \PDO::PARAM_STR);
-        $statement->bindValue(':comment', $review['comment'], \PDO::PARAM_STR);
-        $statement->bindValue(':rating', $review['rating'], \PDO::PARAM_STR);
+        $statement->bindValue(':name', $cleanReview['name'], \PDO::PARAM_STR);
+        $statement->bindValue(':comment', $cleanReview['comment'], \PDO::PARAM_STR);
+        $statement->bindValue(':rating', $cleanReview['rating'], \PDO::PARAM_STR);
         $statement->bindValue(':date', $date, \PDO::PARAM_STR);
         $statement->bindValue(':online', 0, \PDO::PARAM_STR);
         if ($statement->execute()) {

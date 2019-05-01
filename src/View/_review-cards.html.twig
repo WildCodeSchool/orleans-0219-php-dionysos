@@ -1,0 +1,16 @@
+<div class="card-body ">
+    <h5 class="card-title">{{ review.name }}</h5>
+    <div class="col-12">
+        <hr>
+    </div>
+    <p class="card-text card-date">{{ review.date }}</p>
+    <div class="col-12">
+        <hr>
+    </div>
+    <div class="rating-display text-center col-sm-12">
+        {% for i in 1..5 %}
+            <i class="fa-star fa{{i > review.rating ? 'r' }}"></i>
+        {% endfor %}
+    </div>
+    <p class="card-text">{{ review.comment }}</p>
+</div>
