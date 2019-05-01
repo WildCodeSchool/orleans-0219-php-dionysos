@@ -39,3 +39,7 @@ body {
 .alert:empty {
     display:none;
 }
+
+.faitmaisonlogo{
+    max-height:40px;
+}
