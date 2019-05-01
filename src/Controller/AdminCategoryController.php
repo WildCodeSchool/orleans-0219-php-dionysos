@@ -40,14 +40,18 @@ class AdminCategoryController extends AbstractController
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key]=trim($value);
             }
+            var_dump($_POST);
             $category = [
                 'name' => $cleanPost['name'],
+                'display_order' => $cleanPost['display_order'],
                 'price' => $cleanPost['price'],
                 'label' => $cleanPost['label'],
             ];
             $categoryManager->insert($category);
-            header('Location:/AdminCategory/add');
-            exit;
+            $categoryManager->changeOrder($category['display_order']);
+
+            //header('Location:/AdminCategory/add');
+            //exit;
         }
         return $this->twig->render('Admin/Dish/add_category.html.twig', ['categories' => $categories,
             'category' => $cleanPost]);
