@@ -1,0 +1,27 @@
+{% extends 'layout-admin.html.twig' %}
+{% block content %}
+    <div class="container">
+        <h2>Ajouter une catégorie</h2>
+        <form method="POST">
+            <div class="form-group">
+                <input type="hidden" value="{{ category.id }}" name="id">
+            </div>
+            <div class="form-group">
+                <label for="name">Nom du plat : </label>
+                <input required class="form-control col-5" id="name" type="text" value="{{ category.name }}" name="name"  size="40">
+            </div>
+            <div class="form-group">
+                <label for="price">Prix : </label>
+                <input class="form-control col-5" type="number" id="price" name="price" value="{{ category.price }}" step="0.5" required>
+            </div>
+            <div class="form-group">
+                <img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo">
+                <label for="label">Label "Fait Maison" : </label>
+                <input type="checkbox" id="label" name="label" value="1" checked>
+            </div>
+            <div class="text-center">
+                <button type="submit" name="submit" value="submit" class="btn btn-lg m-3 btn-success">Ajouter</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
