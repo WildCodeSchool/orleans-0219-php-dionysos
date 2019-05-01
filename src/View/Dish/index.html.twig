@@ -14,8 +14,10 @@
         </div>
 
         {% for category in categories %}
-            <h2 class="menusection">{{ category.name }} : {{ category.price }} € <img
-                        src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo"></h2>
+            <h2 class="menusection">
+                {{ category.name }} : {{ category.price }} €
+                {{ (category.label == 1) ? '<img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo">' }}
+                </h2>
             {% for dish in dishesWithCategories[category.id] %}
                 <ul class="menulist">
                     <li class="menutext">{{dish.dish_name}}<strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)'}}</strong></li>
