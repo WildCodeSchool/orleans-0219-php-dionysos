@@ -5,22 +5,13 @@
 {% block content %}
     <section class="menupage">
 
-        <h1 class="menutitle">Notre Carte</h1>
-
-        <div class="menupricebox">
-            {% for menu in menus %}
-                <p class="dishprices">{{ menu.name }} : {{ menu.price }} €</p>
-            {% endfor %}
-        </div>
+        <h1 class="menutitle">Gestion des plats</h1>
 
         {% for category in categories %}
-            <h2 class="menusection">
-                {{ category.name }} : {{ category.price }} €
-                {{ (category.label == 1) ? '<img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo">' }}
-                </h2>
+            <h2 class="menusection">{{ category.name }}</h2>
             {% for dish in dishesWithCategories[category.id] %}
                 <ul class="menulist">
-                    <li class="menutext">{{dish.dish_name}}<strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)'}}</strong></li>
+                    <a href="/AdminDish/show/{{ dish.id }}"><li class="menutext">{{dish.dish_name}}<strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)'}}</strong></a></li>
                 </ul>
             {% endfor %}
 
