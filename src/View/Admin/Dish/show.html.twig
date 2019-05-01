@@ -1,0 +1,9 @@
+{% extends 'layout-visitor.html.twig' %}
+
+{% block content %}
+    <h1>{{ dish.dish_name }}</h1>
+    <p>{{ dish.id }}. {{ dish.dish_name }}</p>
+    <a href="/Admin/edit/{{ dish.id }}">Modifier</a>
+    <a href="/AdminDish/delete/{{dish.id}}">Supprimer</a>
+    <a href="/AdminDish/index">Back</a>
+{% endblock %}

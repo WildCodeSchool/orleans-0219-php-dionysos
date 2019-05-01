@@ -1,0 +1,11 @@
+{% extends 'layout-admin.html.twig' %}
+
+{% block content %}
+    <section class="container">
+        <h1>Ajouter une boisson</h1>
+
+        {% include 'AdminDrink/_form.html.twig' %}
+
+        <a class="btn btn-outline-dark" href="/adminDrink/index"><i class="fa fa-chevron-left"></i> Retour aux boissons</a>
+    </section>
+{% endblock %}

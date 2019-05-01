@@ -35,3 +35,11 @@ body {
 .list-comments table th{
     padding:5px;
 }
+
+.alert:empty {
+    display:none;
+}
+
+.faitmaisonlogo{
+    max-height:40px;
+}
