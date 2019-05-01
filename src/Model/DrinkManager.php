@@ -26,4 +26,14 @@ class DrinkManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+    /**
+     * @return array
+     */
+    public function selectAllWithCategories(): array
+    {
+        return $this->pdo->query('SELECT d.*, dt.name as category FROM ' . $this->table. ' d
+        JOIN drink_type dt ON dt.id=d.drink_type_id ORDER BY name ASC')->fetchAll();
+    }
+
 }

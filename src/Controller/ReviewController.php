@@ -74,16 +74,20 @@ class ReviewController extends AbstractController
             $errors = $this->checkErrors($cleanPost);
             if (empty($errors)) {
                 $reviewManager = new ReviewManager();
-                $review = [
+                $cleanReview = [
                     'name' => $cleanPost['name'],
                     'comment' => $cleanPost['comment'],
                     'rating' => $cleanPost['rating']
                 ];
-                $reviewManager -> insert($review);
-                header('Location:/review/add');
+                $reviewManager -> insert($cleanReview);
+                header('Location:/review/add/?success=true');
+                exit();
             }
         }
-        return $this->twig->render('/Review/add.html.twig', ['errors' => $errors,
-            'review' => $cleanPost, 'reviewAll' => $reviewAll]);
+        return $this->twig->render('/Review/add.html.twig', [
+            'errors' => $errors,
+            '$cleanReview' => $cleanPost,
+            'reviewAll' => $reviewAll,
+            'get' => $_GET]);
     }
 }

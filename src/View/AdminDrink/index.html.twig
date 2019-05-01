@@ -7,22 +7,23 @@
 
         {% if notification=='edit' %}
             <div class="mt-2 alert alert-success">
-                La catégorie a bien été mise à jour
+                La boisson a bien été mise à jour
             </div>
         {% endif %}
         {% if notification=='delete' %}
             <div class="mt-2 alert alert-danger">
-                La catégorie a bien été supprimée
+                La boisson a bien été supprimée
             </div>
         {% endif %}
 
-        <a class="btn btn-dark my-2" href="/adminDrinkCategory/add"><i class="fas fa-plus"></i> Ajouter une
-            catégorie</a>
+        <a class="btn btn-dark my-2" href="/adminDrink/add"><i class="fas fa-plus"></i> Ajouter une
+            boisson</a>
 
         <table class="table table-striped">
             <thead class="bg-dark text-white">
             <tr>
-                <td>Categorie</td>
+                <td>Boisson</td>
+                <td>Category</td>
                 <td>Editer</td>
                 <td>Supprimer</td>
             </tr>
@@ -31,9 +32,10 @@
             {% for drinkCategory in drinkCategories %}
                 <tr>
                     <td>{{ drinkCategory.name }}</td>
-                    <td><a class="btn btn-dark" href="/adminDrinkCategory/edit/{{ drinkCategory.id }}"><i class="fas fa-edit"></i> Edit</a></td>
+                    <td>{{ drinkCategory.category }}</td>
+                    <td><a class="btn btn-dark" href="/AdminDrink/edit/{{ drinkCategory.id }}"><i class="fas fa-edit"></i> Edit</a></td>
                     <td>
-                        <form action="/adminDrinkCategory/delete" method="POST">
+                        <form action="/AdminDrink/delete" method="POST">
                             <input type="hidden" value="{{ drinkCategory.id }}" name="id"/>
                             <button class="btn btn-danger"><i class="fas fa-trash"></i> Supprimer</button>
                         </form>
