@@ -115,7 +115,7 @@ nav .navbar-collapse{
 
 /* jumbotron home */
 
-.jumbotron {
+.jumbotron-home {
     font-family: 'Montserrat', sans-serif;
     background-size: cover;
     background-attachment: fixed;
@@ -241,51 +241,6 @@ nav .navbar-collapse{
 .guest-book .form-group{
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-}
-
-<<<<<<< HEAD
-/* The sidebar menu */
-.sidenav {
-    /*height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 21%; /* Stay at the top */
-    left: 0;
-    background-color: rgba(132, 1, 7, 0.84); /* Bordeaux */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-}
-@media screen and (max-width: 991px) {
-    .sidenav {
-        display: none;
-    }
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #F8F8F8;
-    display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: black;
-}
-
-/* Style page content */
-.main {
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
 }
 
 .guest-book button{
@@ -431,42 +386,111 @@ form label, .weightBold
 /* end reservation */
 
 /* Menu style  */
+.jumbotron-menu{
+    font-family: 'Montserrat', sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 0;
+    background-image: url("../images/page-menu.jpg");
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: color;
+    padding-top:3%;
+}
+.jumbotron-drinks{
+    padding-top:22%;
+    background-image: url("../images/drinks.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* The sidebar menu */
+.sidenav {
+    /*height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 51%; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    text-align:right;
+    margin-left: 12em;
+    background: rgba(255, 255, 255, 0.87);
+}
+.sidenav img{
+    max-height:40px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 21px;
+    color: gray;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #5d1b18;
+}
+.arrow{
+    opacity:0;
+}
+.sidenav a:hover .arrow{
+    opacity: 1;
+}
+
+@media screen and (max-width: 991px) {
+    .sidenav {
+        display: none;
+    }
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
 
 .menusection {
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    padding-top: 5rem;
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    text-align:left;
+    font-size: 25px;
 }
 
 .menutext {
-    text-align: center;
     font-family: 'Montserrat', sans-serif;
     padding-top: 1rem;
     position: relative;
     right: 1.5rem;
+    text-align:left;
+    font-size: 18px;
 }
 
 .menulist {
     list-style: none;
     margin-bottom: 1rem;
+    text-align:left;
 }
 
 .menutitle {
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    text-align:center;
 }
 
 .menupage {
     padding-bottom: 4rem;
+    margin-left: 16em; /* Same as the width of the sidebar */
+    text-align:left;
 }
 
 .dishprices {
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-style: italic;
 }
 
@@ -479,6 +503,7 @@ form label, .weightBold
     padding-top: 1rem;
     padding-right: 2rem;
     padding-left: 2rem;
+    text-align: left;
 }
 
 .faitmaisonlogo {
@@ -491,8 +516,8 @@ form label, .weightBold
 .menufootnote {
     padding-top: 4rem;
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    font-size: 0.8rem;
+    font-size: 15px;
+    text-align:left;
 }
 
 .faitmaisonlogofooter {
