@@ -34,7 +34,7 @@ class AdminReservationManager extends AbstractManager
      */
     public function selectAll(): array
     {
-        return $this->pdo->query('SELECT * FROM ' . self::TABLE . ' ORDER BY date')->fetchAll();
+        return $this->pdo->query('SELECT * FROM ' . self::TABLE . ' ORDER BY date, appointment')->fetchAll();
     }
 
     /**
