@@ -1,0 +1,48 @@
+{% extends 'layout-admin.html.twig' %}
+
+{% block title %}Admin Drinks categories{% endblock %}
+
+{% block content %}
+    <section class="container">
+
+        {% if notification=='edit' %}
+            <div class="mt-2 alert alert-success">
+                La boisson a bien été mise à jour
+            </div>
+        {% endif %}
+        {% if notification=='delete' %}
+            <div class="mt-2 alert alert-danger">
+                La boisson a bien été supprimée
+            </div>
+        {% endif %}
+
+        <a class="btn btn-dark my-2" href="/adminDrink/add"><i class="fas fa-plus"></i> Ajouter une
+            boisson</a>
+
+        <table class="table table-striped">
+            <thead class="bg-dark text-white">
+            <tr>
+                <td>Boisson</td>
+                <td>Category</td>
+                <td>Editer</td>
+                <td>Supprimer</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for drinkCategory in drinkCategories %}
+                <tr>
+                    <td>{{ drinkCategory.name }}</td>
+                    <td>{{ drinkCategory.category }}</td>
+                    <td><a class="btn btn-dark" href="/AdminDrink/edit/{{ drinkCategory.id }}"><i class="fas fa-edit"></i> Edit</a></td>
+                    <td>
+                        <form action="/AdminDrink/delete" method="POST">
+                            <input type="hidden" value="{{ drinkCategory.id }}" name="id"/>
+                            <button class="btn btn-danger"><i class="fas fa-trash"></i> Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}
