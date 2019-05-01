@@ -35,3 +35,8 @@ body {
 .list-comments table th{
     padding:5px;
 }
+
+.modifydishsection {
+    text-align: center;
+    padding-top: 0px;
+}
