@@ -5,9 +5,14 @@
 {% block content %}
     <section class="container">
 
-        {% if success is defined %}
+        {% if notification=='update' %}
             <div class="mt-2 alert alert-success">
                 La catégorie a bien été mise à jour
+            </div>
+        {% endif %}
+        {% if notification=='delete' %}
+            <div class="mt-2 alert alert-danger">
+                La catégorie a bien été supprimée
             </div>
         {% endif %}
 
@@ -27,7 +32,12 @@
                 <tr>
                     <td>{{ drinkCategory.name }}</td>
                     <td><a class="btn btn-dark" href="/adminDrinkCategory/edit/{{ drinkCategory.id }}"><i class="fas fa-edit"></i> Edit</a></td>
-                    <td></td>
+                    <td>
+                        <form action="/adminDrinkCategory/delete" method="POST">
+                            <input type="hidden" value="{{ drinkCategory.id }}" name="id"/>
+                            <button class="btn btn-danger"><i class="fas fa-trash"></i> Supprimer</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
