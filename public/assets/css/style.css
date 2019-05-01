@@ -349,8 +349,9 @@ footer hr {
 }
 
 footer a {
-   font-size: 0.7em;
-  
+    font-size: 0.7em;
+}
+
 footer hr {
     background-color: white;
     margin: 2em;
@@ -524,6 +525,11 @@ form label, .weightBold
     bottom: 0.3rem;
     padding-right: 1rem;
 }
+
+.organic {
+    width: 30px;
+}
+
 
 
 /* end of Menu style  */
