@@ -24,9 +24,8 @@ class AdminReservationController extends AbstractController
         //base
         $AdminReservationManager = new AdminReservationManager();
         $reservations = $AdminReservationManager->selectAll();
-
-        return $this->twig->render('AdminReservation/index.html.twig', ['reservations' => $reservations, 'reservation'
-        ]);
+        return $this->twig->
+        render('AdminReservation/index.html.twig', ['reservations' => $reservations, 'reservation']);
     }
 
     /**
@@ -37,5 +36,17 @@ class AdminReservationController extends AbstractController
         $AdminReservationManager = new AdminReservationManager();
         $AdminReservationManager->delete($id);
         header('Location:/AdminReservation/index');
+        exit();
+    }
+
+    /**
+     * @param int $id
+     */
+    public function updateValidate(int $id)
+    {
+        $AdminReservationManager = new AdminReservationManager();
+        $AdminReservationManager->updateValidate($id);
+        header('Location:/AdminReservation/index');
+        exit();
     }
 }

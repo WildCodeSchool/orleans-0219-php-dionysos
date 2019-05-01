@@ -13,27 +13,35 @@
                     <th scope="col">Nombre de convives</th>
                     <th scope="col">Date</th>
                     <th scope="col">Heure d'arrivée</th>
-                    <th scope="col">Suppression</th>
+                    <th scope="col">Refus</th>
                     <th scope="col">Confirmation</th>
 
                 </tr>
                 </thead>
                 <tbody>
+
                 {% for reservation in reservations %}
-                    <tr>
-                        <td data-title="Nom">{{ reservation.name }}</td>
-                        <td data-title="Email">{{ reservation.email }}</td>
-                        <td data-title="Téléphone">{{ reservation.phone }}</td>
-                        <td data-title="Nombre de convives">{{ reservation.nbPeople }}</td>
-                        <td data-title="Date">{{ reservation.date }}</td>
-                        <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
-                        <td><a class="btn btn-danger" href="delete/{{ reservation.id }}" role="button">Supprimer</a></td>
-                        <td><a class="btn btn-success" href="send/{{ reservation.id }}" role="button">Confirmation</a></td>
-                    </tr>
+                    {% if reservation.validate == 0 %}
+                        <tr>
+                            <td data-title="Nom">{{ reservation.name }}</td>
+                            <td data-title="Email">{{ reservation.email }}</td>
+                            <td data-title="Téléphone">{{ reservation.phone }}</td>
+                            <td data-title="Nombre de convives">{{ reservation.nbPeople }}</td>
+                            <td data-title="Date">{{ reservation.date }}</td>
+                            <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
+                            <td><a class="btn btn-danger text-white" href="delete/{{ reservation.id }}" role="button">Refuser</a>
+                            </td>
+                            <td>
+                                <input id="id" name="validate" type="hidden" value="{{ reservation.id }}">
+                                <a class="btn btn-success text-white" role="button" href="index/{{ reservation.validate }}" >Valider</a>
+                            </td>
+                        </tr>
+                    {% endif %}
                 {% endfor %}
                 </tbody>
             </table>
         </div>
+
         <h2>Réservations validées</h2>
         <div class="table-responsive-vertical mx-1 text-center pt-4">
             <table id="table" class="table table-hover table-striped table-bordered">
@@ -45,18 +53,23 @@
                     <th scope="col">Nombre de convives</th>
                     <th scope="col">Date</th>
                     <th scope="col">Heure d'arrivée</th>
+                    <th scope="col">Confirmation</th>
                 </tr>
                 </thead>
                 <tbody>
+
                 {% for reservation in reservations %}
-                    <tr>
-                        <td data-title="Nom">{{ reservation.name }}</td>
-                        <td data-title="Email">{{ reservation.email }}</td>
-                        <td data-title="Téléphone">{{ reservation.phone }}</td>
-                        <td data-title="Nombre de convives">{{ reservation.nbPeople }}</td>
-                        <td data-title="Date">{{ reservation.date }}</td>
-                        <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
-                    </tr>
+                    {% if reservation.validate == 1 %}
+                        <tr>
+                            <td data-title="Nom">{{ reservation.name }}</td>
+                            <td data-title="Email">{{ reservation.email }}</td>
+                            <td data-title="Téléphone">{{ reservation.phone }}</td>
+                            <td data-title="Nombre de convives">{{ reservation.nbPeople }}</td>
+                            <td data-title="Date">{{ reservation.date }}</td>
+                            <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
+                            <td><a class="btn btn-success text-white" role="button" type="submit">Envoyer un mail</a></td>
+                        </tr>
+                    {% endif %}
                 {% endfor %}
                 </tbody>
             </table>
