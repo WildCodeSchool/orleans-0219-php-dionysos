@@ -40,7 +40,6 @@ class AdminCategoryController extends AbstractController
             foreach ($_POST as $key => $value) {
                 $cleanPost[$key]=trim($value);
             }
-            var_dump($_POST);
             $category = [
                 'name' => $cleanPost['name'],
                 'display_order' => $cleanPost['display_order'],
