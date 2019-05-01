@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block header %} {% include '_header.html.twig' %}  {% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/style.css">
+{% endblock %}
+
+{% block header %} {% include '_header.html.twig' %} {% endblock %}
+
 {% block footer %}
     <footer>
         <div class="container-fluid">
@@ -9,9 +14,12 @@
                     <hr>
                 </div>
                 <div class="col-md-4 text-center">
-                    <a href="https://fr-fr.facebook.com/pages/category/French-Restaurant/Restaurant-Chez-Dionysos-621002761312747/"><img src="/assets/images/facebook_logo.png" class="px-4 smallPicfb" alt="logo facebook"></a>
-                    <a href="https://www.instagram.com/?hl=fr"><img src="/assets/images/instagram_logo.png" class="px-4 smallPic" alt="logo instagram"></a>
-                    <a href="https://www.tripadvisor.fr/Restaurant_Review-g187129-d6364130-Reviews-Chez_Dionysos-Orleans_Loiret_Centre_Val_de_Loire.html"><img src="/assets/images/tripadvisor_logo.png" class="px-4 smallPic" alt="logo tripadvisor"></a>
+                    <a href="https://fr-fr.facebook.com/pages/category/French-Restaurant/Restaurant-Chez-Dionysos-621002761312747/"><img
+                                src="/assets/images/facebook_logo.png" class="px-4 smallPicfb" alt="logo facebook"></a>
+                    <a href="https://www.instagram.com/?hl=fr"><img src="/assets/images/instagram_logo.png"
+                                                                    class="px-4 smallPic" alt="logo instagram"></a>
+                    <a href="https://www.tripadvisor.fr/Restaurant_Review-g187129-d6364130-Reviews-Chez_Dionysos-Orleans_Loiret_Centre_Val_de_Loire.html"><img
+                                src="/assets/images/tripadvisor_logo.png" class="px-4 smallPic" alt="logo tripadvisor"></a>
                 </div>
                 <div class="col-md-4">
                     <hr>
@@ -21,7 +29,6 @@
                 <div class="col-md-4">
                     <div class="text-center">
                         <img src="/assets/images/cc-mastercard.png" class="px-2 smallPicCard" alt="Master Card">
-                        <i class="fab fa-cc-mastercard"></i>
                         <img src="/assets/images/cc-visa.png" class="px-2 smallPicCard" alt="Visa Card">
                         <img src="/assets/images/cc-amex.png" class="px-2 smallPicCard" alt="American Express Card">
                     </div>
@@ -31,7 +38,7 @@
 
                 </div>
                 <div class="col-md-4 text-center">
-                    <h2 class="text-center">CHEZ DIONYSOS</h2>
+                    <h4 class="text-center">CHEZ DIONYSOS</h4>
                     <ul>
                         <li>1 rue du Tabour</li>
                         <li>45000 ORLEANS</li>
@@ -40,16 +47,19 @@
                     </ul>
                 </div>
                 <div class="col-md-4 text-center">
-                    <h2 class="text-center">Horaires d'ouvertures</h2>
+                    <h4 class="text-center">Horaires d'ouvertures</h4>
                     <ul>
                         <li>Mardi au Samedi 12h00 - 14h00</li>
                         <li>Vendredi au Samedi 19h00 - 22h00</li>
                     </ul>
                 </div>
             </div>
-            <div >
+            <div>
                 <div class="text-center pt-3">
-                    <p class="justify-content-center littleEndPage">© Made with <3 by WCS | <a href="" class="text-white">Mentions Légales</a> | <a href="" class="text-white">Politique de Confidentialité</a></p>
+                    <p class="justify-content-center littleEndPage">© Made with <3 by WCS | <a href="/Admin/index"
+                                                                                               class="text-white">Administration</a>
+                        | <a href="" class="text-white">Politique de Confidentialité</a></p>
+
                 </div>
             </div>
         </div>
