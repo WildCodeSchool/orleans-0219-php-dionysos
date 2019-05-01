@@ -75,7 +75,16 @@ class AdminDrinkCategoryController extends AbstractController
             header('Location: /adminDrinkCategory/index/?notification=delete');
             exit();
         }
-      
+    }
+
+
+    /**
+     * @param int $id
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
     public function edit(int $id)
     {
         $drinkCategoryManager = new DrinkCategoryManager();
@@ -93,7 +102,7 @@ class AdminDrinkCategoryController extends AbstractController
             }
         }
 
-        return $this->twig->render('AdminDrinkCategory/add.html.twig', [
+        return $this->twig->render('AdminDrinkCategory/edit.html.twig', [
             'drinkCategory' => $drinkCategory,
             'errors'        => $errors,
         ]);
