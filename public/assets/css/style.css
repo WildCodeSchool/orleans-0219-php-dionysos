@@ -73,7 +73,6 @@ body {
   
 .navbar-nav {
     justify-content: right;
-
 }
 
 .nav-item {
@@ -89,8 +88,30 @@ nav .navbar-collapse{
         display: none;
     }
 }
+@media screen and (max-width: 850px) {
+    .imgnav {
+        display: none;
+    }
+}
 
 /*end Navbar*/
+
+/*picture*/
+.modal_centered_photo{
+    max-width:800px;
+}
+
+
+.modal-content img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+.h1_pphoto{
+    text-align: center;
+    color: darkred;
+}
+/*end picture*/
 
 /* jumbotron home */
 
@@ -131,6 +152,7 @@ nav .navbar-collapse{
 .arrow-down img {
     max-height: 20px;
 }
+
 
 /*body*/
 .display {
@@ -193,7 +215,6 @@ nav .navbar-collapse{
     color: #2F1D15;
 }
 
-
 /*END HOMEPAGE*/
 
 #map {
@@ -209,6 +230,7 @@ nav .navbar-collapse{
 }
 
 /*fin body*/
+
 /*PAGE REVIEW*/
 
 .guest-book .form {
@@ -239,12 +261,19 @@ nav .navbar-collapse{
 .guest-book label{
     vertical-align: middle;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 0.9em;
+
 }
 .guest-book .rating{
     display: inline-block;
     vertical-align: middle;
     margin-left:10px;
+}
+
+.form-success{
+    font-size: 0.9em;
+    color: #3c6236;
+    padding-top:1em;
 }
 
 .rating > input {
@@ -253,9 +282,9 @@ nav .navbar-collapse{
 
 .rating > label:before {
     margin: 3px;
-    font-size: 1.4em;
-    font-family: FontAwesome;
-    content: "\f005";
+    font-weight: 900;
+    font-family: 'Font Awesome 5 Free';
+    content: '\f005';
     cursor: pointer;
 }
 
@@ -278,17 +307,12 @@ nav .navbar-collapse{
     display:inline-block;
 }
 
-.icon-star:before {
+.fa-star {
     padding-top: 10px;
     color: #FFD700;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
-.icon-star-empty:before{
-    padding-top: 10px;
-    color: #FFD700;
-    font-size: 1.1em;
-}
 
 .comments {
     padding:1.2em;
@@ -332,15 +356,23 @@ footer ul {
     font-size: 0.8em;
 }
 
-footer p {
-    margin-bottom: 0;
-}
-
 footer
 {
     background-color: #1d1d1d;
     color: white;
     padding-bottom: 8px;
+}
+
+footer p
+{
+    margin-bottom: 0;
+}
+footer hr {
+    background-color: white;
+}
+
+footer a {
+    font-size: 0.7em;
 }
 
 footer hr {
@@ -356,19 +388,20 @@ footer a {
     width: 95px;
 }
 
-.smallPicfb {
+.smallPicfb
+{
     width: 110px;
 }
-
-.smallPicCard {
+.smallPicCard
+{
     width: 70px;
 }
-
-.mealTicket {
+.mealTicket
+{
     width: 215px;
 }
-
-.littleEndPage {
+.littleEndPage
+{
     font-size: 0.7em;
 }
 
@@ -376,7 +409,59 @@ footer a {
 
 
 
+/*  Start wine menu  */
 
+.wineblock > th {
+    padding: 10px;
+}
+
+.wineblock > td {
+    padding: 10px;
+    padding-right: 3rem;
+    font-size: smaller;
+}
+
+.winemenutable {
+   margin: auto;
+}
+
+/*  End wine menu  */
+
+/* start reservation */
+.ReservationBlock h2
+{
+    font-size: 1.4em;
+    font-weight: 700;
+    padding-bottom: 0;
+}
+
+.ReservationBlock h1, h2, p, button
+{
+    text-align: center;
+}
+
+.reservationForm
+{
+    font-size: 0.7em;
+}
+
+form label, .weightBold
+{
+    font-weight: 700;
+}
+
+.sameText
+{
+    margin-bottom: 0;
+}
+
+.littlePicCall
+{
+    max-width: 20px;
+    height: auto;
+}
+
+/* end reservation */
 
 /* Menu style  */
 
@@ -451,7 +536,11 @@ footer a {
     padding-right: 1rem;
 }
 
+.organic {
+    width: 30px;
+}
 
 /* end of Menu style  */
+
 
 

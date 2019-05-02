@@ -1,0 +1,11 @@
+{% extends 'layout-admin.html.twig' %}
+
+{% block content %}
+    <h1>{{ dish.dish_name }}</h1>
+    <section class="modifydishsection">
+        <div class="btn-group btn-group-lg" role="group">
+            <a href="/AdminDish/index" class="btn btn-primary active" role="button">Retourner</a>
+            <a href="/AdminDish/delete/{{dish.id}}" class="btn btn-danger active" role="button">Supprimer</a>
+        </div>
+    </section>
+{% endblock %}

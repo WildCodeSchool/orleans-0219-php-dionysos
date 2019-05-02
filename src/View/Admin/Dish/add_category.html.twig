@@ -1,0 +1,39 @@
+{% extends 'layout-admin.html.twig' %}
+{% block content %}
+    <div class="container">
+        <h2>Ajouter une catégorie</h2>
+        {% if get.success == true %}
+            <p class="text-center form-success">Votre catégorie a bien été ajoutée!</p>
+            <div class="text-center p-4">
+                <a href="/AdminCategory/index"  type="button" class="btn btn-primary">Retour à la liste des catégories</a>
+            </div>
+        {% endif %}
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Nom de la catégorie : </label>
+                <input required class="form-control col-5" id="name" type="text" value="{{ category.name }}" name="name"  size="40">
+            </div>
+            <div class="form-group">
+                <label for="price">Prix : </label>
+                <input class="form-control col-5" type="number" id="price" name="price" value="{{ category.price }}" step="0.5" required>
+            </div>
+            <div class="form-group">
+                <img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo">
+                <label for="label">Label "Fait Maison" : </label>
+                <input type="checkbox" id="label" name="label" value="1" checked>
+            </div>
+            <div class="form-group">
+                <label for="display_order">Placer la catégorie après : </label>
+                <select id="display_order" name="display_order">
+                    <option value="0">Mettre en première place</option>
+                    {% for orderCategory in categories %}
+                        <option value="{{ orderCategory.display_order }}">{{ orderCategory.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" name="submit" value="submit" class="btn btn-lg m-3 btn-success">Ajouter</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
