@@ -1,0 +1,84 @@
+{% extends 'layout-admin.html.twig' %}
+
+{% block content %}
+    <h2>Réservations en attentes</h2>
+    <div class="container-fluid ">
+        <div class="table-responsive-vertical mx-1 text-center pt-4">
+            <table id="table" class="table table-hover table-striped table-bordered">
+                <thead class="comp-thead-color">
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Téléphone</th>
+                    <th scope="col">Nombre de convives</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Heure d'arrivée</th>
+                    <th scope="col">Refuser</th>
+                    <th scope="col">Accepter</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for reservation in reservations %}
+                    {% if reservation.validate == 0 %}
+                        <tr>
+                            <td data-title="Nom">{{ reservation.name }}</td>
+                            <td data-title="Email">{{ reservation.email }}</td>
+                            <td data-title="Téléphone">{{ reservation.phone }}</td>
+                            <td data-title="Nombre de convives">{{ reservation.nbPeople }}</td>
+                            <td data-title="Date">{{ reservation.date }}</td>
+                            <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
+                            <td>
+                                 <form method="post" action="/AdminReservation/delete">
+                                    <input name="id" type="hidden" value="{{ reservation.id }}">
+                                    <button class="btn btn-danger" type="submit">Refuser</button>
+                                </form>
+
+                            </td>
+                            <td>
+                                <form method="post" action="/AdminReservation/updateValidate" >
+                                    <input name="id" type="hidden" value="{{ reservation.id }}">
+                                    <button class="btn btn-success" type="submit">Accepter</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Réservations validées</h2>
+        <div class="table-responsive-vertical mx-1 text-center pt-4">
+            <table id="table" class="table table-hover table-striped table-bordered">
+                <thead class="comp-thead-color">
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Téléphone</th>
+                    <th scope="col">Nombre de convives</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Heure d'arrivée</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for reservation in reservations %}
+                    {% if reservation.validate == 1 %}
+                        <tr>
+                            <td data-title="Nom">{{ reservation.name }}</td>
+                            <td data-title="Email">{{ reservation.email }}</td>
+                            <td data-title="Téléphone">{{ reservation.phone }}</td>
+                            <td data-title="Nombre de convives">{{ reservation.nbPeople }}</td>
+                            <td data-title="Date">{{ reservation.date }}</td>
+                            <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
