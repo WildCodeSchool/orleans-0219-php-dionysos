@@ -507,8 +507,8 @@ form label, .weightBold
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
     text-align:right;
-    margin-left: 12em;
-    background: rgba(255, 255, 255, 0.76);
+    margin-left: 8rem;
+    background: rgba(255, 255, 255, 0);
 }
 .sidenav img{
     max-height:40px;
