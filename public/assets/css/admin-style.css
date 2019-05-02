@@ -40,6 +40,7 @@ body {
 .modifydishsection {
     text-align: center;
     padding-top: 0px;
+}
 
 .alert:empty {
     display:none;
@@ -48,3 +49,43 @@ body {
 .faitmaisonlogo{
     max-height:40px;
 }
+
+/* Menu style  */
+
+.adminmenusection {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+}
+
+.adminmenutext {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 1rem;
+    position: relative;
+    right: 1.5rem;
+}
+
+.adminmenulist {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.adminmenutitle {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+}
+
+.adminmenupage {
+    padding-bottom: 4rem;
+}
+
+.liendajout {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Menu style */
