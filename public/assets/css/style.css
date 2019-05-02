@@ -108,7 +108,7 @@ nav .navbar-collapse{
 .h2_pphoto{
     text-align: center;
     color: #5D1B18;
-    margin-top:2em;
+    margin-top:1em;
 }
 .gallery-container img{
     cursor:pointer;
@@ -154,7 +154,6 @@ nav .navbar-collapse{
 .arrow-down img {
     max-height: 20px;
 }
-
 
 /*body*/
 .display {
@@ -218,19 +217,31 @@ nav .navbar-collapse{
     background-image: url("../images/exclusive_paper.png");
     color: #2F1D15;
 }
+
 .reservation img{
-    max-width: 420px;
+    width: 100%;
 }
 
-
 /*END HOMEPAGE*/
+
+.jumbotron-findus{
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.5);
+    background-blend-mode: color;
+    background-image: url("../images/cathedrale-orleans.jpg");
+}
 
 #map {
     color: #2F1D15;
 }
 
 #map li {
-    list-style-type: none
+    list-style-type: none;
+    font-size: 24px;
+    text-align:center;
+    padding:0;
+    margin:0;
 }
 
 #map h2 {
@@ -317,7 +328,6 @@ nav .navbar-collapse{
     color: #FFD700;
     font-size: 1em;
 }
-
 
 .comments {
     padding:1.2em;
