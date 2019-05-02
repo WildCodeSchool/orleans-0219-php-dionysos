@@ -9,28 +9,13 @@
 
     {% include '_reservation-home.html.twig' %}
 
-    <section class="comments">
-        <div class="container-fluid">
-            <h2 class="text-center">LIVRE D'OR</h2>
+    <section class="comments comments-home">
+        <div class="container-fluid p-5">
+            <h2 class="text-center p-1">LIVRE D'OR</h2>
             <div class="row justify-content-around">
                 {% for review in homeReview %}
-                    <div class="card col-sm-12 col-md-12 col-lg-3 text-center">
-                        <div class="card-body ">
-                            <h5 class="card-title">{{ review.name }}</h5>
-                            <div class="col-12">
-                                <hr>
-                            </div>
-                            <p class="card-text card-date">{{ review.date }}</p>
-                            <div class="col-12">
-                                <hr>
-                            </div>
-                            <div class="rating-display text-center col-sm-12">
-                                {% for i in 1..5 %}
-                                    <i class="fa-star fa{{i > review.rating ? 'r' }}"></i>
-                                {% endfor %}
-                            </div>
-                            <p class="card-text">{{ review.comment }}</p>
-                        </div>
+                    <div class="card p-2 col-sm-12 col-md-12 col-lg-3 text-center">
+                        {% include '_review-cards.html.twig' %}
                     </div>
                 {% endfor %}
             </div>
