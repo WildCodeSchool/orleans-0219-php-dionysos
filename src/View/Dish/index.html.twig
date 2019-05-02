@@ -8,10 +8,12 @@
     </div>
     <!-- Side navigation -->
     <div class="sidenav ">
+        <div><hr></div>
         <a href="#menus">Les Menus<span class="arrow"> «</span></a>
         {% for category in categories %}
             <a href="#{{ category.name }}">{{ category.name }}<span class="arrow"> «</span></a>
         {% endfor %}
+        <div><hr></div>
     </div>
     <section class="menupage">
         <h2 id="menu-h2" class="menutitle">CARTE DES PLATS</h2>
@@ -26,7 +28,7 @@
                 {{ category.name }} : {{ category.price }} €
                 {{ (category.label == 1) ? '<img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo">' }}
                 </h3>
-            <div class="col-8"><hr></div>
+            <div class="col-8 hr-menu"><hr></div>
 
             {% for dish in dishesWithCategories[category.id] %}
                 <ul class="menulist">

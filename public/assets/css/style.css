@@ -403,6 +403,7 @@ form label, .weightBold
     background-attachment: fixed;
 }
 /* The sidebar menu */
+
 .sidenav {
     /*height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 160px; /* Set the width of the sidebar */
@@ -414,7 +415,7 @@ form label, .weightBold
     padding-top: 20px;
     text-align:right;
     margin-left: 12em;
-    background: rgba(255, 255, 255, 0.87);
+    background: rgba(255, 255, 255, 0.76);
 }
 .sidenav img{
     max-height:40px;
@@ -425,7 +426,7 @@ form label, .weightBold
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 21px;
-    color: gray;
+    color: rgba(128, 42, 42, 0.91);
     display: block;
 }
 
@@ -444,8 +445,11 @@ form label, .weightBold
     .sidenav {
         display: none;
     }
+    body .menupage{
+        margin: 0;
+        padding:0;
+    }
 }
-
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
@@ -484,7 +488,7 @@ form label, .weightBold
 
 .menupage {
     padding-bottom: 4rem;
-    margin-left: 16em; /* Same as the width of the sidebar */
+    margin-left: 16em;
     text-align:left;
 }
 
@@ -528,6 +532,13 @@ form label, .weightBold
     padding-right: 1rem;
 }
 
+.list-dishes h3{
+    color: rgba(128, 42, 42, 0.91);
+    font-size: 35px;
+}
+.menupage h2{
+    color: rgba(128, 42, 42, 0.91);
+}
 /* end of Menu style  */
 
 /* start Footer */
