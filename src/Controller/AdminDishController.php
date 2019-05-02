@@ -42,7 +42,7 @@ class AdminDishController extends AbstractController
                 'sup' => $noSupplement,
             ];
             $id = $dishManager->insert($dish);
-            header('Location:/AdminDish/add');
+            header('Location:/AdminDish/index');
             exit;
         }
         $categoryManager = new CategoryManager();
