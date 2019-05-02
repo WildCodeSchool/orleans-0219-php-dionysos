@@ -1,7 +1,9 @@
 {% extends 'layout-visitor.html.twig' %}
 {% block content %}
-    <h1 class="h1_pphoto">Restaurant</h1>
-    <div class="container">
+    <section class="gallery-container">
+        <h1 class="text-center">LES PHOTOS</h1>
+        <h2 class="h2_pphoto">Restaurant</h2>
+        <div class="container">
         <div class="row">
             <div class="col-sm">
                 <div class="card" data-toggle="modal" data-target="#Photo_100">
@@ -48,7 +50,7 @@
         </div>
     </div>
     <br>
-    <h1 class="h1_pphoto">Plats</h1>
+    <h2 class="h2_pphoto">Plats</h2>
     <div class="container">
         <div class="row">
             <div class="col-sm">
@@ -94,7 +96,7 @@
             </div>
         </div>
     </div>
-    <h1 class="h1_pphoto">Boissons</h1>
+    <h2 class="h2_pphoto">Boissons</h2>
     <div class="container">
         <div class="row">
             <div class="col-sm">
@@ -141,4 +143,5 @@
             </div>
         </div>
     </div>
+    </section>
 {% endblock %}
