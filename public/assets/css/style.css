@@ -319,19 +319,18 @@ nav .navbar-collapse{
     font-family: 'Lato', sans-serif;
 }
 
-.comments .card-title {
+.comments .card-title{
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
 }
 
 .comments .card-text{
-    padding-top: 0.5em;
     font-size: 0.8em;
 }
 .comments .card{
     margin: 1em 2em 1em 2em;
     max-width:19em;
-    height:17em;
+    height:18em;
     color: #0b0303;
     transition: all 0.4s ease 0s;
     padding: 0.4em;
