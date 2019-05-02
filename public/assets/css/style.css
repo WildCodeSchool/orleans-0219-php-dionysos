@@ -151,6 +151,7 @@ nav .navbar-collapse{
     padding: 15px;
 }
 
+
 .arrow-down img {
     max-height: 20px;
 }
@@ -223,7 +224,20 @@ nav .navbar-collapse{
 }
 
 /*END HOMEPAGE*/
-
+.jumbotron-reservation{
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.5);
+    background-blend-mode: color;
+    background-image: url("../images/reservation.jpg");
+}
+.jumbotron-review{
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.5);
+    background-blend-mode: color;
+    background-image: url("../images/guest-book.jpg");
+}
 .jumbotron-findus{
     background-size: cover;
     background-attachment: fixed;
