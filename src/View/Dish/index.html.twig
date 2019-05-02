@@ -51,7 +51,7 @@
             <h3 class="menusection">{{ drinkCategory.name }}</h3>
             {% for drink in drinksWithCategories[drinkCategory.id] %}
                 <ul class="menulist">
-                    <li class="menutext">{{ drink.name }} - {{ drink.takeaway_price }}€
+                    <li class="menutext">{{ drink.name }} - {{ drink.main_price }}€
                         {% if drink.takeaway_price %}
                             (à emporter {{ drink.takeaway_price }}€)
                         {% endif %}
