@@ -349,6 +349,85 @@ nav .navbar-collapse{
 
 /*END PAGE REVIEW*/
 
+/* start Footer */
+footer ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 0.8em;
+}
+
+footer
+{
+    background-color: #1d1d1d;
+    color: white;
+    padding-bottom: 8px;
+}
+
+footer p
+{
+    margin-bottom: 0;
+}
+footer hr {
+    background-color: white;
+}
+
+footer a {
+    font-size: 0.7em;
+}
+
+footer hr {
+    background-color: white;
+    margin: 2em;
+}
+
+footer a {
+    list-style-type: none;
+}
+
+.smallPic {
+    width: 95px;
+}
+
+.smallPicfb
+{
+    width: 110px;
+}
+.smallPicCard
+{
+    width: 70px;
+}
+.mealTicket
+{
+    width: 215px;
+}
+.littleEndPage
+{
+    font-size: 0.7em;
+}
+
+/* end Footer */
+
+
+
+/*  Start wine menu  */
+
+.wineblock > th {
+    padding: 10px;
+}
+
+.wineblock > td {
+    padding: 10px;
+    padding-right: 3rem;
+    font-size: smaller;
+}
+
+.winemenutable {
+   margin: auto;
+}
+
+/*  End wine menu  */
+
 /* start reservation */
 .ReservationBlock h2
 {
@@ -559,37 +638,12 @@ footer
 footer p
 {
     margin-bottom: 0;
-}
-
-footer a {
-    list-style-type: none;
-}
-
   
-footer hr {
-    background-color: white;
-    margin: 2em;
+.organic {
+    width: 30px;
 }
 
-.smallPic {
-    width: 95px;
-}
+/* end of Menu style  */
 
-.smallPicfb
-{
-    width: 110px;
-}
-.smallPicCard
-{
-    width: 70px;
-}
-.mealTicket
-{
-    width: 215px;
-}
-.littleEndPage
-{
-    font-size: 0.6em;
-}
 
-/* end Footer */
+

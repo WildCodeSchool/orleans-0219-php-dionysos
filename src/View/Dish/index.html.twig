@@ -29,10 +29,10 @@
                 {{ (category.label == 1) ? '<img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo">' }}
                 </h3>
             <div class="col-8 hr-menu"><hr></div>
-
             {% for dish in dishesWithCategories[category.id] %}
                 <ul class="menulist">
-                    <li class="menutext">{{dish.dish_name}}<strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)'}}</strong></li>
+                    <li class="menutext">{{ dish.dish_name }}
+                        <strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)' }}</strong></li>
                 </ul>
             {% endfor %}
         {% endfor %}
@@ -45,5 +45,23 @@
     </section>
     <div class="jumbotron jumbotron-fluid jumbotron-drinks align-items-center">
     </div>
+    <section>
+        <h2 id="menu-h2" class="menutitle">CARTE DES BOISSONS</h2>
 
+        {% for drinkCategory in drinkCategories %}
+            <h3 class="menusection">{{ drinkCategory.name }}</h3>
+            {% for drink in drinksWithCategories[drinkCategory.id] %}
+                <ul class="menulist">
+                    <li class="menutext">{{ drink.name }} - {{ drink.takeaway_price }}€
+                        {% if drink.takeaway_price %}
+                            (à emporter {{ drink.takeaway_price }}€)
+                        {% endif %}
+                        {% if drink.is_organic %}
+                            <img class="organic" src="/assets/images/organic_logo.jpg" title="certification bio" alt="cerfifié bio"/>
+                        {% endif %}
+                    </li>
+                </ul>
+            {% endfor %}
+        {% endfor %}
+    </section>
 {% endblock %}

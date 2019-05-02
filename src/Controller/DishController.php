@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Model\DishManager;
 use App\Model\CategoryManager;
+use App\Model\DrinkCategoryManager;
+use App\Model\DrinkManager;
 use App\Model\MenuManager;
 
 class DishController extends AbstractController
@@ -20,6 +22,11 @@ class DishController extends AbstractController
      */
     public function index()
     {
+        // get menus (formules)
+        $menuManager = new MenuManager();
+        $menus = $menuManager->selectAll();
+
+        // get dishes
         $dishManager = new DishManager();
         $dishes = $dishManager->selectDish();
 
@@ -30,14 +37,26 @@ class DishController extends AbstractController
         }
 
         $categoryManager = new CategoryManager();
-        $categories = $categoryManager->selectAll();
+        $dishCategories = $categoryManager->selectAll();
 
-        $menuManager = new MenuManager();
-        $menus = $menuManager->selectAll();
+        // get drinks
+        $drinkManager = new DrinkManager();
+        $drinks = $drinkManager->selectAll();
+        $drinksWithCategories = [];
+
+        foreach ($drinks as $drink) {
+            $drinksWithCategories[$drink['drink_type_id']][] = $drink;
+        }
+
+        $drinkCategoryManager = new DrinkCategoryManager();
+        $drinkCategories = $drinkCategoryManager->selectAll();
+
 
         return $this->twig->render('Dish/index.html.twig', [
             'dishesWithCategories' => $dishesWithCategories,
-            'categories' => $categories,
+            'dishCategories' => $dishCategories,
+            'drinksWithCategories' => $drinksWithCategories,
+            'drinkCategories' => $drinkCategories,
             'menus' => $menus,
         ]);
     }
