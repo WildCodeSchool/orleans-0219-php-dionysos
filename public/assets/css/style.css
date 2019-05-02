@@ -214,6 +214,10 @@ nav .navbar-collapse{
     background-image: url("../images/exclusive_paper.png");
     color: #2F1D15;
 }
+.reservation img{
+    max-width: 420px;
+}
+
 
 /*END HOMEPAGE*/
 
@@ -244,10 +248,7 @@ nav .navbar-collapse{
 }
 
 .guest-book button{
-    margin-top: 1em;
-    margin-bottom: 1em;
     color : white;
-    background-color: #5d1b18;
     transition: all 0.5s ease 0s;
     border:none;
 }
@@ -634,9 +635,9 @@ footer
     padding-bottom: 8px;
 }
 
-footer p
-{
+footer p {
     margin-bottom: 0;
+}
   
 .organic {
     width: 30px;
