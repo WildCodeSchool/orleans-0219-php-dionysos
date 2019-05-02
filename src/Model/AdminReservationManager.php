@@ -56,7 +56,7 @@ class AdminReservationManager extends AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("UPDATE $this->table SET `validate` = 1 WHERE id=:id");
-        $statement->bindValue(':validate', $reservation['validate'], \PDO::PARAM_INT);
+        $statement->bindValue(':id', $reservation, \PDO::PARAM_INT);
         return $statement->execute();
     }
 }

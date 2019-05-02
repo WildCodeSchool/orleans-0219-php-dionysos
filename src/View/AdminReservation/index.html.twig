@@ -33,7 +33,7 @@
                             </td>
                             <td>
                                 <input id="id" name="validate" type="hidden" value="{{ reservation.id }}">
-                                <a class="btn btn-success text-white" role="button" href="index/{{ reservation.validate }}" >Valider</a>
+                                <a class="btn btn-success text-white" role="button" href="/AdminReservation/updateValidate/{{ reservation.id }}" >Valider</a>
                             </td>
                         </tr>
                     {% endif %}
@@ -53,7 +53,6 @@
                     <th scope="col">Nombre de convives</th>
                     <th scope="col">Date</th>
                     <th scope="col">Heure d'arrivée</th>
-                    <th scope="col">Confirmation</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -67,7 +66,6 @@
                             <td data-title="Nombre de convives">{{ reservation.nbPeople }}</td>
                             <td data-title="Date">{{ reservation.date }}</td>
                             <td data-title="Heure d'arrivée">{{ reservation.appointment }}</td>
-                            <td><a class="btn btn-success text-white" role="button" type="submit">Envoyer un mail</a></td>
                         </tr>
                     {% endif %}
                 {% endfor %}

@@ -24,8 +24,10 @@ class AdminReservationController extends AbstractController
         //base
         $AdminReservationManager = new AdminReservationManager();
         $reservations = $AdminReservationManager->selectAll();
-        return $this->twig->
-        render('AdminReservation/index.html.twig', ['reservations' => $reservations, 'reservation']);
+        return $this->twig->render('AdminReservation/index.html.twig', [
+            'reservations' => $reservations,
+            'reservation'
+        ]);
     }
 
     /**
