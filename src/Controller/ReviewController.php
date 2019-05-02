@@ -86,7 +86,7 @@ class ReviewController extends AbstractController
         }
         return $this->twig->render('/Review/add.html.twig', [
             'errors' => $errors,
-            '$cleanReview' => $cleanPost,
+            'cleanReview' => $cleanPost,
             'reviewAll' => $reviewAll,
             'get' => $_GET]);
     }

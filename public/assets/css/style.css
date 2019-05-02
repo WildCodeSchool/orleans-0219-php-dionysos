@@ -10,7 +10,7 @@ h2 {
     font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
     text-align: center;
     font-weight: lighter;
-    padding-bottom: 5vw;
+    padding-bottom: 4vw;
 }
 
 section{
@@ -100,22 +100,24 @@ nav .navbar-collapse{
 .modal_centered_photo{
     max-width:800px;
 }
-
-
 .modal-content img{
     width: 100%;
     height: 600px;
     object-fit: cover;
 }
-.h1_pphoto{
+.h2_pphoto{
     text-align: center;
-    color: darkred;
+    color: #5D1B18;
+    margin-top:1em;
+}
+.gallery-container img{
+    cursor:pointer;
 }
 /*end picture*/
 
 /* jumbotron home */
 
-.jumbotron {
+.jumbotron-home {
     font-family: 'Montserrat', sans-serif;
     background-size: cover;
     background-attachment: fixed;
@@ -142,17 +144,17 @@ nav .navbar-collapse{
     text-shadow: 0.5px 0.5px #000000;
 }
 
-.jumbotron button {
+.jumbotron .btn{
     font-size: calc(12px + (22 - 12) * ((100vw - 300px) / (1600 - 300)));
     margin-bottom: 5%;
     transition: 0.5s ease all;
     padding: 15px;
 }
 
+
 .arrow-down img {
     max-height: 20px;
 }
-
 
 /*body*/
 .display {
@@ -166,6 +168,8 @@ nav .navbar-collapse{
     border:none;
     padding:11px;
     border-radius:0;
+    color:#F8F8F8;
+
 }
 
 .btn-red a {
@@ -215,14 +219,43 @@ nav .navbar-collapse{
     color: #2F1D15;
 }
 
+.reservation img{
+    width: 100%;
+}
+
 /*END HOMEPAGE*/
+.jumbotron-reservation{
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.5);
+    background-blend-mode: color;
+    background-image: url("../images/reservation.jpg");
+}
+.jumbotron-review{
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.5);
+    background-blend-mode: color;
+    background-image: url("../images/guest-book.jpg");
+}
+.jumbotron-findus{
+    background-size: cover;
+    background-attachment: fixed;
+    background-color :rgba(0,0,0,0.5);
+    background-blend-mode: color;
+    background-image: url("../images/cathedrale-orleans.jpg");
+}
 
 #map {
     color: #2F1D15;
 }
 
 #map li {
-    list-style-type: none
+    list-style-type: none;
+    font-size: 24px;
+    text-align:center;
+    padding:0;
+    margin:0;
 }
 
 #map h2 {
@@ -244,10 +277,7 @@ nav .navbar-collapse{
 }
 
 .guest-book button{
-    margin-top: 1em;
-    margin-bottom: 1em;
     color : white;
-    background-color: #5d1b18;
     transition: all 0.5s ease 0s;
     border:none;
 }
@@ -313,25 +343,23 @@ nav .navbar-collapse{
     font-size: 1em;
 }
 
-
 .comments {
     padding:1.2em;
     font-family: 'Lato', sans-serif;
 }
 
-.comments .card-title {
+.comments .card-title{
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
 }
 
 .comments .card-text{
-    padding-top: 0.5em;
     font-size: 0.8em;
 }
 .comments .card{
     margin: 1em 2em 1em 2em;
     max-width:19em;
-    height:17em;
+    height:18em;
     color: #0b0303;
     transition: all 0.4s ease 0s;
     padding: 0.4em;
@@ -348,6 +376,85 @@ nav .navbar-collapse{
 }
 
 /*END PAGE REVIEW*/
+
+/* start Footer */
+footer ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 0.8em;
+}
+
+footer
+{
+    background-color: #1d1d1d;
+    color: white;
+    padding-bottom: 8px;
+}
+
+footer p
+{
+    margin-bottom: 0;
+}
+footer hr {
+    background-color: white;
+}
+
+footer a {
+    font-size: 0.7em;
+}
+
+footer hr {
+    background-color: white;
+    margin: 2em;
+}
+
+footer a {
+    list-style-type: none;
+}
+
+.smallPic {
+    width: 95px;
+}
+
+.smallPicfb
+{
+    width: 110px;
+}
+.smallPicCard
+{
+    width: 70px;
+}
+.mealTicket
+{
+    width: 215px;
+}
+.littleEndPage
+{
+    font-size: 0.7em;
+}
+
+/* end Footer */
+
+
+
+/*  Start wine menu  */
+
+.wineblock > th {
+    padding: 10px;
+}
+
+.wineblock > td {
+    padding: 10px;
+    padding-right: 3rem;
+    font-size: smaller;
+}
+
+.winemenutable {
+   margin: auto;
+}
+
+/*  End wine menu  */
 
 /* start reservation */
 .ReservationBlock h2
@@ -386,42 +493,115 @@ form label, .weightBold
 /* end reservation */
 
 /* Menu style  */
+.jumbotron-menu{
+    font-family: 'Montserrat', sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 0;
+    background-image: url("../images/page-menu.jpg");
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: color;
+    padding-top:3%;
+}
+.jumbotron-drinks{
+    padding-top:22%;
+    background-image: url("../images/drinks.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* The sidebar menu */
+
+.sidenav {
+    /*height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 51%; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    text-align:right;
+    margin-left: 8rem;
+    background: rgba(255, 255, 255, 0);
+}
+.sidenav img{
+    max-height:40px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 21px;
+    color: rgba(128, 42, 42, 0.91);
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #5d1b18;
+}
+.arrow{
+    opacity:0;
+}
+.sidenav a:hover .arrow{
+    opacity: 1;
+}
+
+@media screen and (max-width: 991px) {
+    .sidenav {
+        display: none;
+    }
+    body .menupage{
+        margin: 0;
+        padding:0;
+    }
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
 
 .menusection {
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    padding-top: 5rem;
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    text-align:left;
+    font-size: 25px;
 }
 
 .menutext {
-    text-align: center;
     font-family: 'Montserrat', sans-serif;
     padding-top: 1rem;
     position: relative;
     right: 1.5rem;
+    text-align:left;
+    font-size: 18px;
 }
 
 .menulist {
     list-style: none;
     margin-bottom: 1rem;
+    text-align:left;
 }
 
 .menutitle {
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    text-align:center;
 }
 
 .menupage {
     padding-bottom: 4rem;
+    margin-left: 16em;
+    text-align:left;
 }
 
 .dishprices {
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-style: italic;
 }
 
@@ -434,6 +614,7 @@ form label, .weightBold
     padding-top: 1rem;
     padding-right: 2rem;
     padding-left: 2rem;
+    text-align: left;
 }
 
 .faitmaisonlogo {
@@ -446,8 +627,8 @@ form label, .weightBold
 .menufootnote {
     padding-top: 4rem;
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    font-size: 0.8rem;
+    font-size: 15px;
+    text-align:left;
 }
 
 .faitmaisonlogofooter {
@@ -458,6 +639,13 @@ form label, .weightBold
     padding-right: 1rem;
 }
 
+.list-dishes h3{
+    color: rgba(128, 42, 42, 0.91);
+    font-size: 35px;
+}
+.menupage h2{
+    color: rgba(128, 42, 42, 0.91);
+}
 /* end of Menu style  */
 
 /* start Footer */
@@ -475,40 +663,16 @@ footer
     padding-bottom: 8px;
 }
 
-footer p
-{
+footer p {
     margin-bottom: 0;
 }
-
-footer a {
-    list-style-type: none;
-}
-
   
-footer hr {
-    background-color: white;
-    margin: 2em;
+.organic {
+    width: 30px;
 }
 
-.smallPic {
-    width: 95px;
-}
+/* end of Menu style  */
 
-.smallPicfb
-{
-    width: 110px;
-}
-.smallPicCard
-{
-    width: 70px;
-}
-.mealTicket
-{
-    width: 215px;
-}
-.littleEndPage
-{
-    font-size: 0.6em;
-}
 
-/* end Footer */
+
+

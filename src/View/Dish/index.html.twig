@@ -1,37 +1,66 @@
 {% extends 'layout-visitor.html.twig' %}
 
-
-
 {% block content %}
+    <div class="jumbotron jumbotron-fluid jumbotron-menu align-items-center">
+        <div class="container-fluid ">
+            <h1 class="h1 jumbotron-title text-center">NOTRE CARTE</h1>
+        </div>
+    </div>
+    <!-- Side navigation -->
+    <div class="sidenav ">
+        <a href="#menus">Les Menus<span class="arrow"> «</span></a>
+        {% for category in dishCategories %}
+            <a href="#{{ category.name }}">{{ category.name }}<span class="arrow"> «</span></a>
+        {% endfor %}
+        <a href="#menu-h2">Boissons<span class="arrow"> «</span></a>
+    </div>
     <section class="menupage">
-
-        <h1 class="menutitle">Notre Carte</h1>
-
-        <div class="menupricebox">
+        <h2 id="menu-h2" class="menutitle">CARTE DES PLATS</h2>
+        <div id="menus" class="menupricebox">
             {% for menu in menus %}
                 <p class="dishprices">{{ menu.name }} : {{ menu.price }} €</p>
             {% endfor %}
         </div>
-
-        {% for category in categories %}
-            <h2 class="menusection">
+        <div class="list-dishes">
+        {% for category in dishCategories %}
+            <h3 class="menusection" id="{{ category.name }}">
                 {{ category.name }} : {{ category.price }} €
                 {{ (category.label == 1) ? '<img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogo">' }}
-                </h2>
+                </h3>
+            <div class="col-8 hr-menu"><hr></div>
             {% for dish in dishesWithCategories[category.id] %}
                 <ul class="menulist">
-                    <li class="menutext">{{dish.dish_name}}<strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)'}}</strong></li>
+                    <li class="menutext">{{ dish.dish_name }}
+                        <strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)' }}</strong></li>
                 </ul>
             {% endfor %}
-
         {% endfor %}
-
         <p class="menufootnote">
             <img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogofooter">
             Logo « Fait Maison » selon le Décret Nº 2014-797 du 11 juillet 2014. <br/>
             Les plats «faits maison» sont élaborés sur place à partir de produits bruts.
-
         </p>
+        </div>
     </section>
+    <div class="jumbotron jumbotron-fluid jumbotron-drinks align-items-center">
+    </div>
+    <section class="menupage">
+        <h2 id="menu-h2" class="menutitle">CARTE DES BOISSONS</h2>
 
+        {% for drinkCategory in drinkCategories %}
+            <h3 class="menusection">{{ drinkCategory.name }}</h3>
+            {% for drink in drinksWithCategories[drinkCategory.id] %}
+                <ul class="menulist">
+                    <li class="menutext">{{ drink.name }} - {{ drink.takeaway_price }}€
+                        {% if drink.takeaway_price %}
+                            (à emporter {{ drink.takeaway_price }}€)
+                        {% endif %}
+                        {% if drink.is_organic %}
+                            <img class="organic" src="/assets/images/organic_logo.jpg" title="certification bio" alt="cerfifié bio"/>
+                        {% endif %}
+                    </li>
+                </ul>
+            {% endfor %}
+        {% endfor %}
+    </section>
 {% endblock %}

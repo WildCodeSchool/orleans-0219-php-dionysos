@@ -1,28 +1,23 @@
-{% extends 'layout-visitor.html.twig' %}
+{% extends 'layout-admin.html.twig' %}
 
 
 
 {% block content %}
-    <section class="menupage">
+    <section class="adminmenupage">
 
-        <h1 class="menutitle">Gestion des plats</h1>
+        <h1 class="adminmenutitle">Gestion des plats</h1>
+        <a href="/AdminDish/add"><p class="liendajout">Ajouter un plat</p></a>
 
         {% for category in categories %}
-            <h2 class="menusection">{{ category.name }}</h2>
+            <h2 class="adminmenusection">{{ category.name }}</h2>
             {% for dish in dishesWithCategories[category.id] %}
-                <ul class="menulist">
-                    <a href="/AdminDish/show/{{ dish.id }}"><li class="menutext">{{dish.dish_name}}<strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)'}}</strong></a></li>
+                <ul class="adminmenulist">
+                    <a href="/AdminDish/show/{{ dish.id }}"><li class="adminmenutext">{{dish.dish_name}}<strong>{{ dish.sup is not null ? '  (sup + ' ~ dish.sup ~ ' euros)'}}</strong></a></li>
                 </ul>
             {% endfor %}
 
         {% endfor %}
 
-        <p class="menufootnote">
-            <img src="/assets/images/faitmaison.png" alt="fait maison logo" class="faitmaisonlogofooter">
-            Logo « Fait Maison » selon le Décret Nº 2014-797 du 11 juillet 2014. <br/>
-            Les plats «faits maison» sont élaborés sur place à partir de produits bruts.
-
-        </p>
     </section>
 
 {% endblock %}
