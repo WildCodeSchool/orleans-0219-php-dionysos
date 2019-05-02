@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<p>Bonjour {{ reservation.name }}.</p>
+{% if success %}
+<p>Nous avons le plaisir de vous confirmer votre réservation pour {{ reservation.nbPeople }} couverts. Nous vous
+    attendons le {{ reservation.date }} à {{ reservation.appointment }}.</p>
+{% else %}
+<p>Nous avons le regret de ne pouvoir accepter votre réservation.</p>
+<p>N'hésitez à nous recontacter via le formulaire de contact, ou bien par téléphone au 02 38 53 71 12.</p>
+<p>Nous aurons le plaisir de vous accueillir dans notre établissement.</p>
+{% endif %}
+</body>
+</html>

@@ -52,7 +52,7 @@ class AdminReservationManager extends AbstractManager
      * @param int $reservation
      * @return bool
      */
-    public function updateValidate(int $reservation):bool
+    public function updateValidate(int $reservation): bool
     {
         // prepared request
         $statement = $this->pdo->prepare("UPDATE $this->table SET `validate` = 1 WHERE id=:id");
